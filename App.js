@@ -17,7 +17,9 @@ export default function App() {
       await Font.loadAsync({
         'Inter-Regular': require('./assets/fonts/Inter-Regular.ttf'),
         'Inter-Bold': require('./assets/fonts/Inter-Bold.ttf'),
-        'Inter-semi-Bold': require('./assets/fonts/Inter-Bold.ttf'),
+        'Inter-semi-Bold': require('./assets/fonts/Inter-SemiBold.ttf'),
+        'VastShadow-Regular': require('./assets/fonts/VastShadow-Regular.ttf'),
+        'Radley-Regular': require('./assets/fonts/Radley-Regular.ttf'),
       });
       setFontsLoaded(true);
       await SplashScreen.hideAsync();

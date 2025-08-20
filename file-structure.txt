@@ -12,18 +12,90 @@
 │                       └── favicon-24272cdaeff82cc5facdaccd982a6f05b60c4504704bbf94c19a6388659880bb-contain-transparent
 │                           └── favicon-48.png
 ├── .gitignore
+├── .vscode
+│   └── .react
 ├── App.js
+├── Groups.png
 ├── api
 │   ├── assets
 │   │   └── bible-kinyarwanda
 │   │       └── KinyarwandaBibleStructure.json
-│   └── core
-│       └── apiRoutes.js
+│   ├── core
+│   │   └── dataApi.js
+│   └── scripts
+│       └── generate-bible-icons.js
 ├── app.json
 ├── assets
 │   ├── adaptive-icon.png
 │   ├── bible
 │   │   └── 1petero.mp3
+│   ├── bible_icons
+│   │   ├── 01-genesis.svg
+│   │   ├── 02-exodus.svg
+│   │   ├── 03-leviticus.svg
+│   │   ├── 04-numbers.svg
+│   │   ├── 05-deuteronomy.svg
+│   │   ├── 06-joshua.svg
+│   │   ├── 07-judges.svg
+│   │   ├── 08-ruth.svg
+│   │   ├── 09-1-samuel.svg
+│   │   ├── 10-2-samuel.svg
+│   │   ├── 11-1-kings.svg
+│   │   ├── 12-2-kings.svg
+│   │   ├── 13-1-chronicles.svg
+│   │   ├── 14-2-chronicles.svg
+│   │   ├── 15-ezra.svg
+│   │   ├── 16-nehemiah.svg
+│   │   ├── 17-esther.svg
+│   │   ├── 18-job.svg
+│   │   ├── 19-psalms.svg
+│   │   ├── 20-proverbs.svg
+│   │   ├── 21-ecclesiastes.svg
+│   │   ├── 22-song-of-songs.svg
+│   │   ├── 23-isaiah.svg
+│   │   ├── 24-jeremiah.svg
+│   │   ├── 25-lamentations.svg
+│   │   ├── 26-ezekiel.svg
+│   │   ├── 27-daniel.svg
+│   │   ├── 28-hosea.svg
+│   │   ├── 29-joel.svg
+│   │   ├── 30-amos.svg
+│   │   ├── 31-obadiah.svg
+│   │   ├── 32-jonah.svg
+│   │   ├── 33-micah.svg
+│   │   ├── 34-nahum.svg
+│   │   ├── 35-habakkuk.svg
+│   │   ├── 36-zephaniah.svg
+│   │   ├── 37-haggai.svg
+│   │   ├── 38-zechariah.svg
+│   │   ├── 39-malachi.svg
+│   │   ├── 40-matthew.svg
+│   │   ├── 41-mark.svg
+│   │   ├── 42-luke.svg
+│   │   ├── 43-john.svg
+│   │   ├── 44-acts.svg
+│   │   ├── 45-romans.svg
+│   │   ├── 46-1-corinthians.svg
+│   │   ├── 47-2-corinthians.svg
+│   │   ├── 48-galatians.svg
+│   │   ├── 49-ephesians.svg
+│   │   ├── 50-philippians.svg
+│   │   ├── 51-colossians.svg
+│   │   ├── 52-1-thessalonians.svg
+│   │   ├── 53-2-thessalonians.svg
+│   │   ├── 54-1-timothy.svg
+│   │   ├── 55-2-timothy.svg
+│   │   ├── 56-titus.svg
+│   │   ├── 57-philemon.svg
+│   │   ├── 58-hebrews.svg
+│   │   ├── 59-james.svg
+│   │   ├── 60-1-peter.svg
+│   │   ├── 61-2-peter.svg
+│   │   ├── 62-1-john.svg
+│   │   ├── 63-2-john.svg
+│   │   ├── 64-3-john.svg
+│   │   ├── 65-jude.svg
+│   │   └── 66-revelation.svg
 │   ├── favicon.png
 │   ├── fonts
 │   │   ├── Inter-Bold.ttf
@@ -42,7 +114,9 @@
 │       └── Typography.js
 ├── bible-module
 │   ├── book-categories
+│   │   ├── BibleIcons.js
 │   │   ├── BookList.js
+│   │   ├── BookListItem.js
 │   │   ├── NewTestament.js
 │   │   └── OldTestament.js
 │   ├── book-select
@@ -57,7 +131,6 @@
 ├── screens
 │   ├── ChapterScreen.js
 │   └── HomeScreen.js
-├── webpack.config.js
 └── yarn.lock
 
-24 directories, 37 files
+28 directories, 106 files
