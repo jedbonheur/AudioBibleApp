@@ -24,6 +24,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
-  }
+    },
+    "plugins": [
+      "expo-audio"
+    ],
+    "sdkVersion": "53.0.0"
+  },
+  "name": "audiobibleapp"
 }

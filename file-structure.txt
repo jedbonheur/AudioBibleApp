@@ -1,0 +1,63 @@
+.
+├── .expo
+│   ├── README.md
+│   ├── devices.json
+│   ├── packager-info.json
+│   ├── settings.json
+│   └── web
+│       └── cache
+│           └── production
+│               └── images
+│                   └── favicon
+│                       └── favicon-24272cdaeff82cc5facdaccd982a6f05b60c4504704bbf94c19a6388659880bb-contain-transparent
+│                           └── favicon-48.png
+├── .gitignore
+├── App.js
+├── api
+│   ├── assets
+│   │   └── bible-kinyarwanda
+│   │       └── KinyarwandaBibleStructure.json
+│   └── core
+│       └── apiRoutes.js
+├── app.json
+├── assets
+│   ├── adaptive-icon.png
+│   ├── bible
+│   │   └── 1petero.mp3
+│   ├── favicon.png
+│   ├── fonts
+│   │   ├── Inter-Bold.ttf
+│   │   ├── Inter-Light.ttf
+│   │   ├── Inter-LightItalic.ttf
+│   │   ├── Inter-Regular.ttf
+│   │   ├── Inter-SemiBold.ttf
+│   │   └── Inter-SemiBoldItalic.ttf
+│   ├── icon.png
+│   ├── splash-icon.png
+│   └── theme
+│       └── theme.js
+├── bible-components
+│   ├── play
+│   └── typography
+│       └── Typography.js
+├── bible-module
+│   ├── book-categories
+│   │   ├── BookList.js
+│   │   ├── NewTestament.js
+│   │   └── OldTestament.js
+│   ├── book-select
+│   │   └── BookSelect.js
+│   └── header
+│       └── Header.js
+├── file-structure.txt
+├── index.js
+├── jsconfig.json
+├── package-lock.json
+├── package.json
+├── screens
+│   ├── ChapterScreen.js
+│   └── HomeScreen.js
+├── webpack.config.js
+└── yarn.lock
+
+24 directories, 37 files

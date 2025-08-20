@@ -1,0 +1,14 @@
+{
+ "compilerOptions": {
+   "baseUrl": ".",
+   "paths": {
+     "@theme/*": ["assets/theme/*"],
+     "@typography/*": ["bible-components/typography/*"],
+     "@bookcategories/*": ["bible-module/book-categories/*"],
+     "@screens/*": ["screens/*"],
+     "@header/*": ["bible-module/header/*"],
+     "@bookselect/*": ["bible-module/book-select/*"],
+     "@data/*": ["api/core/*"]
+   }
+ }
+}
