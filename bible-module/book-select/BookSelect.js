@@ -9,7 +9,7 @@ const BookSelect = () => {
   const [selectedTab, setSelectedTab] = useState('New');
 
   return (
-    <View>
+    <View style={styles.wrapper}>
       <Title style={styles.titleSelect}>Select Book</Title>
       <View style={styles.tabContainer}>
         <TouchableOpacity
@@ -81,8 +81,12 @@ const styles = StyleSheet.create({
   content: {
     color: theme.colors.primaryTextWhite,
     borderRadius: 8,
-    alignItems: 'center',
+    alignItems: 'stretch',
     marginLeft: theme.spacing.outerPadding,
+    flex: 1,
+  },
+  wrapper: {
+    flex: 1,
   },
 });
 export default BookSelect;

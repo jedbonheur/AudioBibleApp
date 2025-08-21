@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,29 +13,34 @@ export default function App() {
 
   useEffect(() => {
     async function prepare() {
-      await SplashScreen.preventAutoHideAsync();
-      await Font.loadAsync({
-        'Inter-Regular': require('./assets/fonts/Inter-Regular.ttf'),
-        'Inter-Bold': require('./assets/fonts/Inter-Bold.ttf'),
-        'Inter-semi-Bold': require('./assets/fonts/Inter-SemiBold.ttf'),
-        'VastShadow-Regular': require('./assets/fonts/VastShadow-Regular.ttf'),
-        'Radley-Regular': require('./assets/fonts/Radley-Regular.ttf'),
-      });
-      setFontsLoaded(true);
-      await SplashScreen.hideAsync();
+      try {
+        await SplashScreen.preventAutoHideAsync();
+        await Font.loadAsync({
+          'Inter-Regular': require('./assets/fonts/Inter-Regular.ttf'),
+          'Inter-Bold': require('./assets/fonts/Inter-Bold.ttf'),
+          'Inter-SemiBold': require('./assets/fonts/Inter-SemiBold.ttf'),
+          'VastShadow-Regular': require('./assets/fonts/VastShadow-Regular.ttf'),
+          'Radley-Regular': require('./assets/fonts/Radley-Regular.ttf'),
+        });
+      } catch (err) {
+        console.warn('Font loading error:', err);
+      } finally {
+        setFontsLoaded(true);
+        await SplashScreen.hideAsync();
+      }
     }
     prepare();
   }, []);
 
   if (!fontsLoaded) {
-    return null; // App stays on splash screen until fonts are loaded
+    return null; // Keep splash visible until fonts load
   }
 
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Chapter" component={ChapterScreen} />
+        <Stack.Screen name="ChapterScreen" component={ChapterScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
