@@ -1,25 +1,25 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import theme from '@theme/theme';
 import BookListItem from './BookListItem';
 
-const BookList = ({ books, onBookPress }) => {
-  const [selectedBookId, setSelectedBookId] = useState(null);
+const BookList = ({ books }) => {
+  const navigation = useNavigation();
 
   const handlePress = useCallback(
     (book) => {
-      setSelectedBookId(book.id);
-      if (onBookPress) onBookPress(book);
+      navigation.navigate('ChapterScreen', { book });
     },
-    [onBookPress]
+    [navigation]
   );
+
 
   const renderItem = useCallback(
     ({ item }) => {
-      const isSelected = item.id === selectedBookId;
-      return <BookListItem item={item} isSelected={isSelected} onPress={handlePress} />;
+      return <BookListItem item={item} onPress={() => handlePress(item)} />;
     },
-    [selectedBookId, handlePress]
+    [handlePress]
   );
 
   return (
@@ -28,8 +28,9 @@ const BookList = ({ books, onBookPress }) => {
       keyExtractor={(item) => item.id.toString()}
       renderItem={renderItem}
       ItemSeparatorComponent={() => <View style={styles.separator} />}
-      extraData={selectedBookId}
       contentContainerStyle={styles.listContainer}
+      style={styles.list}
+      showsVerticalScrollIndicator={true}
     />
   );
 };
@@ -39,6 +40,11 @@ export default BookList;
 const styles = StyleSheet.create({
   listContainer: {
     paddingVertical: 4,
+    flexGrow: 1,
+
+  },
+  list: {
+    flex: 1,
   },
   separator: {
     height: 1,

@@ -1,72 +1,468 @@
 {
   "OldTestament": [
-    {"id": 1, "name": "Genesis", "chapters": 50, "category": "pentateuch"},
-    {"id": 2, "name": "Exodus", "chapters": 40, "category": "pentateuch"},
-    {"id": 3, "name": "Leviticus", "chapters": 27, "category": "pentateuch"},
-    {"id": 4, "name": "Numbers", "chapters": 36, "category": "pentateuch"},
-    {"id": 5, "name": "Deuteronomy", "chapters": 34, "category": "pentateuch"},
-    {"id": 6, "name": "Joshua", "chapters": 24, "category": "historical"},
-    {"id": 7, "name": "Judges", "chapters": 21, "category": "historical"},
-    {"id": 8, "name": "Ruth", "chapters": 4, "category": "historical"},
-    {"id": 9, "name": "1 Samuel", "chapters": 31, "category": "historical"},
-    {"id": 10, "name": "2 Samuel", "chapters": 24, "category": "historical"},
-    {"id": 11, "name": "1 Kings", "chapters": 22, "category": "historical"},
-    {"id": 12, "name": "2 Kings", "chapters": 25, "category": "historical"},
-    {"id": 13, "name": "1 Chronicles", "chapters": 29, "category": "historical"},
-    {"id": 14, "name": "2 Chronicles", "chapters": 36, "category": "historical"},
-    {"id": 15, "name": "Ezra", "chapters": 10, "category": "historical"},
-    {"id": 16, "name": "Nehemiah", "chapters": 13, "category": "historical"},
-    {"id": 17, "name": "Esther", "chapters": 10, "category": "historical"},
-    {"id": 18, "name": "Job", "chapters": 42, "category": "wisdom"},
-    {"id": 19, "name": "Psalms", "chapters": 150, "category": "wisdom"},
-    {"id": 20, "name": "Proverbs", "chapters": 31, "category": "wisdom"},
-    {"id": 21, "name": "Ecclesiastes", "chapters": 12, "category": "wisdom"},
-    {"id": 22, "name": "Song of Solomon", "chapters": 8, "category": "wisdom"},
-    {"id": 23, "name": "Isaiah", "chapters": 66, "category": "major_prophet"},
-    {"id": 24, "name": "Jeremiah", "chapters": 52, "category": "major_prophet"},
-    {"id": 25, "name": "Lamentations", "chapters": 5, "category": "major_prophet"},
-    {"id": 26, "name": "Ezekiel", "chapters": 48, "category": "major_prophet"},
-    {"id": 27, "name": "Daniel", "chapters": 12, "category": "major_prophet"},
-    {"id": 28, "name": "Hosea", "chapters": 14, "category": "minor_prophet"},
-    {"id": 29, "name": "Joel", "chapters": 3, "category": "minor_prophet"},
-    {"id": 30, "name": "Amos", "chapters": 9, "category": "minor_prophet"},
-    {"id": 31, "name": "Obadiah", "chapters": 1, "category": "minor_prophet"},
-    {"id": 32, "name": "Jonah", "chapters": 4, "category": "minor_prophet"},
-    {"id": 33, "name": "Micah", "chapters": 7, "category": "minor_prophet"},
-    {"id": 34, "name": "Nahum", "chapters": 3, "category": "minor_prophet"},
-    {"id": 35, "name": "Habakkuk", "chapters": 3, "category": "minor_prophet"},
-    {"id": 36, "name": "Zephaniah", "chapters": 3, "category": "minor_prophet"},
-    {"id": 37, "name": "Haggai", "chapters": 2, "category": "minor_prophet"},
-    {"id": 38, "name": "Zechariah", "chapters": 14, "category": "minor_prophet"},
-    {"id": 39, "name": "Malachi", "chapters": 4, "category": "minor_prophet"}
+    {
+      "id": 1,
+      "name": "Genesis",
+      "chapters": 50,
+      "category": "pentateuch",
+      "intro": "Genesis introduces God as Creator and tells the beginnings of the world, humanity, and Israel. It recounts stories of Adam and Eve, Noah, Abraham, Isaac, Jacob, and Joseph. The book emphasizes God’s promises, human failure, and His plan of redemption."
+    },
+    {
+      "id": 2,
+      "name": "Exodus",
+      "chapters": 40,
+      "category": "pentateuch",
+      "intro": "Exodus narrates Israel’s deliverance from slavery in Egypt under Moses’ leadership. God reveals His power through plagues, the Red Sea crossing, and provision in the wilderness. It highlights covenant at Sinai, God’s presence, and the building of the tabernacle."
+    },
+    {
+      "id": 3,
+      "name": "Leviticus",
+      "chapters": 27,
+      "category": "pentateuch",
+      "intro": "Leviticus provides laws for Israel’s worship and daily life, emphasizing holiness. It details sacrifices, priestly duties, and festivals that teach God’s holiness and mercy. The book shows how sinful people can live in fellowship with a holy God."
+    },
+    {
+      "id": 4,
+      "name": "Numbers",
+      "chapters": 36,
+      "category": "pentateuch",
+      "intro": "Numbers recounts Israel’s wilderness journey marked by rebellion, testing, and God’s faithfulness. Despite their disobedience, God provides guidance and prepares them for the Promised Land. The book teaches trust in God’s promises despite hardships."
+    },
+    {
+      "id": 5,
+      "name": "Deuteronomy",
+      "chapters": 34,
+      "category": "pentateuch",
+      "intro": "Deuteronomy records Moses’ final speeches before Israel enters the Promised Land. It reviews God’s laws, covenant faithfulness, and calls the people to wholehearted obedience. The book stresses love for God, remembering His works, and passing faith to future generations."
+    },
+    {
+      "id": 6,
+      "name": "Joshua",
+      "chapters": 24,
+      "category": "historical",
+      "intro": "Joshua tells of Israel’s conquest and settlement of the Promised Land. God fulfills His promises by granting victory through obedience and faith. The book highlights courage, covenant loyalty, and the inheritance of God’s people."
+    },
+    {
+      "id": 7,
+      "name": "Judges",
+      "chapters": 21,
+      "category": "historical",
+      "intro": "Judges describes a cycle of sin, oppression, repentance, and deliverance in Israel. God raises leaders called judges to rescue His people despite widespread disobedience. It highlights human weakness and God’s mercy in times of chaos."
+    },
+    {
+      "id": 8,
+      "name": "Ruth",
+      "chapters": 4,
+      "category": "historical",
+      "intro": "Ruth tells the story of loyalty, kindness, and God’s providence through ordinary lives. Ruth’s devotion to Naomi leads her to Boaz and into the family of David. The book reveals God’s care and His plan unfolding through faithful love."
+    },
+    {
+      "id": 9,
+      "name": "1 Samuel",
+      "chapters": 31,
+      "category": "historical",
+      "intro": "1 Samuel describes Israel’s transition from judges to monarchy under Saul and David. It emphasizes obedience to God over outward appearance or human strength. David rises as a man after God’s heart, despite struggles and trials."
+    },
+    {
+      "id": 10,
+      "name": "2 Samuel",
+      "chapters": 24,
+      "category": "historical",
+      "intro": "2 Samuel focuses on David’s reign, showing his victories, sins, and God’s covenant promise. The narrative shows both blessings of godly leadership and consequences of failure. God’s plan of redemption continues through David’s family line."
+    },
+    {
+      "id": 11,
+      "name": "1 Kings",
+      "chapters": 22,
+      "category": "historical",
+      "intro": "1 Kings recounts Solomon’s wisdom, temple building, and decline into idolatry. After his reign, the kingdom splits into northern Israel and southern Judah. Prophets emerge to call people back to covenant faithfulness."
+    },
+    {
+      "id": 12,
+      "name": "2 Kings",
+      "chapters": 25,
+      "category": "historical",
+      "intro": "2 Kings continues the history of Israel and Judah, marked by rebellion and judgment. Prophets like Elisha call kings to repent, but most ignore God’s word. The book ends with exile, showing consequences of persistent unfaithfulness."
+    },
+    {
+      "id": 13,
+      "name": "1 Chronicles",
+      "chapters": 29,
+      "category": "historical",
+      "intro": "1 Chronicles retells Israel’s history with focus on David’s reign and temple preparation. Genealogies emphasize God’s covenant promises through His chosen line. The book highlights worship, prayer, and God’s presence with His people."
+    },
+    {
+      "id": 14,
+      "name": "2 Chronicles",
+      "chapters": 36,
+      "category": "historical",
+      "intro": "2 Chronicles emphasizes the kings of Judah, temple worship, and prophetic warnings. It shows blessings for obedience and consequences of idolatry and sin. The book closes with exile but ends with hope of restoration."
+    },
+    {
+      "id": 15,
+      "name": "Ezra",
+      "chapters": 10,
+      "category": "historical",
+      "intro": "Ezra recounts the return of exiles and the rebuilding of the temple in Jerusalem. God restores His people and renews their worship through His law. Ezra calls the nation to repentance and faithfulness to God’s covenant."
+    },
+    {
+      "id": 16,
+      "name": "Nehemiah",
+      "chapters": 13,
+      "category": "historical",
+      "intro": "Nehemiah tells how Jerusalem’s walls were rebuilt despite opposition. Through prayer, courage, and perseverance, God’s people restored their city and covenant. The book underscores faith, leadership, and renewal in community life."
+    },
+    {
+      "id": 17,
+      "name": "Esther",
+      "chapters": 10,
+      "category": "historical",
+      "intro": "Esther describes God’s deliverance of His people through Esther’s courage. Though God’s name is not mentioned, His providence is clear in every event. The story reveals God’s hidden hand and the power of faithful action."
+    },
+    {
+      "id": 18,
+      "name": "Job",
+      "chapters": 42,
+      "category": "wisdom",
+      "intro": "Job wrestles with suffering, faith, and the mystery of God’s purposes. Through loss and pain, Job questions but ultimately trusts God’s wisdom. The book highlights God’s sovereignty and human dependence on Him."
+    },
+    {
+      "id": 19,
+      "name": "Psalms",
+      "chapters": 150,
+      "category": "wisdom",
+      "intro": "Psalms is a collection of songs and prayers expressing every emotion to God. It includes praise, lament, thanksgiving, and trust in God’s faithfulness. These poems guide worship and strengthen faith across generations."
+    },
+    {
+      "id": 20,
+      "name": "Proverbs",
+      "chapters": 31,
+      "category": "wisdom",
+      "intro": "Proverbs offers wisdom for living faithfully in God’s world. It contrasts righteousness and wickedness, wisdom and folly, diligence and laziness. Rooted in the fear of the Lord, it guides practical daily life."
+    },
+    {
+      "id": 21,
+      "name": "Ecclesiastes",
+      "chapters": 12,
+      "category": "wisdom",
+      "intro": "Ecclesiastes reflects on life’s fleeting nature and the emptiness of worldly pursuits. The Teacher explores meaning, toil, and mortality, finding vanity apart from God. True fulfillment is found in fearing God and keeping His commands."
+    },
+    {
+      "id": 22,
+      "name": "Song of Solomon",
+      "chapters": 8,
+      "category": "wisdom",
+      "intro": "Song of Solomon is a poetic celebration of love and marital intimacy. It honors passion, commitment, and covenant joy as God’s design. The book also reflects God’s faithful love for His people."
+    },
+    {
+      "id": 23,
+      "name": "Isaiah",
+      "chapters": 66,
+      "category": "major_prophet",
+      "intro": "Isaiah proclaims judgment and hope, revealing God’s holiness and salvation. He announces the coming Messiah, the suffering servant, and God’s future kingdom. The book blends warning with promises of restoration and eternal peace."
+    },
+    {
+      "id": 24,
+      "name": "Jeremiah",
+      "chapters": 52,
+      "category": "major_prophet",
+      "intro": "Jeremiah warns of judgment on Judah for its unfaithfulness. Despite rejection and hardship, he delivers God’s call to repentance. The book also promises a new covenant and hope beyond exile."
+    },
+    {
+      "id": 25,
+      "name": "Lamentations",
+      "chapters": 5,
+      "category": "major_prophet",
+      "intro": "Lamentations is a poetic mourning over Jerusalem’s destruction. It expresses grief, confession, and cries for mercy amid suffering. Yet it also affirms God’s steadfast love and faithfulness that never fail."
+    },
+    {
+      "id": 26,
+      "name": "Ezekiel",
+      "chapters": 48,
+      "category": "major_prophet",
+      "intro": "Ezekiel shares visions of God’s glory, judgment, and restoration. He calls Israel to repent while portraying God’s holiness and presence. The book ends with hope of renewal and a future temple."
+    },
+    {
+      "id": 27,
+      "name": "Daniel",
+      "chapters": 12,
+      "category": "major_prophet",
+      "intro": "Daniel tells of faithfulness in exile and God’s sovereignty over kingdoms. Through visions and miracles, God shows His plan for the future. The book emphasizes trust in God’s rule despite opposition."
+    },
+    {
+      "id": 28,
+      "name": "Hosea",
+      "chapters": 14,
+      "category": "minor_prophet",
+      "intro": "Hosea uses marriage as a picture of God’s love for His unfaithful people. Despite Israel’s idolatry, God calls them back with compassion. The book highlights both judgment and redeeming love."
+    },
+    {
+      "id": 29,
+      "name": "Joel",
+      "chapters": 3,
+      "category": "minor_prophet",
+      "intro": "Joel describes a devastating locust plague as a picture of God’s judgment. He calls the people to repentance and promises restoration. The book points to God’s Spirit being poured out in the last days."
+    },
+    {
+      "id": 30,
+      "name": "Amos",
+      "chapters": 9,
+      "category": "minor_prophet",
+      "intro": "Amos warns Israel of coming judgment for injustice and idolatry. He calls for true worship expressed in righteousness and justice. The book ends with hope of restoration under David’s line."
+    },
+    {
+      "id": 31,
+      "name": "Obadiah",
+      "chapters": 1,
+      "category": "minor_prophet",
+      "intro": "Obadiah delivers judgment against Edom for its pride and cruelty. God’s justice is certain against all who oppose His people. The book ends with the promise of God’s kingdom triumphing."
+    },
+    {
+      "id": 32,
+      "name": "Jonah",
+      "chapters": 4,
+      "category": "minor_prophet",
+      "intro": "Jonah tells of a reluctant prophet sent to Nineveh. Despite running away, Jonah witnesses God’s mercy toward repentant sinners. The story highlights God’s compassion for all nations."
+    },
+    {
+      "id": 33,
+      "name": "Micah",
+      "chapters": 7,
+      "category": "minor_prophet",
+      "intro": "Micah proclaims judgment for injustice and idolatry in Israel and Judah. He also promises the coming ruler from Bethlehem and God’s restoration. The book emphasizes justice, mercy, and walking humbly with God."
+    },
+    {
+      "id": 34,
+      "name": "Nahum",
+      "chapters": 3,
+      "category": "minor_prophet",
+      "intro": "Nahum announces God’s judgment on Nineveh for its cruelty and pride. The book portrays God as both just and a refuge for His people. It assures that evil will not prevail forever."
+    },
+    {
+      "id": 35,
+      "name": "Habakkuk",
+      "chapters": 3,
+      "category": "minor_prophet",
+      "intro": "Habakkuk questions God about injustice and suffering in the world. God answers with a call to live by faith and trust His timing. The book ends with a prayer of confidence in God’s salvation."
+    },
+    {
+      "id": 36,
+      "name": "Zephaniah",
+      "chapters": 3,
+      "category": "minor_prophet",
+      "intro": "Zephaniah warns of the coming day of the Lord against sin and rebellion. He calls for repentance and promises future restoration for the faithful. The book highlights God’s judgment and redeeming love."
+    },
+    {
+      "id": 37,
+      "name": "Haggai",
+      "chapters": 2,
+      "category": "minor_prophet",
+      "intro": "Haggai encourages the people to rebuild the temple after exile. He reminds them of God’s presence and promises greater glory to come. The book calls for renewed priorities and obedience."
+    },
+    {
+      "id": 38,
+      "name": "Zechariah",
+      "chapters": 14,
+      "category": "minor_prophet",
+      "intro": "Zechariah offers visions of encouragement and calls for repentance. He points to God’s coming King, the Messiah, who will bring peace. The book emphasizes hope, restoration, and God’s future kingdom."
+    },
+    {
+      "id": 39,
+      "name": "Malachi",
+      "chapters": 4,
+      "category": "minor_prophet",
+      "intro": "Malachi rebukes Israel for neglecting worship and covenant faithfulness. He calls them to return to God with sincere devotion. The book promises a coming messenger and the day of the Lord."
+    }
   ],
   "NewTestament": [
-    {"id": 40, "name": "Matthew", "chapters": 28, "category": "gospel"},
-    {"id": 41, "name": "Mark", "chapters": 16, "category": "gospel"},
-    {"id": 42, "name": "Luke", "chapters": 24, "category": "gospel"},
-    {"id": 43, "name": "John", "chapters": 21, "category": "gospel"},
-    {"id": 44, "name": "Acts", "chapters": 28, "category": "history"},
-    {"id": 45, "name": "Romans", "chapters": 16, "category": "pauline_epistle"},
-    {"id": 46, "name": "1 Corinthians", "chapters": 16, "category": "pauline_epistle"},
-    {"id": 47, "name": "2 Corinthians", "chapters": 13, "category": "pauline_epistle"},
-    {"id": 48, "name": "Galatians", "chapters": 6, "category": "pauline_epistle"},
-    {"id": 49, "name": "Ephesians", "chapters": 6, "category": "pauline_epistle"},
-    {"id": 50, "name": "Philippians", "chapters": 4, "category": "pauline_epistle"},
-    {"id": 51, "name": "Colossians", "chapters": 4, "category": "pauline_epistle"},
-    {"id": 52, "name": "1 Thessalonians", "chapters": 5, "category": "pauline_epistle"},
-    {"id": 53, "name": "2 Thessalonians", "chapters": 3, "category": "pauline_epistle"},
-    {"id": 54, "name": "1 Timothy", "chapters": 6, "category": "pauline_epistle"},
-    {"id": 55, "name": "2 Timothy", "chapters": 4, "category": "pauline_epistle"},
-    {"id": 56, "name": "Titus", "chapters": 3, "category": "pauline_epistle"},
-    {"id": 57, "name": "Philemon", "chapters": 1, "category": "pauline_epistle"},
-    {"id": 58, "name": "Hebrews", "chapters": 13, "category": "general_epistle"},
-    {"id": 59, "name": "James", "chapters": 5, "category": "general_epistle"},
-    {"id": 60, "name": "1 Peter", "chapters": 5, "category": "general_epistle"},
-    {"id": 61, "name": "2 Peter", "chapters": 3, "category": "general_epistle"},
-    {"id": 62, "name": "1 John", "chapters": 5, "category": "general_epistle"},
-    {"id": 63, "name": "2 John", "chapters": 1, "category": "general_epistle"},
-    {"id": 64, "name": "3 John", "chapters": 1, "category": "general_epistle"},
-    {"id": 65, "name": "Jude", "chapters": 1, "category": "general_epistle"},
-    {"id": 66, "name": "Revelation", "chapters": 22, "category": "prophecy"}
+    {
+      "id": 40,
+      "name": "Matthew",
+      "chapters": 28,
+      "category": "gospel",
+      "intro": "Matthew presents Jesus as the promised Messiah and King. It emphasizes His teachings, miracles, and fulfillment of Old Testament prophecy. The book ends with the Great Commission to make disciples of all nations."
+    },
+    {
+      "id": 41,
+      "name": "Mark",
+      "chapters": 16,
+      "category": "gospel",
+      "intro": "Mark portrays Jesus as the powerful Son of God and servant. It moves quickly through His miracles, teachings, and sacrifice. The gospel highlights discipleship and the call to follow Christ."
+    },
+    {
+      "id": 42,
+      "name": "Luke",
+      "chapters": 24,
+      "category": "gospel",
+      "intro": "Luke emphasizes Jesus’ compassion and mission to all people. It contains parables, healings, and stories showing God’s mercy to the marginalized. The gospel highlights salvation as God’s gift through Christ."
+    },
+    {
+      "id": 43,
+      "name": "John",
+      "chapters": 21,
+      "category": "gospel",
+      "intro": "John presents Jesus as the eternal Word and Son of God. Through signs and teachings, it shows that believing in Him brings life. The gospel emphasizes love, truth, and the Spirit’s work."
+    },
+    {
+      "id": 44,
+      "name": "Acts",
+      "chapters": 28,
+      "category": "history",
+      "intro": "Acts tells how the gospel spread from Jerusalem to the world. Empowered by the Holy Spirit, the apostles preach, perform miracles, and plant churches. The book shows the unstoppable growth of God’s kingdom."
+    },
+    {
+      "id": 45,
+      "name": "Romans",
+      "chapters": 16,
+      "category": "pauline_epistle",
+      "intro": "Romans explains the gospel of salvation by grace through faith. Paul outlines humanity’s sin, God’s righteousness, and life in the Spirit. The letter calls believers to live transformed lives in unity and love."
+    },
+    {
+      "id": 46,
+      "name": "1 Corinthians",
+      "chapters": 16,
+      "category": "pauline_epistle",
+      "intro": "1 Corinthians addresses divisions, immorality, and worship in the church. Paul offers guidance on love, spiritual gifts, and the resurrection. The letter emphasizes living in holiness and unity in Christ."
+    },
+    {
+      "id": 47,
+      "name": "2 Corinthians",
+      "chapters": 13,
+      "category": "pauline_epistle",
+      "intro": "2 Corinthians defends Paul’s ministry and encourages generosity and faith. It highlights God’s power in weakness and comfort in suffering. The letter urges reconciliation and devotion to Christ."
+    },
+    {
+      "id": 48,
+      "name": "Galatians",
+      "chapters": 6,
+      "category": "pauline_epistle",
+      "intro": "Galatians proclaims freedom in Christ apart from the law. Paul warns against false teaching and emphasizes justification by faith alone. The letter calls believers to live by the Spirit in love."
+    },
+    {
+      "id": 49,
+      "name": "Ephesians",
+      "chapters": 6,
+      "category": "pauline_epistle",
+      "intro": "Ephesians highlights the church as Christ’s body and believers’ unity in Him. Paul emphasizes grace, spiritual blessings, and living a holy life. The letter encourages strength through the armor of God."
+    },
+    {
+      "id": 50,
+      "name": "Philippians",
+      "chapters": 4,
+      "category": "pauline_epistle",
+      "intro": "Philippians is a letter of joy and encouragement. Paul teaches contentment, humility, and pressing toward Christ. It emphasizes rejoicing in all circumstances and the power of Christ in daily life."
+    },
+    {
+      "id": 51,
+      "name": "Colossians",
+      "chapters": 4,
+      "category": "pauline_epistle",
+      "intro": "Colossians teaches the supremacy of Christ over all creation. Paul warns against false teachings and urges believers to live in Him. The letter stresses spiritual maturity, prayer, and godly conduct."
+    },
+    {
+      "id": 52,
+      "name": "1 Thessalonians",
+      "chapters": 5,
+      "category": "pauline_epistle",
+      "intro": "1 Thessalonians encourages a young church in faith, love, and hope. Paul reminds believers of Christ’s return and holy living. The letter emphasizes encouragement, perseverance, and community in Christ."
+    },
+    {
+      "id": 53,
+      "name": "2 Thessalonians",
+      "chapters": 3,
+      "category": "pauline_epistle",
+      "intro": "2 Thessalonians corrects misunderstandings about Christ’s return. Paul exhorts patience, steadfastness, and responsible living. The letter calls for encouragement, discipline, and hope in God’s promises."
+    },
+    {
+      "id": 54,
+      "name": "1 Timothy",
+      "chapters": 6,
+      "category": "pauline_epistle",
+      "intro": "1 Timothy instructs on church leadership and sound doctrine. Paul guides Timothy in pastoral responsibilities, teaching, and godly living. The letter emphasizes faithfulness, prayer, and care for God’s people."
+    },
+    {
+      "id": 55,
+      "name": "2 Timothy",
+      "chapters": 4,
+      "category": "pauline_epistle",
+      "intro": "2 Timothy is Paul’s final letter, urging courage and perseverance. He reminds Timothy of Scripture’s power and the call to remain faithful. The letter emphasizes endurance, preaching the Word, and hope in Christ."
+    },
+    {
+      "id": 56,
+      "name": "Titus",
+      "chapters": 3,
+      "category": "pauline_epistle",
+      "intro": "Titus provides guidance on church organization and Christian living. Paul stresses good works, sound teaching, and faithfulness to God. The letter encourages godliness and community responsibility."
+    },
+    {
+      "id": 57,
+      "name": "Philemon",
+      "chapters": 1,
+      "category": "pauline_epistle",
+      "intro": "Philemon is a personal letter appealing for forgiveness and reconciliation. Paul advocates for Onesimus, a former slave, in Christ’s spirit of love. The letter highlights mercy, restoration, and Christian fellowship."
+    },
+    {
+      "id": 58,
+      "name": "Hebrews",
+      "chapters": 13,
+      "category": "general_epistle",
+      "intro": "Hebrews presents Christ as the ultimate high priest and perfect sacrifice. It contrasts the old covenant with the new and calls believers to faith and endurance. The letter emphasizes God’s promises, holiness, and hope."
+    },
+    {
+      "id": 59,
+      "name": "James",
+      "chapters": 5,
+      "category": "general_epistle",
+      "intro": "James teaches practical Christian living grounded in faith. It emphasizes wisdom, patience, and the power of words. The letter calls believers to active faith expressed in deeds and love."
+    },
+    {
+      "id": 60,
+      "name": "1 Peter",
+      "chapters": 5,
+      "category": "general_epistle",
+      "intro": "1 Peter encourages Christians facing persecution and suffering. Peter reminds them of hope, holiness, and God’s sustaining power. The letter emphasizes perseverance, humility, and trust in God’s promises."
+    },
+    {
+      "id": 61,
+      "name": "2 Peter",
+      "chapters": 3,
+      "category": "general_epistle",
+      "intro": "2 Peter warns against false teachers and reminds believers of Christ’s return. It calls for growth in knowledge, godliness, and steadfast faith. The letter highlights vigilance, truth, and hope in God’s timing."
+    },
+    {
+      "id": 62,
+      "name": "1 John",
+      "chapters": 5,
+      "category": "general_epistle",
+      "intro": "1 John emphasizes love, fellowship, and obedience to God. It counters false teaching and reassures believers of eternal life in Christ. The letter highlights the importance of faith expressed in love and truth."
+    },
+    {
+      "id": 63,
+      "name": "2 John",
+      "chapters": 1,
+      "category": "general_epistle",
+      "intro": "2 John warns against deceivers and encourages walking in truth and love. John urges believers to remain faithful to Christ’s commandments. The letter stresses caution, obedience, and Christian hospitality."
+    },
+    {
+      "id": 64,
+      "name": "3 John",
+      "chapters": 1,
+      "category": "general_epistle",
+      "intro": "3 John commends hospitality and support for faithful ministers. John contrasts good leadership with arrogant behavior. The letter emphasizes truth, love, and encouragement in Christian service."
+    },
+    {
+      "id": 65,
+      "name": "Jude",
+      "chapters": 1,
+      "category": "general_epistle",
+      "intro": "Jude warns against false teachers who corrupt the faith. He urges believers to contend for the faith and remain in God’s love. The letter highlights perseverance, vigilance, and divine protection."
+    },
+    {
+      "id": 66,
+      "name": "Revelation",
+      "chapters": 22,
+      "category": "prophecy",
+      "intro": "Revelation reveals Christ’s ultimate victory and the end times. It contains visions of judgment, hope, and a new creation. The book encourages faithfulness, perseverance, and anticipation of God’s eternal kingdom."
+    }
   ]
 }

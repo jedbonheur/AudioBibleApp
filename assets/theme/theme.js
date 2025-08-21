@@ -21,7 +21,7 @@ const bibleCategory = {
   minor_prophet: '#036afcff',    // blue
   gospel: '#CB653F',          // red-ish
   history: '#845EC2',          // purple
-  pauline_epistle: '#036afcff',  // teal
+  pauline_epistle: '#1f940bff',  // teal
   general_epistle: '#fe9540da',  // light orange
   prophecy: '#F9F871',         // bright yellow
 };

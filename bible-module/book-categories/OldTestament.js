@@ -39,6 +39,7 @@ export default OldTestament;
 const styles = StyleSheet.create({
   container: {
     width: '100%',
+    flex: 1,
   },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 12 },
   title: { marginBottom: 8, fontWeight: '600' },
