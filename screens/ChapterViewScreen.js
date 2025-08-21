@@ -3,21 +3,18 @@ import { SafeAreaView, View, Text, StyleSheet, ActivityIndicator, ScrollView, To
 import { useRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import theme from '@theme/theme';
 import { Paragraph } from '@typography/Typography';
 
+// Build CDN URL from book object
 function buildCdnUrl(book) {
  if (!book || !book.name || !book.id) return null;
 
- // Create slug: lowercase, spaces → _, remove non-alphanumeric except _
- const slug = book.name
-  .toLowerCase()
-  .trim()
-  .replace(/\s+/g, '_')
-  .replace(/[^a-z0-9_]/g, '');
-
+ const slug = book.name.toLowerCase().trim().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+ const paddedId = String(book.id).padStart(2, '0');
  const base = `https://cdn.kinyabible.com/${book.testament}/`;
- return `${base}${book.id}_${slug}/${slug}${book.chapter}.json`;
+ return `${base}${paddedId}_${slug}/${slug}${book.chapter}.json`;
 }
 
 export default function ChapterViewScreen({ navigation }) {
@@ -33,11 +30,26 @@ export default function ChapterViewScreen({ navigation }) {
    setLoading(true);
    setError(null);
    try {
+    const cacheKey = `chapter_${book.testament}_${book.id}_${book.chapter}`;
+    // Check AsyncStorage cache first
+    const cached = await AsyncStorage.getItem(cacheKey);
+    if (cached) {
+     setData(JSON.parse(cached));
+     setLoading(false);
+     return;
+    }
+
+    // Fetch from CDN
     const url = buildCdnUrl(book);
     const res = await fetch(url);
     if (!res.ok) throw new Error('Chapter not found');
     const json = await res.json();
-    if (!isCancelled) setData(json);
+
+    if (!isCancelled) {
+     setData(json);
+     // Save to cache
+     AsyncStorage.setItem(cacheKey, JSON.stringify(json));
+    }
    } catch (e) {
     if (!isCancelled) setError(e.message);
    } finally {
