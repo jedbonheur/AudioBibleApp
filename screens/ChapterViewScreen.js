@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, View, Text, StyleSheet, ActivityIndicator, ScrollView, TouchableOpacity } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -7,61 +7,99 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import theme from '@theme/theme';
 import { Paragraph } from '@typography/Typography';
 
-// Build CDN URL from book object
+// Build CDN URL
 function buildCdnUrl(book) {
  if (!book || !book.name || !book.id) return null;
 
- const slug = book.name.toLowerCase().trim().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+ // padded ID for CDN
  const paddedId = String(book.id).padStart(2, '0');
+
+ // slug: lowercase, spaces → _, remove non-alphanumeric except _
+ const slug = book.name.toLowerCase().trim().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
  const base = `https://cdn.kinyabible.com/${book.testament}/`;
  return `${base}${paddedId}_${slug}/${slug}${book.chapter}.json`;
 }
 
+// AsyncStorage key
+function chapterCacheKey(book) {
+ return `chapter_${book.testament}_${book.id}_${book.chapter}`;
+}
+
 export default function ChapterViewScreen({ navigation }) {
- const { book } = useRoute().params;
+ const { book, nextBook } = useRoute().params; // nextBook optional
  const [loading, setLoading] = useState(true);
  const [error, setError] = useState(null);
  const [data, setData] = useState(null);
 
+ // Fetch chapter (with caching)
+ const fetchChapter = async (chapterBook) => {
+  const key = chapterCacheKey(chapterBook);
+
+  try {
+   // Check cache first
+   const cached = await AsyncStorage.getItem(key);
+   if (cached) return JSON.parse(cached);
+
+   // Fetch from CDN
+   const url = buildCdnUrl(chapterBook);
+   const res = await fetch(url);
+   if (!res.ok) throw new Error('Chapter not found');
+   const json = await res.json();
+
+   // Save to cache
+   await AsyncStorage.setItem(key, JSON.stringify(json));
+   return json;
+  } catch (e) {
+   throw new Error(e.message);
+  }
+ };
+
+ // Load current chapter
  useEffect(() => {
   let isCancelled = false;
 
-  const fetchChapter = async () => {
-   setLoading(true);
-   setError(null);
-   try {
-    const cacheKey = `chapter_${book.testament}_${book.id}_${book.chapter}`;
-    // Check AsyncStorage cache first
-    const cached = await AsyncStorage.getItem(cacheKey);
-    if (cached) {
-     setData(JSON.parse(cached));
-     setLoading(false);
-     return;
-    }
+  setLoading(true);
+  setError(null);
 
-    // Fetch from CDN
-    const url = buildCdnUrl(book);
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('Chapter not found');
-    const json = await res.json();
+  fetchChapter(book)
+   .then((json) => { if (!isCancelled) setData(json); })
+   .catch((e) => { if (!isCancelled) setError(e.message); })
+   .finally(() => { if (!isCancelled) setLoading(false); });
 
-    if (!isCancelled) {
-     setData(json);
-     // Save to cache
-     AsyncStorage.setItem(cacheKey, JSON.stringify(json));
-    }
-   } catch (e) {
-    if (!isCancelled) setError(e.message);
-   } finally {
-    if (!isCancelled) setLoading(false);
-   }
-  };
+  // Prefetch next chapter if it exists
+  let nextChapterBook = null;
 
-  fetchChapter();
+  if (book.chapter < book.chapters) {
+   // same book, next chapter
+   nextChapterBook = { ...book, chapter: book.chapter + 1 };
+  } else if (nextBook) {
+   // next book exists
+   nextChapterBook = { ...nextBook, chapter: 1 };
+  }
+
+  if (nextChapterBook) {
+   fetchChapter(nextChapterBook).catch(() => { });
+  }
+
   return () => { isCancelled = true; };
- }, [book]);
+ }, [book, nextBook]);
 
  const gradientColors = [theme.bibleCategory[book?.category] || '#111', '#000'];
+
+ // Convert verses object to array with verse number
+ const versesArray = data?.verses
+  ? Object.entries(data.verses).map(([verseNumber, verse]) => ({
+   verse: verseNumber,
+   text: verse.text,
+  }))
+  : [];
+
+ const renderVerse = ({ item }) => (
+  <View style={styles.verseRow}>
+   <Text style={styles.verseNumber}>{item.verse}</Text>
+   <Text style={styles.verseText}>{item.text}</Text>
+  </View>
+ );
 
  return (
   <LinearGradient colors={gradientColors} style={{ flex: 1 }} start={{ x: 0.5, y: 0.5 }} end={{ x: 0.6, y: 0.1 }}>
@@ -76,35 +114,19 @@ export default function ChapterViewScreen({ navigation }) {
     </View>
 
     {/* Content */}
-    <ScrollView contentContainerStyle={styles.content}>
-     {loading && <ActivityIndicator size="large" color={theme.colors.primaryTextWhite} />}
-     {error && <Paragraph style={styles.errorText}>{error}</Paragraph>}
-
-     {!loading && !error && data && (
-      <View>
-       {data.verses && typeof data.verses === 'object' ? (
-        Object.entries(data.verses)
-         .sort((a, b) => Number(a[0]) - Number(b[0]))
-         .map(([verseNumber, verse]) => (
-          <View key={verseNumber} style={styles.verseRow}>
-           <Text style={styles.verseNumber}>{verseNumber}</Text>
-           <Text style={styles.verseText}>{verse.text}</Text>
-          </View>
-         ))
-       ) : Array.isArray(data) ? (
-        data.map((item, idx) => (
-         <Paragraph key={idx} style={styles.paragraph}>
-          {typeof item === 'string' ? item : JSON.stringify(item)}
-         </Paragraph>
-        ))
-       ) : data.chapter || data.text || data.content ? (
-        <Paragraph style={styles.paragraph}>{data.chapter || data.text || data.content}</Paragraph>
-       ) : (
-        <Paragraph style={styles.paragraph}>{JSON.stringify(data)}</Paragraph>
-       )}
-      </View>
-     )}
-    </ScrollView>
+    {loading ? (
+     <ActivityIndicator size="large" color={theme.colors.primaryTextWhite} style={{ marginTop: 20 }} />
+    ) : error ? (
+     <Paragraph style={styles.errorText}>{error}</Paragraph>
+    ) : (
+     <FlatList
+      data={versesArray}
+      keyExtractor={(item) => item.verse}
+      renderItem={renderVerse}
+      contentContainerStyle={styles.content}
+      initialNumToRender={20}// renders first 20 verses first
+     />
+    )}
    </SafeAreaView>
   </LinearGradient>
  );
@@ -128,6 +150,7 @@ const styles = StyleSheet.create({
  },
  content: {
   padding: 16,
+  paddingBottom: 50,
  },
  verseRow: {
   flexDirection: 'row',
@@ -151,5 +174,7 @@ const styles = StyleSheet.create({
  },
  errorText: {
   color: '#ffdddd',
+  marginTop: 20,
+  textAlign: 'center',
  },
 });

@@ -358,7 +358,7 @@
       "id": 45,
       "name": "Romans",
       "chapters": 16,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "Romans presents a systematic explanation of salvation through faith in Christ. Paul teaches about sin, grace, justification, and living by the Spirit. The letter shows God’s plan for Jews and Gentiles alike.",
       "testament": "newTestament"
     },
@@ -366,7 +366,7 @@
       "id": 46,
       "name": "1 Corinthians",
       "chapters": 16,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "1 Corinthians addresses divisions, immorality, and misuse of spiritual gifts in the church. Paul teaches unity, love, and proper worship. The book emphasizes practical Christian living and resurrection hope.",
       "testament": "newTestament"
     },
@@ -374,7 +374,7 @@
       "id": 47,
       "name": "2 Corinthians",
       "chapters": 13,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "2 Corinthians defends Paul’s apostleship and ministry. He encourages generosity, reconciliation, and endurance in suffering. The letter emphasizes God’s comfort and power in weakness.",
       "testament": "newTestament"
     },
@@ -382,7 +382,7 @@
       "id": 48,
       "name": "Galatians",
       "chapters": 6,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "Galatians teaches salvation by grace through faith, not by the law. Paul defends Christian freedom and calls believers to live by the Spirit. The book emphasizes identity in Christ and unity in the gospel.",
       "testament": "newTestament"
     },
@@ -390,7 +390,7 @@
       "id": 49,
       "name": "Ephesians",
       "chapters": 6,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "Ephesians explains the Church as Christ’s body and God’s eternal plan of salvation. Paul teaches unity, love, spiritual growth, and armor of God for spiritual battles.",
       "testament": "newTestament"
     },
@@ -398,7 +398,7 @@
       "id": 50,
       "name": "Philippians",
       "chapters": 4,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "Philippians is a letter of joy and encouragement. Paul thanks the believers for support, exhorts humility, and urges steadfast faith. The book emphasizes rejoicing in the Lord in all circumstances.",
       "testament": "newTestament"
     },
@@ -406,7 +406,7 @@
       "id": 51,
       "name": "Colossians",
       "chapters": 4,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "Colossians teaches the supremacy of Christ over all creation and false teachings. Paul encourages believers to live in Christ and bear fruit through love and good works.",
       "testament": "newTestament"
     },
@@ -414,7 +414,7 @@
       "id": 52,
       "name": "1 Thessalonians",
       "chapters": 5,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "1 Thessalonians encourages believers to stand firm in faith and hope. Paul instructs on holy living, love, and readiness for Christ’s return. The book emphasizes perseverance and comfort in trials.",
       "testament": "newTestament"
     },
@@ -422,7 +422,7 @@
       "id": 53,
       "name": "2 Thessalonians",
       "chapters": 3,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "2 Thessalonians corrects misunderstandings about the Day of the Lord. Paul calls for steadfastness, work ethic, and encouragement, highlighting God’s justice and faithfulness.",
       "testament": "newTestament"
     },
@@ -430,7 +430,7 @@
       "id": 54,
       "name": "1 Timothy",
       "chapters": 6,
-      "category": "pastoral_epistle",
+      "category": "pauline_epistle",
       "intro": "1 Timothy gives guidance for church leadership, sound teaching, and godly living. Paul instructs Timothy on prayer, doctrine, and character needed for ministry.",
       "testament": "newTestament"
     },
@@ -438,7 +438,7 @@
       "id": 55,
       "name": "2 Timothy",
       "chapters": 4,
-      "category": "pastoral_epistle",
+      "category": "pauline_epistle",
       "intro": "2 Timothy is Paul’s final letter, urging faithfulness and endurance. He encourages Timothy to continue preaching the gospel boldly despite persecution.",
       "testament": "newTestament"
     },
@@ -446,7 +446,7 @@
       "id": 56,
       "name": "Titus",
       "chapters": 3,
-      "category": "pastoral_epistle",
+      "category": "pauline_epistle",
       "intro": "Titus provides guidance on church organization, teaching sound doctrine, and encouraging good works among believers.",
       "testament": "newTestament"
     },
@@ -454,7 +454,7 @@
       "id": 57,
       "name": "Philemon",
       "chapters": 1,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "Philemon is a personal letter appealing for forgiveness and reconciliation between a slave and his master. It reflects Christian love, mercy, and practical application of faith.",
       "testament": "newTestament"
     },
@@ -462,7 +462,7 @@
       "id": 58,
       "name": "Hebrews",
       "chapters": 13,
-      "category": "epistle",
+      "category": "pauline_epistle",
       "intro": "Hebrews presents Christ as the perfect high priest and fulfillment of the Old Testament. It encourages perseverance, faith, and understanding God’s promises.",
       "testament": "newTestament"
     },
@@ -470,7 +470,7 @@
       "id": 59,
       "name": "James",
       "chapters": 5,
-      "category": "epistle",
+      "category": "general_epistle",
       "intro": "James emphasizes practical faith expressed in works, patience, and wisdom. He calls believers to live righteous, faithful, and humble lives.",
       "testament": "newTestament"
     },
@@ -478,7 +478,7 @@
       "id": 60,
       "name": "1 Peter",
       "chapters": 5,
-      "category": "epistle",
+      "category": "general_epistle",
       "intro": "1 Peter encourages believers facing persecution. It teaches hope, holiness, and submission to God while enduring suffering.",
       "testament": "newTestament"
     },
@@ -486,7 +486,7 @@
       "id": 61,
       "name": "2 Peter",
       "chapters": 3,
-      "category": "epistle",
+      "category": "general_epistle",
       "intro": "2 Peter warns against false teachers and reminds believers of Christ’s return. It encourages growth in faith and knowledge of God’s promises.",
       "testament": "newTestament"
     },
@@ -494,7 +494,7 @@
       "id": 62,
       "name": "1 John",
       "chapters": 5,
-      "category": "epistle",
+      "category": "general_epistle",
       "intro": "1 John stresses love, obedience, and assurance of salvation. It contrasts truth and falsehood, emphasizing God’s love in Christ.",
       "testament": "newTestament"
     },
@@ -502,7 +502,7 @@
       "id": 63,
       "name": "2 John",
       "chapters": 1,
-      "category": "epistle",
+      "category": "general_epistle",
       "intro": "2 John warns against deceivers and encourages walking in truth and love. It emphasizes faithfulness to God’s commandments.",
       "testament": "newTestament"
     },
@@ -510,7 +510,7 @@
       "id": 64,
       "name": "3 John",
       "chapters": 1,
-      "category": "epistle",
+      "category": "general_epistle",
       "intro": "3 John commends hospitality and faithfulness among believers. It highlights support for those spreading the gospel and warns against pride and opposition.",
       "testament": "newTestament"
     },
@@ -518,7 +518,7 @@
       "id": 65,
       "name": "Jude",
       "chapters": 1,
-      "category": "epistle",
+      "category": "general_epistle",
       "intro": "Jude urges believers to contend for the faith and warns against false teachers. It emphasizes God’s judgment and the need for perseverance in truth.",
       "testament": "newTestament"
     },
