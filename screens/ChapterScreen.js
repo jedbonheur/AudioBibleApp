@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, Text, StyleSheet, ScrollView, View, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, StyleSheet, ScrollView, View, StatusBar, TouchableOpacity } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -26,6 +26,7 @@ export default function ChapterScreen({ navigation }) {
     <LinearGradient colors={gradientColors} style={{ flex: 1 }} start={{ x: 0.5, y: 0.5 }}   // top center
       end={{ x: 0.6, y: 0.1 }}  >
       <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" />
         {/* Header */}
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
