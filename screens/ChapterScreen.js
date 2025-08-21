@@ -65,7 +65,7 @@ export default function ChapterScreen({ navigation }) {
             <TouchableOpacity
               key={num}
               style={styles.chapterButton}
-              onPress={() => navigation.navigate('ChapterView', { bookId: book.id, chapterNumber: num })}
+              onPress={() => navigation.navigate('ChapterView', { book: { ...book, chapter: num } })}
             >
               <Text style={styles.chapterText}>{num}</Text>
             </TouchableOpacity>

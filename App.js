@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import ChapterScreen from './screens/ChapterScreen';
+import ChapterViewScreen from './screens/ChapterViewScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="ChapterScreen" component={ChapterScreen} />
+        <Stack.Screen name="ChapterView" component={ChapterViewScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
