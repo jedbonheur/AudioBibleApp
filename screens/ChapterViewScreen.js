@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import theme from '@theme/theme';
 import { Paragraph } from '@typography/Typography';
 import Controller from '@components/Controller';
+import BottomController from '@components/BottomController';
 
 // Build CDN URL
 function buildCdnUrl(book) {
@@ -34,6 +35,34 @@ export default function ChapterViewScreen({ navigation }) {
  const [controllerVisible, setControllerVisible] = useState(false);
  const [fontSize, setFontSize] = useState(16);
  const [music, setMusic] = useState('none');
+
+ // load persisted font size on mount
+ useEffect(() => {
+  let mounted = true;
+  (async () => {
+   try {
+    const stored = await AsyncStorage.getItem('user_font_size');
+    if (mounted && stored) {
+     const n = parseInt(stored, 10);
+     if (!Number.isNaN(n)) setFontSize(n);
+    }
+   } catch (e) {
+    // ignore
+   }
+  })();
+  return () => { mounted = false; };
+ }, []);
+
+ // persist font size whenever it changes
+ useEffect(() => {
+  (async () => {
+   try {
+    await AsyncStorage.setItem('user_font_size', String(fontSize));
+   } catch (e) {
+    // ignore
+   }
+  })();
+ }, [fontSize]);
 
  // Fetch chapter (with caching)
  const fetchChapter = async (chapterBook) => {
@@ -98,12 +127,22 @@ export default function ChapterViewScreen({ navigation }) {
   }))
   : [];
 
- const renderVerse = ({ item }) => (
-  <View style={styles.verseRow}>
-   <Text style={[styles.verseNumber, { fontSize: fontSize * 0.9 }]}>{item.verse}</Text>
-   <Text style={[styles.verseText, { fontSize }]}>{item.text}</Text>
-  </View>
- );
+ const renderVerse = ({ item }) => {
+  const verseMargin = Math.max(8, Math.round(fontSize * 0.75));
+  const lineH = Math.round(fontSize * 1.45);
+
+  // Capitalize the first Unicode letter while preserving leading whitespace/punctuation
+  const displayText = item.text
+   ? item.text.replace(/(\p{L})/u, (m) => m.toUpperCase())
+   : item.text;
+
+  return (
+   <View style={[styles.verseRow, { marginBottom: verseMargin, flexDirection: 'column' }]}>
+    <Text style={[styles.verseText, { fontSize, lineHeight: lineH }]}>{displayText}</Text>
+    <Text style={styles.verseFooter}>{`${book?.name} ${book.chapter} : ${item.verse}`}</Text>
+   </View>
+  );
+ };
 
  return (
   <LinearGradient colors={gradientColors} style={{ flex: 1 }} start={{ x: 0.5, y: 0.5 }} end={{ x: 0.6, y: 0.1 }}>
@@ -132,24 +171,13 @@ export default function ChapterViewScreen({ navigation }) {
      />
     )}
 
-    {/* Sticky bottom controller */}
-    <View style={styles.bottomControllerWrapper} backgroundColor={theme.bibleCategory[book?.category]} pointerEvents="box-none">
-     <View style={styles.bottomController}>
-      <View style={styles.leftGroup}>
-       <TouchableOpacity style={styles.playBtn} onPress={() => { /* TODO: play/pause */ }}>
-        <Ionicons name="play" size={20} color="white" />
-       </TouchableOpacity>
-       <View style={{ marginLeft: 10 }}>
-        <Text style={styles.controllerTitle}>{book?.name} - {book.chapter}</Text>
-        <Text style={styles.controllerSub}>{data?.verses ? Object.keys(data.verses).length : 0} verses</Text>
-       </View>
-      </View>
-
-      <TouchableOpacity style={styles.settingsBtn} onPress={() => setControllerVisible(true)}>
-       <Ionicons name="settings-outline" size={22} color="white" />
-      </TouchableOpacity>
-     </View>
-    </View>
+    <BottomController
+     book={book}
+     versesCount={data?.verses ? Object.keys(data.verses).length : 0}
+     onSettingsPress={() => setControllerVisible(true)}
+     onPlayPress={() => { /* TODO: play/pause */ }}
+     categoryColor={theme.bibleCategory[book?.category]}
+    />
 
     <Controller
      visible={controllerVisible}
@@ -198,9 +226,16 @@ const styles = StyleSheet.create({
   marginRight: 8,
  },
  verseText: {
-  color: theme.colors.primaryTextWhite,
+  color: theme.colors.greyverse,
   flex: 1,
   lineHeight: 22,
+  fontWeight: '400',
+ },
+ verseFooter: {
+  color: theme.colors.greyverse,
+  fontSize: 13,
+  marginTop: 6,
+  alignSelf: 'flex-start',
  },
  paragraph: {
   color: theme.colors.primaryTextWhite,

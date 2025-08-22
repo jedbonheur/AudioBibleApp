@@ -2,6 +2,7 @@ const colors = {
   primary: '#000',
   primaryTextWhite: '#DEDFE0',
   primaryTextGrey: '#525C65',
+  greyverse: '#ccc',
   secondaryOrange: '#CB653F',
   blueDark: '#0D171F',
   secondary: '#bfc3c7',
