@@ -6,6 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import theme from '@theme/theme';
 import { Paragraph } from '@typography/Typography';
+import Controller from '@components/Controller';
 
 // Build CDN URL
 function buildCdnUrl(book) {
@@ -30,6 +31,9 @@ export default function ChapterViewScreen({ navigation }) {
  const [loading, setLoading] = useState(true);
  const [error, setError] = useState(null);
  const [data, setData] = useState(null);
+ const [controllerVisible, setControllerVisible] = useState(false);
+ const [fontSize, setFontSize] = useState(16);
+ const [music, setMusic] = useState('none');
 
  // Fetch chapter (with caching)
  const fetchChapter = async (chapterBook) => {
@@ -96,8 +100,8 @@ export default function ChapterViewScreen({ navigation }) {
 
  const renderVerse = ({ item }) => (
   <View style={styles.verseRow}>
-   <Text style={styles.verseNumber}>{item.verse}</Text>
-   <Text style={styles.verseText}>{item.text}</Text>
+   <Text style={[styles.verseNumber, { fontSize: fontSize * 0.9 }]}>{item.verse}</Text>
+   <Text style={[styles.verseText, { fontSize }]}>{item.text}</Text>
   </View>
  );
 
@@ -127,6 +131,37 @@ export default function ChapterViewScreen({ navigation }) {
       initialNumToRender={20}// renders first 20 verses first
      />
     )}
+
+    {/* Sticky bottom controller */}
+    <View style={styles.bottomControllerWrapper} backgroundColor={theme.bibleCategory[book?.category]} pointerEvents="box-none">
+     <View style={styles.bottomController}>
+      <View style={styles.leftGroup}>
+       <TouchableOpacity style={styles.playBtn} onPress={() => { /* TODO: play/pause */ }}>
+        <Ionicons name="play" size={20} color="white" />
+       </TouchableOpacity>
+       <View style={{ marginLeft: 10 }}>
+        <Text style={styles.controllerTitle}>{book?.name} - {book.chapter}</Text>
+        <Text style={styles.controllerSub}>{data?.verses ? Object.keys(data.verses).length : 0} verses</Text>
+       </View>
+      </View>
+
+      <TouchableOpacity style={styles.settingsBtn} onPress={() => setControllerVisible(true)}>
+       <Ionicons name="settings-outline" size={22} color="white" />
+      </TouchableOpacity>
+     </View>
+    </View>
+
+    <Controller
+     visible={controllerVisible}
+     onClose={() => setControllerVisible(false)}
+     fontSize={fontSize}
+     onIncreaseFont={() => setFontSize((s) => Math.min(30, s + 1))}
+     onDecreaseFont={() => setFontSize((s) => Math.max(10, s - 1))}
+     selectedMusic={music}
+     onSelectMusic={(m) => { setMusic(m); setControllerVisible(false); }}
+     bookLabel={`${book?.name} - ${book.chapter}`}
+     versesCount={data?.verses ? Object.keys(data.verses).length : 0}
+    />
    </SafeAreaView>
   </LinearGradient>
  );
@@ -177,4 +212,26 @@ const styles = StyleSheet.create({
   marginTop: 20,
   textAlign: 'center',
  },
+ bottomControllerWrapper: {
+  // ensure controller sits above content
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  bottom: 12,
+  alignItems: 'center',
+ },
+ bottomController: {
+  paddingHorizontal: 12,
+  paddingVertical: 8,
+  borderRadius: 12,
+  width: '94%',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+ },
+ leftGroup: { flexDirection: 'row', alignItems: 'center' },
+ playBtn: { width: 36, height: 36, borderRadius: 18, backgroundColor: theme.colors.primary || '#1e90ff', alignItems: 'center', justifyContent: 'center' },
+ controllerTitle: { color: theme.colors.primaryTextWhite, fontSize: 18, fontWeight: '600' },
+ controllerSub: { color: theme.colors.primaryTextWhite, fontSize: 12 },
+ settingsBtn: { padding: 6 },
 });
