@@ -117,7 +117,7 @@ export default function ChapterViewScreen({ navigation }) {
   return () => { isCancelled = true; };
  }, [book, nextBook]);
 
- const gradientColors = [theme.bibleCategory[book?.category] || '#fffdfdff', '#8a6b45ff'];
+ const gradientColors = [theme.bibleCategory[book?.category] || '#fffdfdff', '#030100d5'];
 
  // Convert verses object to array with verse number
  const versesArray = data?.verses

@@ -15,12 +15,12 @@ const colors = {
 };
 
 const bibleCategory = {
-  pentateuch: '#CB653F',       // red-ish
+  pentateuch: '#9e3c18ff',       // red-ish
   historical: '#763907ff',       // orange
   wisdom: '#0e421cff',           // yellow
   major_prophet: '#250b4eff',    // green
   minor_prophet: '#032049ff',    // blue
-  gospel: '#CB653F',          // red-ish
+  gospel: '#87391cff',          // red-ish
   history: '#845EC2',          // purple
   pauline_epistle: '#083901ff',  // teal
   general_epistle: '#8a3f01da',  // light orange

@@ -14,7 +14,7 @@ export default function BottomController({ book, versesCount = 0, onSettingsPres
       <Ionicons name="play" size={20} color="white" />
      </TouchableOpacity>
      <View style={{ marginLeft: 10 }}>
-      <Text style={styles.controllerTitle}>{book?.name} - {book?.chapter}</Text>
+      <Text style={styles.controllerTitle}>{book?.name}  {book?.chapter}</Text>
       <Text style={styles.controllerSub}>{versesCount} verses</Text>
      </View>
     </View>
