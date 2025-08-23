@@ -20,7 +20,7 @@ const BookListItem = ({ item, isSelected, onPress }) => {
         {IconComponent ? (
           <IconComponent width={60} height={60} />
         ) : (
-          <View style={styles.bookIconPlaceholder} />
+          <View style={styles.s} />
         )}
       </View>
 

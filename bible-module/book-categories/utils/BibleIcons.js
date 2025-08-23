@@ -90,7 +90,7 @@ const bibleIcons = {
  "Psalms": Psalms,
  "Proverbs": Proverbs,
  "Ecclesiastes": Ecclesiastes,
- "Song of Solomon": SongOfSongs,
+ "Song of Songs": SongOfSongs,
  "Isaiah": Isaiah,
  "Jeremiah": Jeremiah,
  "Lamentations": Lamentations,

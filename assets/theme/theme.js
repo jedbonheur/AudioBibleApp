@@ -2,7 +2,7 @@ const colors = {
   primary: '#000',
   primaryTextWhite: '#DEDFE0',
   primaryTextGrey: '#525C65',
-  greyverse: '#ccc',
+  greyverse: '#a5a5a5ff',
   secondaryOrange: '#CB653F',
   blueDark: '#0D171F',
   secondary: '#bfc3c7',
@@ -16,7 +16,7 @@ const colors = {
 
 const bibleCategory = {
   pentateuch: '#CB653F',       // red-ish
-  historical: '#763907da',       // orange
+  historical: '#763907ff',       // orange
   wisdom: '#0e421cff',           // yellow
   major_prophet: '#250b4eff',    // green
   minor_prophet: '#032049ff',    // blue

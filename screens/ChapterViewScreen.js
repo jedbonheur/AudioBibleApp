@@ -117,7 +117,7 @@ export default function ChapterViewScreen({ navigation }) {
   return () => { isCancelled = true; };
  }, [book, nextBook]);
 
- const gradientColors = [theme.bibleCategory[book?.category] || '#111', '#000'];
+ const gradientColors = [theme.bibleCategory[book?.category] || '#fffdfdff', '#8a6b45ff'];
 
  // Convert verses object to array with verse number
  const versesArray = data?.verses
@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
   color: theme.colors.greyverse,
   flex: 1,
   lineHeight: 22,
-  fontWeight: '400',
+  fontWeight: '600',
  },
  verseFooter: {
   color: theme.colors.greyverse,
@@ -247,26 +247,4 @@ const styles = StyleSheet.create({
   marginTop: 20,
   textAlign: 'center',
  },
- bottomControllerWrapper: {
-  // ensure controller sits above content
-  position: 'absolute',
-  left: 0,
-  right: 0,
-  bottom: 12,
-  alignItems: 'center',
- },
- bottomController: {
-  paddingHorizontal: 12,
-  paddingVertical: 8,
-  borderRadius: 12,
-  width: '94%',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-between',
- },
- leftGroup: { flexDirection: 'row', alignItems: 'center' },
- playBtn: { width: 36, height: 36, borderRadius: 18, backgroundColor: theme.colors.primary || '#1e90ff', alignItems: 'center', justifyContent: 'center' },
- controllerTitle: { color: theme.colors.primaryTextWhite, fontSize: 18, fontWeight: '600' },
- controllerSub: { color: theme.colors.primaryTextWhite, fontSize: 12 },
- settingsBtn: { padding: 6 },
 });

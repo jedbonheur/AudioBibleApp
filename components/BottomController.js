@@ -20,7 +20,7 @@ export default function BottomController({ book, versesCount = 0, onSettingsPres
     </View>
 
     <TouchableOpacity style={styles.settingsBtn} onPress={onSettingsPress}>
-     <Ionicons name="options" size={30} color="white" />
+     <Ionicons name="options-outline" size={40} color={theme.colors.greyverse} />
     </TouchableOpacity>
    </View>
   </View>
@@ -32,22 +32,39 @@ const styles = StyleSheet.create({
   position: 'absolute',
   left: 0,
   right: 0,
-  bottom: 12,
+  bottom: 0,
   alignItems: 'center',
  },
  bottomController: {
   paddingHorizontal: 12,
-  paddingVertical: 8,
-  borderRadius: 12,
+  paddingVertical: 18,
   width: '100%',
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
-  backgroundColor: 'rgba(0,0,0,0.45)'
  },
- leftGroup: { flexDirection: 'row', alignItems: 'center' },
- playBtn: { width: 36, height: 36, borderRadius: 18, backgroundColor: theme.colors.primary || '#1e90ff', alignItems: 'center', justifyContent: 'center' },
- controllerTitle: { color: theme.colors.primaryTextWhite, fontSize: 18, fontWeight: '600' },
- controllerSub: { color: theme.colors.primaryTextWhite, fontSize: 12 },
- settingsBtn: { padding: 6 },
+ leftGroup: {
+  flexDirection: 'row',
+  alignItems: 'center'
+ },
+ playBtn: {
+  width: 36,
+  height: 36,
+  borderRadius: 18,
+  backgroundColor: theme.colors.primary || '#1e90ff',
+  alignItems: 'center',
+  justifyContent: 'center'
+ },
+ controllerTitle: {
+  color: theme.colors.primaryTextWhite,
+  fontSize: 18,
+  fontWeight: '600'
+ },
+ controllerSub: {
+  color: theme.colors.primaryTextWhite,
+  fontSize: 12
+ },
+ settingsBtn: {
+  padding: 6
+ },
 });
