@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   SafeAreaView,
   View,
@@ -32,28 +32,29 @@ function buildCdnUrl(book) {
   return `${base}${paddedId}_${slug}/${slug}${book.chapter}.json`;
 }
 
-// Build MP3 audio URL for a chapter
+// Build MP3 audio URL for a chapter (derived from JSON URL)
 function buildAudioUrl(book) {
-  // Build audio URL by reusing buildCdnUrl, inserting `audiobible/` before the
-  // testament segment and swapping the extension to .mp3
   const jsonUrl = buildCdnUrl(book);
   if (!jsonUrl) return null;
-  // example transform:
-  // https://cdn.kinyabible.com/newTestament/60_1_peter/1_peter1.json
-  // -> https://cdn.kinyabible.com/audiobible/newTestament/60_1_peter/1_peter1.mp3
   return jsonUrl
     .replace('https://cdn.kinyabible.com/', 'https://cdn.kinyabible.com/audiobible/')
     .replace(/\.json$/i, '.mp3');
 }
 
-// AsyncStorage key
+// AsyncStorage cache key for a chapter
 function chapterCacheKey(book) {
-  return `chapter_${book.testament}_${book.id}_${book.chapter}`;
+  if (!book) return 'chapter_unknown';
+  const testament = book.testament ?? 't';
+  const id = typeof book.id !== 'undefined' ? String(book.id) : '0';
+  const ch = typeof book.chapter !== 'undefined' ? String(book.chapter) : '0';
+  return `chapter_${testament}_${id}_${ch}`;
 }
 
+// Build MP3 audio URL for a chapter
 export default function ChapterViewScreen({ navigation }) {
   const route = useRoute();
-  const { book, nextBook, autoplay } = route.params || {}; // nextBook optional, autoplay optional
+  const { book, nextBook, autoplay } = route.params || {};
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
@@ -63,8 +64,26 @@ export default function ChapterViewScreen({ navigation }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioUrl, setAudioUrl] = useState(null);
   const [latestStatus, setLatestStatus] = useState(null);
+  const [currentVerse, setCurrentVerse] = useState(null);
+  const [syncOffsetMs, setSyncOffsetMs] = useState(0);
+  const [seekToMs, setSeekToMs] = useState(null);
 
-  // load persisted font size on mount
+  const flatListRef = useRef(null);
+  const verseLayoutsRef = useRef({});
+  const flatListHeightRef = useRef(0);
+  const scrollOffsetRef = useRef(0);
+  const lastScrolledVerseRef = useRef(null);
+  const lastAutoScrollAtRef = useRef(0);
+  const MIN_AUTOSCROLL_INTERVAL_MS = 800;
+  const lastUserSeekAtRef = useRef(0);
+  const lastUserScrollAtRef = useRef(0);
+  const USER_SEEK_NO_AUTOSCROLL_MS = 1500;
+  const USER_SCROLL_NO_AUTOSCROLL_MS = 1200;
+  const lastUserPlayAtRef = useRef(0);
+  const USER_PLAY_DEBOUNCE_MS = 800;
+  const isUserDraggingRef = useRef(false);
+  const audioPlayerRef = useRef(null);
+
   useEffect(() => {
     let mounted = true;
     (async () => {
@@ -74,53 +93,74 @@ export default function ChapterViewScreen({ navigation }) {
           const n = parseInt(stored, 10);
           if (!Number.isNaN(n)) setFontSize(n);
         }
-      } catch (e) {
-        // ignore
-      }
+      } catch (e) {}
     })();
-    return () => {
-      mounted = false;
-    };
+    return () => (mounted = false);
   }, []);
 
-  // persist font size whenever it changes
   useEffect(() => {
     (async () => {
       try {
         await AsyncStorage.setItem('user_font_size', String(fontSize));
-      } catch (e) {
-        // ignore
-      }
+      } catch (e) {}
     })();
   }, [fontSize]);
 
-  // Fetch chapter (with caching)
-  const fetchChapter = async (chapterBook) => {
+  const fetchChapter = async (chapterBook, { forceRefresh = false } = {}) => {
     const key = chapterCacheKey(chapterBook);
 
+    const readCache = async () => {
+      try {
+        const raw = await AsyncStorage.getItem(key);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch (e) {
+        return null;
+      }
+    };
+
+    const writeCache = async (dataPayload, etag, lastModified) => {
+      try {
+        const entry = {
+          data: dataPayload,
+          etag: etag || null,
+          lastModified: lastModified || null,
+          savedAt: Date.now(),
+        };
+        await AsyncStorage.setItem(key, JSON.stringify(entry));
+      } catch (e) {}
+    };
+
+    const cachedEntry = await readCache();
+    const url = buildCdnUrl(chapterBook);
+    if (!url) throw new Error('Invalid book data');
+
+    const headers = {};
+    if (!forceRefresh && cachedEntry) {
+      if (cachedEntry.etag) headers['If-None-Match'] = cachedEntry.etag;
+      if (cachedEntry.lastModified) headers['If-Modified-Since'] = cachedEntry.lastModified;
+    }
+
     try {
-      // Check cache first
-      const cached = await AsyncStorage.getItem(key);
-      if (cached) return JSON.parse(cached);
-
-      // Fetch from CDN
-      const url = buildCdnUrl(chapterBook);
-      const res = await fetch(url);
-      if (!res.ok) throw new Error('Chapter not found');
+      const res = await fetch(url, { method: 'GET', headers, cache: 'no-store' });
+      if (res.status === 304 && cachedEntry) return cachedEntry.data;
+      if (!res.ok) {
+        if (cachedEntry) return cachedEntry.data;
+        throw new Error(`Chapter fetch failed (status ${res.status})`);
+      }
       const json = await res.json();
-
-      // Save to cache
-      await AsyncStorage.setItem(key, JSON.stringify(json));
+      const etag = res.headers.get('ETag') || res.headers.get('etag');
+      const lastModified = res.headers.get('Last-Modified') || res.headers.get('last-modified');
+      await writeCache(json, etag, lastModified);
       return json;
     } catch (e) {
-      throw new Error(e.message);
+      if (cachedEntry) return cachedEntry.data;
+      throw new Error(e.message || 'Network error');
     }
   };
 
-  // Load current chapter
   useEffect(() => {
     let isCancelled = false;
-
     setLoading(true);
     setError(null);
 
@@ -135,77 +175,218 @@ export default function ChapterViewScreen({ navigation }) {
         if (!isCancelled) setLoading(false);
       });
 
-    // Build audio URL for this chapter and set it
     try {
       const mp3 = buildAudioUrl(book);
       setAudioUrl(mp3);
-      // if navigation requested autoplay, start playing immediately to avoid
-      // timing races between setting audioUrl and the AudioPlayer loading.
       if (autoplay) setIsPlaying(true);
     } catch (e) {
       setAudioUrl(null);
     }
 
-    // Prefetch next chapter if it exists
     let nextChapterBook = null;
+    if (book.chapter < book.chapters) nextChapterBook = { ...book, chapter: book.chapter + 1 };
+    else if (nextBook) nextChapterBook = { ...nextBook, chapter: 1 };
+    if (nextChapterBook) fetchChapter(nextChapterBook).catch(() => {});
 
-    if (book.chapter < book.chapters) {
-      // same book, next chapter
-      nextChapterBook = { ...book, chapter: book.chapter + 1 };
-    } else if (nextBook) {
-      // next book exists
-      nextChapterBook = { ...nextBook, chapter: 1 };
-    }
-
-    if (nextChapterBook) {
-      fetchChapter(nextChapterBook).catch(() => {});
-    }
-
-    return () => {
-      isCancelled = true;
-    };
+    return () => (isCancelled = true);
   }, [book, nextBook]);
 
-  // If user navigated with autoplay param, start playback when audioUrl is ready
   useEffect(() => {
-    if (autoplay && audioUrl) {
-      setIsPlaying(true);
-    }
+    if (autoplay && audioUrl) setIsPlaying(true);
   }, [autoplay, audioUrl]);
-
-  useEffect(() => {
-    try {
-      // eslint-disable-next-line no-console
-      console.warn('[ChapterView] audioUrl', audioUrl, 'isPlaying', isPlaying);
-    } catch (e) {}
-  }, [audioUrl, isPlaying]);
 
   const gradientColors = [theme.bibleCategory[book?.category] || '#fffdfdff', '#030100d5'];
 
-  // Convert verses object to array with verse number
   const versesArray = data?.verses
     ? Object.entries(data.verses).map(([verseNumber, verse]) => ({
         verse: verseNumber,
         text: verse.text,
+        startMs: typeof verse.start === 'number' ? Math.round(verse.start * 1000) : null,
+        endMs: typeof verse.end === 'number' ? Math.round(verse.end * 1000) : null,
       }))
     : [];
 
   const renderVerse = ({ item }) => {
     const verseMargin = Math.max(8, Math.round(fontSize * 0.75));
     const lineH = Math.round(fontSize * 1.45);
-
-    // Capitalize the first Unicode letter while preserving leading whitespace/punctuation
     const displayText = item.text
       ? item.text.replace(/(\p{L})/u, (m) => m.toUpperCase())
       : item.text;
+    const isActive = item.verse === currentVerse;
 
     return (
-      <View style={[styles.verseRow, { marginBottom: verseMargin, flexDirection: 'column' }]}>
-        <Text style={[styles.verseText, { fontSize, lineHeight: lineH }]}>{displayText}</Text>
-        <Text style={styles.verseFooter}>{`${book?.name} ${book.chapter} : ${item.verse}`}</Text>
-      </View>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => {
+          if (typeof item.startMs === 'number') {
+            // mark user-initiated seek so autoscroll can be suppressed briefly
+            try {
+              lastUserSeekAtRef.current = Date.now();
+            } catch (e) {}
+            // prefer imperative seek if player ref exists
+            if (audioPlayerRef.current && audioPlayerRef.current.seek) {
+              try {
+                audioPlayerRef.current.seek(item.startMs);
+                // ensure playback after seek
+                if (audioPlayerRef.current.play) audioPlayerRef.current.play().catch(() => {});
+                setIsPlaying(true);
+              } catch (e) {
+                setSeekToMs(item.startMs);
+                setIsPlaying(true);
+              }
+            } else {
+              setSeekToMs(item.startMs);
+              setIsPlaying(true);
+            }
+          }
+        }}
+        onLayout={(e) => {
+          try {
+            verseLayoutsRef.current[item.verse] = e.nativeEvent.layout;
+          } catch (e) {}
+        }}
+        style={[
+          styles.verseRow,
+          { marginBottom: verseMargin, flexDirection: 'column' },
+          isActive ? styles.activeVerseRow : null,
+        ]}
+      >
+        <Text
+          style={[
+            styles.verseText,
+            { fontSize, lineHeight: lineH },
+            isActive ? styles.activeVerseText : null,
+          ]}
+        >
+          {displayText}
+        </Text>
+        <Text
+          style={[styles.verseFooter, isActive ? styles.activeVerseFooter : null]}
+        >{`${book?.name} ${book.chapter} : ${item.verse}`}</Text>
+      </TouchableOpacity>
     );
   };
+
+  const computeItemLayout = (index) => {
+    const item = versesArray[index];
+    if (!item) return { length: 60, offset: index * 60, index };
+    const charsPerLine = 40;
+    const text = item.text || '';
+    const lines = Math.max(1, Math.ceil(text.length / charsPerLine));
+    const lineHeight = Math.round(fontSize * 1.45);
+    const textHeight = lines * lineHeight;
+    const footerHeight = 18;
+    const marginBottom = Math.max(8, Math.round(fontSize * 0.75));
+    const length = textHeight + footerHeight + marginBottom + 16;
+    let offset = 0;
+    for (let i = 0; i < index; i++) {
+      const pi = versesArray[i];
+      if (!pi) offset += length;
+      else {
+        const plines = Math.max(1, Math.ceil((pi.text || '').length / charsPerLine));
+        const plen =
+          plines * lineHeight + footerHeight + Math.max(8, Math.round(fontSize * 0.75)) + 16;
+        offset += plen;
+      }
+    }
+    return { length, offset, index };
+  };
+
+  useEffect(() => {
+    try {
+      const reportedMs = latestStatus?.positionMillis;
+      if (typeof reportedMs !== 'number' || isNaN(reportedMs)) return;
+      const posMs = reportedMs + (typeof syncOffsetMs === 'number' ? syncOffsetMs : 0);
+      const found = versesArray.find(
+        (v) =>
+          typeof v.startMs === 'number' &&
+          typeof v.endMs === 'number' &&
+          posMs >= v.startMs &&
+          posMs < v.endMs,
+      );
+      if (found) {
+        if (found.verse !== currentVerse) setCurrentVerse(found.verse);
+      } else {
+        if (currentVerse !== null) setCurrentVerse(null);
+      }
+      if (latestStatus?.didJustFinish) setCurrentVerse(null);
+    } catch (e) {
+      // ignore
+    }
+  }, [latestStatus, versesArray]);
+
+  useEffect(() => {
+    try {
+      if (!currentVerse) return;
+      const now = Date.now();
+
+      // Prevent auto-scrolling too frequently
+      if (
+        lastScrolledVerseRef.current === currentVerse &&
+        now - lastAutoScrollAtRef.current < MIN_AUTOSCROLL_INTERVAL_MS
+      ) {
+        return;
+      }
+
+      // If the user is currently dragging or just recently scrolled/seeked,
+      // avoid auto-scrolling to respect user control.
+      if (isUserDraggingRef.current) return;
+      if (now - (lastUserSeekAtRef.current || 0) < USER_SEEK_NO_AUTOSCROLL_MS) return;
+      if (now - (lastUserScrollAtRef.current || 0) < USER_SCROLL_NO_AUTOSCROLL_MS) return;
+
+      const idx = versesArray.findIndex((v) => v.verse === currentVerse);
+      if (idx < 0) return;
+
+      const isVerseVisible = (verseKey) => {
+        try {
+          const layout = verseLayoutsRef.current[verseKey];
+          const listHeight = flatListHeightRef.current || 0;
+          const scrollY = scrollOffsetRef.current || 0;
+          if (!layout || !listHeight) return false;
+          const verseTop = layout.y;
+          const verseCenter = verseTop + layout.height / 2;
+          const visibleTop = scrollY + listHeight * 0.2; // 20% down
+          const visibleBottom = scrollY + listHeight * 0.8; // 80% down
+          return verseCenter >= visibleTop && verseCenter <= visibleBottom;
+        } catch (e) {
+          return false;
+        }
+      };
+
+      // if already visible within central band, do not scroll
+      if (isVerseVisible(currentVerse)) {
+        lastScrolledVerseRef.current = currentVerse;
+        lastAutoScrollAtRef.current = now;
+        return;
+      }
+
+      if (flatListRef.current && flatListRef.current.scrollToIndex) {
+        try {
+          flatListRef.current.scrollToIndex({ index: idx, viewPosition: 0.4, animated: true });
+          lastScrolledVerseRef.current = currentVerse;
+          lastAutoScrollAtRef.current = now;
+          return;
+        } catch (e) {
+          // fall through to offset fallback
+        }
+      }
+
+      const layout = verseLayoutsRef.current[currentVerse];
+      if (layout && flatListRef.current && flatListRef.current.scrollToOffset) {
+        const listHeight = flatListHeightRef.current || 0;
+        const offset = Math.max(0, layout.y - listHeight / 2 + layout.height / 2 - 16);
+        try {
+          flatListRef.current.scrollToOffset({ offset, animated: true });
+          lastScrolledVerseRef.current = currentVerse;
+          lastAutoScrollAtRef.current = now;
+        } catch (e) {
+          // ignore
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, [currentVerse, versesArray]);
 
   return (
     <LinearGradient
@@ -215,7 +396,6 @@ export default function ChapterViewScreen({ navigation }) {
       end={{ x: 0.6, y: 0.1 }}
     >
       <SafeAreaView style={styles.container}>
-        {/* Header */}
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Ionicons name="arrow-back" size={24} color="white" />
@@ -226,7 +406,6 @@ export default function ChapterViewScreen({ navigation }) {
           <View style={{ width: 24 }} />
         </View>
 
-        {/* Content */}
         {loading ? (
           <ActivityIndicator
             size="large"
@@ -237,11 +416,47 @@ export default function ChapterViewScreen({ navigation }) {
           <Paragraph style={styles.errorText}>{error}</Paragraph>
         ) : (
           <FlatList
+            ref={flatListRef}
             data={versesArray}
             keyExtractor={(item) => item.verse}
             renderItem={renderVerse}
             contentContainerStyle={styles.content}
-            initialNumToRender={20} // renders first 20 verses first
+            initialNumToRender={20}
+            windowSize={21}
+            removeClippedSubviews={false}
+            getItemLayout={(data, index) => computeItemLayout(index)}
+            onLayout={(e) => {
+              flatListHeightRef.current = e.nativeEvent.layout.height;
+            }}
+            onScroll={(e) => {
+              try {
+                scrollOffsetRef.current = e.nativeEvent.contentOffset.y || 0;
+              } catch (err) {}
+            }}
+            onScrollBeginDrag={() => {
+              try {
+                isUserDraggingRef.current = true;
+                lastUserScrollAtRef.current = Date.now();
+              } catch (e) {}
+            }}
+            onScrollEndDrag={() => {
+              try {
+                isUserDraggingRef.current = false;
+                lastUserScrollAtRef.current = Date.now();
+              } catch (e) {}
+            }}
+            onMomentumScrollBegin={() => {
+              try {
+                isUserDraggingRef.current = true;
+              } catch (e) {}
+            }}
+            onMomentumScrollEnd={() => {
+              try {
+                isUserDraggingRef.current = false;
+                lastUserScrollAtRef.current = Date.now();
+              } catch (e) {}
+            }}
+            scrollEventThrottle={100}
           />
         )}
 
@@ -250,42 +465,72 @@ export default function ChapterViewScreen({ navigation }) {
           versesCount={data?.verses ? Object.keys(data.verses).length : 0}
           onSettingsPress={() => setControllerVisible(true)}
           onPlayPress={() => {
-            setIsPlaying((s) => !s);
+            try {
+              lastUserPlayAtRef.current = Date.now();
+            } catch (e) {}
+            try {
+              if (isPlaying) {
+                if (audioPlayerRef.current && audioPlayerRef.current.pause)
+                  audioPlayerRef.current.pause();
+                setIsPlaying(false);
+              } else {
+                if (audioPlayerRef.current && audioPlayerRef.current.play)
+                  audioPlayerRef.current.play();
+                setIsPlaying(true);
+              }
+            } catch (e) {
+              setIsPlaying((s) => !s);
+            }
           }}
           isPlaying={isPlaying}
           categoryColor={theme.bibleCategory[book?.category]}
         />
-        {/* Invisible audio player that loads the dynamic audio URL */}
+
         <AudioPlayer
+          ref={audioPlayerRef}
           sourceUrl={audioUrl}
           play={isPlaying}
+          seekToMs={seekToMs}
+          onSeekComplete={() => setSeekToMs(null)}
           onStatusChange={(status) => {
-            // update local debug status
             setLatestStatus(status);
-
-            // Keep UI play/pause in sync with actual playback.
-            // If the player reports it is playing, show pause icon.
-            if (status && typeof status.isPlaying === 'boolean') {
-              setIsPlaying(Boolean(status.isPlaying));
+            try {
+              const now = Date.now();
+              if (now - (lastUserPlayAtRef.current || 0) < USER_PLAY_DEBOUNCE_MS) {
+                // recently toggled by user — don't override isPlaying from status
+              } else {
+                if (status && typeof status.isPlaying === 'boolean')
+                  setIsPlaying(Boolean(status.isPlaying));
+              }
+            } catch (e) {
+              if (status && typeof status.isPlaying === 'boolean')
+                setIsPlaying(Boolean(status.isPlaying));
             }
 
-            // if playback finished, reset isPlaying
             if (status?.didJustFinish) setIsPlaying(false);
-            // if error, stop
             if (status?.error) setIsPlaying(false);
           }}
         />
 
-        {/* Debug overlay: shows current audioUrl and latest playback status */}
-        <View style={styles.debugOverlay} pointerEvents="none">
-          <Text style={styles.debugTitle}>audioUrl</Text>
-          <Text style={styles.debugText} numberOfLines={2} ellipsizeMode="tail">
-            {audioUrl || '—'}
+        <View style={styles.debugOverlay} pointerEvents="box-none">
+          <Text style={styles.debugTitle}>Sync</Text>
+          <Text style={styles.debugText}>reported: {latestStatus?.positionMillis ?? '—'} ms</Text>
+          <Text style={styles.debugText}>
+            applied: {(latestStatus?.positionMillis ?? 0) + syncOffsetMs} ms
           </Text>
-          <Text style={styles.debugTitle}>status</Text>
-          <Text style={styles.debugText} numberOfLines={3} ellipsizeMode="tail">
-            {latestStatus ? JSON.stringify(latestStatus) : '—'}
-          </Text>
+          <Text style={styles.debugText}>offset: {syncOffsetMs} ms</Text>
+          <Text style={styles.debugText}>matched verse: {currentVerse ?? '—'}</Text>
+          <View style={{ flexDirection: 'row' }}>
+            <TouchableOpacity
+              onPress={() => setSyncOffsetMs((s) => s - 100)}
+              style={{ marginRight: 12 }}
+            >
+              <Text style={styles.debugText}>-100ms</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSyncOffsetMs((s) => s + 100)}>
+              <Text style={styles.debugText}>+100ms</Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
         <Controller
@@ -377,5 +622,16 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 12,
     marginBottom: 6,
+  },
+  activeVerseRow: {
+    backgroundColor: 'rgba(255,255,255,0.06)',
+    borderRadius: 8,
+    padding: 8,
+  },
+  activeVerseText: {
+    color: '#fff',
+  },
+  activeVerseFooter: {
+    color: '#ffffffaa',
   },
 });
