@@ -34,17 +34,16 @@ function buildCdnUrl(book) {
 
 // Build MP3 audio URL for a chapter
 function buildAudioUrl(book) {
-  if (!book || !book.name || !book.id) return null;
-  const paddedId = String(book.id).padStart(2, '0');
-  const slug = book.name
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '_')
-    .replace(/[^a-z0-9_]/g, '');
-
-  // pattern: https://cdn.kinyabible.com/audiobible/newTestament/60_1_peter/1_peter1.mp3
-  const testamentSegment = book.testament === 'newTestament' ? 'newTestament' : 'oldTestament';
-  return `https://cdn.kinyabible.com/audiobible/${testamentSegment}/${paddedId}_${slug}/${slug}${book.chapter}.mp3`;
+  // Build audio URL by reusing buildCdnUrl, inserting `audiobible/` before the
+  // testament segment and swapping the extension to .mp3
+  const jsonUrl = buildCdnUrl(book);
+  if (!jsonUrl) return null;
+  // example transform:
+  // https://cdn.kinyabible.com/newTestament/60_1_peter/1_peter1.json
+  // -> https://cdn.kinyabible.com/audiobible/newTestament/60_1_peter/1_peter1.mp3
+  return jsonUrl
+    .replace('https://cdn.kinyabible.com/', 'https://cdn.kinyabible.com/audiobible/')
+    .replace(/\.json$/i, '.mp3');
 }
 
 // AsyncStorage key
@@ -140,7 +139,9 @@ export default function ChapterViewScreen({ navigation }) {
     try {
       const mp3 = buildAudioUrl(book);
       setAudioUrl(mp3);
-      // autoplay is handled in the effect below once audioUrl is set
+      // if navigation requested autoplay, start playing immediately to avoid
+      // timing races between setting audioUrl and the AudioPlayer loading.
+      if (autoplay) setIsPlaying(true);
     } catch (e) {
       setAudioUrl(null);
     }
@@ -261,6 +262,13 @@ export default function ChapterViewScreen({ navigation }) {
           onStatusChange={(status) => {
             // update local debug status
             setLatestStatus(status);
+
+            // Keep UI play/pause in sync with actual playback.
+            // If the player reports it is playing, show pause icon.
+            if (status && typeof status.isPlaying === 'boolean') {
+              setIsPlaying(Boolean(status.isPlaying));
+            }
+
             // if playback finished, reset isPlaying
             if (status?.didJustFinish) setIsPlaying(false);
             // if error, stop
