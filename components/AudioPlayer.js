@@ -113,9 +113,10 @@ export default function AudioPlayer({ sourceUrl, play = false, onStatusChange })
     (async () => {
       try {
         if (!soundRef.current) return;
-        const status = await soundRef.current.getStatusAsync();
-        if (play && !status.isPlaying) await soundRef.current.playAsync();
-        if (!play && status.isPlaying) await soundRef.current.pauseAsync();
+        // Directly request play or pause. Avoid relying on getStatusAsync() to
+        // decide because status can be stale during quick user interactions.
+        if (play) await soundRef.current.playAsync();
+        else await soundRef.current.pauseAsync();
       } catch (e) {
         if (onStatusChange) onStatusChange({ error: e.message });
       }
