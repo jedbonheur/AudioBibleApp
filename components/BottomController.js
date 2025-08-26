@@ -9,6 +9,7 @@ export default function BottomController({
   onSettingsPress,
   onPlayPress,
   categoryColor,
+  isPlaying = false,
 }) {
   const bg = categoryColor || theme.bibleCategory[book?.category] || 'rgba(0,0,0,0.45)';
 
@@ -17,7 +18,7 @@ export default function BottomController({
       <View style={[styles.bottomController, { backgroundColor: bg }]}>
         <View style={styles.leftGroup}>
           <TouchableOpacity style={styles.playBtn} onPress={onPlayPress}>
-            <Ionicons name="play" size={40} color="white" />
+            <Ionicons name={isPlaying ? 'pause' : 'play'} size={40} color="white" />
           </TouchableOpacity>
           <View style={{ marginLeft: 10 }}>
             <Text style={styles.controllerTitle}>

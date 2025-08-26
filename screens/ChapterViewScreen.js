@@ -16,15 +16,13 @@ import theme from '@theme/theme';
 import { Paragraph } from '@typography/Typography';
 import Controller from '@components/Controller';
 import BottomController from '@components/BottomController';
+import AudioPlayer from '@components/AudioPlayer';
 
-// Build CDN URL
+// Build CDN JSON URL
 function buildCdnUrl(book) {
   if (!book || !book.name || !book.id) return null;
 
-  // padded ID for CDN
   const paddedId = String(book.id).padStart(2, '0');
-
-  // slug: lowercase, spaces → _, remove non-alphanumeric except _
   const slug = book.name
     .toLowerCase()
     .trim()
@@ -34,19 +32,38 @@ function buildCdnUrl(book) {
   return `${base}${paddedId}_${slug}/${slug}${book.chapter}.json`;
 }
 
+// Build MP3 audio URL for a chapter
+function buildAudioUrl(book) {
+  if (!book || !book.name || !book.id) return null;
+  const paddedId = String(book.id).padStart(2, '0');
+  const slug = book.name
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '_')
+    .replace(/[^a-z0-9_]/g, '');
+
+  // pattern: https://cdn.kinyabible.com/audiobible/newTestament/60_1_peter/1_peter1.mp3
+  const testamentSegment = book.testament === 'newTestament' ? 'newTestament' : 'oldTestament';
+  return `https://cdn.kinyabible.com/audiobible/${testamentSegment}/${paddedId}_${slug}/${slug}${book.chapter}.mp3`;
+}
+
 // AsyncStorage key
 function chapterCacheKey(book) {
   return `chapter_${book.testament}_${book.id}_${book.chapter}`;
 }
 
 export default function ChapterViewScreen({ navigation }) {
-  const { book, nextBook } = useRoute().params; // nextBook optional
+  const route = useRoute();
+  const { book, nextBook, autoplay } = route.params || {}; // nextBook optional, autoplay optional
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
   const [controllerVisible, setControllerVisible] = useState(false);
   const [fontSize, setFontSize] = useState(16);
   const [music, setMusic] = useState('none');
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioUrl, setAudioUrl] = useState(null);
+  const [latestStatus, setLatestStatus] = useState(null);
 
   // load persisted font size on mount
   useEffect(() => {
@@ -119,6 +136,15 @@ export default function ChapterViewScreen({ navigation }) {
         if (!isCancelled) setLoading(false);
       });
 
+    // Build audio URL for this chapter and set it
+    try {
+      const mp3 = buildAudioUrl(book);
+      setAudioUrl(mp3);
+      // autoplay is handled in the effect below once audioUrl is set
+    } catch (e) {
+      setAudioUrl(null);
+    }
+
     // Prefetch next chapter if it exists
     let nextChapterBook = null;
 
@@ -138,6 +164,20 @@ export default function ChapterViewScreen({ navigation }) {
       isCancelled = true;
     };
   }, [book, nextBook]);
+
+  // If user navigated with autoplay param, start playback when audioUrl is ready
+  useEffect(() => {
+    if (autoplay && audioUrl) {
+      setIsPlaying(true);
+    }
+  }, [autoplay, audioUrl]);
+
+  useEffect(() => {
+    try {
+      // eslint-disable-next-line no-console
+      console.warn('[ChapterView] audioUrl', audioUrl, 'isPlaying', isPlaying);
+    } catch (e) {}
+  }, [audioUrl, isPlaying]);
 
   const gradientColors = [theme.bibleCategory[book?.category] || '#fffdfdff', '#030100d5'];
 
@@ -209,10 +249,36 @@ export default function ChapterViewScreen({ navigation }) {
           versesCount={data?.verses ? Object.keys(data.verses).length : 0}
           onSettingsPress={() => setControllerVisible(true)}
           onPlayPress={() => {
-            /* TODO: play/pause */
+            setIsPlaying((s) => !s);
           }}
+          isPlaying={isPlaying}
           categoryColor={theme.bibleCategory[book?.category]}
         />
+        {/* Invisible audio player that loads the dynamic audio URL */}
+        <AudioPlayer
+          sourceUrl={audioUrl}
+          play={isPlaying}
+          onStatusChange={(status) => {
+            // update local debug status
+            setLatestStatus(status);
+            // if playback finished, reset isPlaying
+            if (status?.didJustFinish) setIsPlaying(false);
+            // if error, stop
+            if (status?.error) setIsPlaying(false);
+          }}
+        />
+
+        {/* Debug overlay: shows current audioUrl and latest playback status */}
+        <View style={styles.debugOverlay} pointerEvents="none">
+          <Text style={styles.debugTitle}>audioUrl</Text>
+          <Text style={styles.debugText} numberOfLines={2} ellipsizeMode="tail">
+            {audioUrl || '—'}
+          </Text>
+          <Text style={styles.debugTitle}>status</Text>
+          <Text style={styles.debugText} numberOfLines={3} ellipsizeMode="tail">
+            {latestStatus ? JSON.stringify(latestStatus) : '—'}
+          </Text>
+        </View>
 
         <Controller
           visible={controllerVisible}
@@ -284,5 +350,24 @@ const styles = StyleSheet.create({
     color: '#ffdddd',
     marginTop: 20,
     textAlign: 'center',
+  },
+  debugOverlay: {
+    position: 'absolute',
+    left: 12,
+    right: 12,
+    bottom: 72,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    padding: 8,
+    borderRadius: 8,
+  },
+  debugTitle: {
+    color: '#ffffffaa',
+    fontSize: 11,
+    fontWeight: '700',
+  },
+  debugText: {
+    color: '#fff',
+    fontSize: 12,
+    marginBottom: 6,
   },
 });
