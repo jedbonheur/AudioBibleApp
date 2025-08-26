@@ -6,7 +6,209 @@
       "chapters": 50,
       "category": "pentateuch",
       "intro": "Genesis introduces God as Creator and tells the beginnings of the world, humanity, and Israel. It recounts stories of Adam and Eve, Noah, Abraham, Isaac, Jacob, and Joseph. The book emphasizes God’s promises, human failure, and His plan of redemption.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis34.mp3"
+        },
+        {
+          "chapter": 35,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis35.mp3"
+        },
+        {
+          "chapter": 36,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis36.mp3"
+        },
+        {
+          "chapter": 37,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis37.mp3"
+        },
+        {
+          "chapter": 38,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis38.mp3"
+        },
+        {
+          "chapter": 39,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis39.mp3"
+        },
+        {
+          "chapter": 40,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis40.mp3"
+        },
+        {
+          "chapter": 41,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis41.mp3"
+        },
+        {
+          "chapter": 42,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis42.mp3"
+        },
+        {
+          "chapter": 43,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis43.mp3"
+        },
+        {
+          "chapter": 44,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis44.mp3"
+        },
+        {
+          "chapter": 45,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis45.mp3"
+        },
+        {
+          "chapter": 46,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis46.mp3"
+        },
+        {
+          "chapter": 47,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis47.mp3"
+        },
+        {
+          "chapter": 48,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis48.mp3"
+        },
+        {
+          "chapter": 49,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis49.mp3"
+        },
+        {
+          "chapter": 50,
+          "audio": "https://cdn.kinyabible.com/oldTestament/01_genesis/genesis50.mp3"
+        }
+      ]
     },
     {
       "id": 2,
@@ -14,7 +216,169 @@
       "chapters": 40,
       "category": "pentateuch",
       "intro": "Exodus narrates Israel’s deliverance from slavery in Egypt under Moses’ leadership. God reveals His power through plagues, the Red Sea crossing, and provision in the wilderness. It highlights covenant at Sinai, God’s presence, and the building of the tabernacle.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus34.mp3"
+        },
+        {
+          "chapter": 35,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus35.mp3"
+        },
+        {
+          "chapter": 36,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus36.mp3"
+        },
+        {
+          "chapter": 37,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus37.mp3"
+        },
+        {
+          "chapter": 38,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus38.mp3"
+        },
+        {
+          "chapter": 39,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus39.mp3"
+        },
+        {
+          "chapter": 40,
+          "audio": "https://cdn.kinyabible.com/oldTestament/02_exodus/exodus40.mp3"
+        }
+      ]
     },
     {
       "id": 3,
@@ -22,7 +386,117 @@
       "chapters": 27,
       "category": "pentateuch",
       "intro": "Leviticus provides laws for Israel’s worship and daily life, emphasizing holiness. It details sacrifices, priestly duties, and festivals that teach God’s holiness and mercy. The book shows how sinful people can live in fellowship with a holy God.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/03_leviticus/leviticus27.mp3"
+        }
+      ]
     },
     {
       "id": 4,
@@ -30,7 +504,153 @@
       "chapters": 36,
       "category": "pentateuch",
       "intro": "Numbers recounts Israel’s wilderness journey marked by rebellion, testing, and God’s faithfulness. Despite their disobedience, God provides guidance and prepares them for the Promised Land. The book teaches trust in God’s promises despite hardships.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers34.mp3"
+        },
+        {
+          "chapter": 35,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers35.mp3"
+        },
+        {
+          "chapter": 36,
+          "audio": "https://cdn.kinyabible.com/oldTestament/04_numbers/numbers36.mp3"
+        }
+      ]
     },
     {
       "id": 5,
@@ -38,7 +658,145 @@
       "chapters": 34,
       "category": "pentateuch",
       "intro": "Deuteronomy records Moses’ final speeches before Israel enters the Promised Land. It reviews God’s laws, covenant faithfulness, and calls the people to wholehearted obedience. The book stresses love for God, remembering His works, and passing faith to future generations.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/05_deuteronomy/deuteronomy34.mp3"
+        }
+      ]
     },
     {
       "id": 6,
@@ -46,7 +804,105 @@
       "chapters": 24,
       "category": "historical",
       "intro": "Joshua tells of Israel’s conquest and settlement of the Promised Land. God fulfills His promises by granting victory through obedience and faith. The book highlights courage, covenant loyalty, and the inheritance of God’s people.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/06_joshua/joshua24.mp3"
+        }
+      ]
     },
     {
       "id": 7,
@@ -54,7 +910,93 @@
       "chapters": 21,
       "category": "historical",
       "intro": "Judges describes a cycle of sin, oppression, repentance, and deliverance in Israel. God raises leaders called judges to rescue His people despite widespread disobedience. It highlights human weakness and God’s mercy in times of chaos.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/07_judges/judges21.mp3"
+        }
+      ]
     },
     {
       "id": 8,
@@ -62,7 +1004,25 @@
       "chapters": 4,
       "category": "historical",
       "intro": "Ruth tells the story of loyalty, kindness, and God’s providence through ordinary lives. Ruth’s devotion to Naomi leads her to Boaz and into the family of David. The book reveals God’s care and His plan unfolding through faithful love.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/08_ruth/ruth1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/08_ruth/ruth2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/08_ruth/ruth3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/08_ruth/ruth4.mp3"
+        }
+      ]
     },
     {
       "id": 9,
@@ -70,7 +1030,133 @@
       "chapters": 31,
       "category": "historical",
       "intro": "1 Samuel describes Israel’s transition from judges to monarchy under Saul and David. It emphasizes obedience to God over outward appearance or human strength. David rises as a man after God’s heart, despite struggles and trials.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/09_1_samuel/1_samuel31.mp3"
+        }
+      ]
     },
     {
       "id": 10,
@@ -78,7 +1164,105 @@
       "chapters": 24,
       "category": "historical",
       "intro": "2 Samuel focuses on David’s reign, showing his victories, sins, and God’s covenant promise. The narrative shows both blessings of godly leadership and consequences of failure. God’s plan of redemption continues through David’s family line.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/10_2_samuel/2_samuel24.mp3"
+        }
+      ]
     },
     {
       "id": 11,
@@ -86,7 +1270,97 @@
       "chapters": 22,
       "category": "historical",
       "intro": "1 Kings recounts Solomon’s wisdom, temple building, and decline into idolatry. After his reign, the kingdom splits into northern Israel and southern Judah. Prophets emerge to call people back to covenant faithfulness.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/11_1_kings/1_kings22.mp3"
+        }
+      ]
     },
     {
       "id": 12,
@@ -94,7 +1368,109 @@
       "chapters": 25,
       "category": "historical",
       "intro": "2 Kings continues the history of Israel and Judah, marked by rebellion and judgment. Prophets like Elisha call kings to repent, but most ignore God’s word. The book ends with exile, showing consequences of persistent unfaithfulness.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/12_2_kings/2_kings25.mp3"
+        }
+      ]
     },
     {
       "id": 13,
@@ -102,7 +1478,125 @@
       "chapters": 29,
       "category": "historical",
       "intro": "1 Chronicles retells Israel’s history with focus on David’s reign and temple preparation. Genealogies emphasize God’s covenant promises through His chosen line. The book highlights worship, prayer, and God’s presence with His people.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/13_1_chronicles/1_chronicles29.mp3"
+        }
+      ]
     },
     {
       "id": 14,
@@ -110,7 +1604,153 @@
       "chapters": 36,
       "category": "historical",
       "intro": "2 Chronicles emphasizes the kings of Judah, temple worship, and prophetic warnings. It shows blessings for obedience and consequences of idolatry and sin. The book closes with exile but ends with hope of restoration.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles34.mp3"
+        },
+        {
+          "chapter": 35,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles35.mp3"
+        },
+        {
+          "chapter": 36,
+          "audio": "https://cdn.kinyabible.com/oldTestament/14_2_chronicles/2_chronicles36.mp3"
+        }
+      ]
     },
     {
       "id": 15,
@@ -118,7 +1758,49 @@
       "chapters": 10,
       "category": "historical",
       "intro": "Ezra recounts the return of exiles and the rebuilding of the temple in Jerusalem. God restores His people and renews their worship through His law. Ezra calls the nation to repentance and faithfulness to God’s covenant.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/15_ezra/ezra10.mp3"
+        }
+      ]
     },
     {
       "id": 16,
@@ -126,7 +1808,61 @@
       "chapters": 13,
       "category": "historical",
       "intro": "Nehemiah tells how Jerusalem’s walls were rebuilt despite opposition. Through prayer, courage, and perseverance, God’s people restored their city and covenant. The book underscores faith, leadership, and renewal in community life.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/16_nehemiah/nehemiah13.mp3"
+        }
+      ]
     },
     {
       "id": 17,
@@ -134,7 +1870,49 @@
       "chapters": 10,
       "category": "historical",
       "intro": "Esther describes God’s deliverance of His people through Esther’s courage. Though God’s name is not mentioned, His providence is clear in every event. The story reveals God’s hidden hand and the power of faithful action.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/17_esther/esther10.mp3"
+        }
+      ]
     },
     {
       "id": 18,
@@ -142,7 +1920,177 @@
       "chapters": 42,
       "category": "wisdom",
       "intro": "Job wrestles with suffering, faith, and the mystery of God’s purposes. Through loss and pain, Job questions but ultimately trusts God’s wisdom. The book highlights God’s sovereignty and human dependence on Him.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job34.mp3"
+        },
+        {
+          "chapter": 35,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job35.mp3"
+        },
+        {
+          "chapter": 36,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job36.mp3"
+        },
+        {
+          "chapter": 37,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job37.mp3"
+        },
+        {
+          "chapter": 38,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job38.mp3"
+        },
+        {
+          "chapter": 39,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job39.mp3"
+        },
+        {
+          "chapter": 40,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job40.mp3"
+        },
+        {
+          "chapter": 41,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job41.mp3"
+        },
+        {
+          "chapter": 42,
+          "audio": "https://cdn.kinyabible.com/oldTestament/18_job/job42.mp3"
+        }
+      ]
     },
     {
       "id": 19,
@@ -150,7 +2098,609 @@
       "chapters": 150,
       "category": "wisdom",
       "intro": "Psalms is a collection of songs and prayers expressing every emotion to God. It includes praise, lament, thanksgiving, and trust in God’s faithfulness. These poems guide worship and strengthen faith across generations.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms34.mp3"
+        },
+        {
+          "chapter": 35,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms35.mp3"
+        },
+        {
+          "chapter": 36,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms36.mp3"
+        },
+        {
+          "chapter": 37,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms37.mp3"
+        },
+        {
+          "chapter": 38,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms38.mp3"
+        },
+        {
+          "chapter": 39,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms39.mp3"
+        },
+        {
+          "chapter": 40,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms40.mp3"
+        },
+        {
+          "chapter": 41,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms41.mp3"
+        },
+        {
+          "chapter": 42,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms42.mp3"
+        },
+        {
+          "chapter": 43,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms43.mp3"
+        },
+        {
+          "chapter": 44,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms44.mp3"
+        },
+        {
+          "chapter": 45,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms45.mp3"
+        },
+        {
+          "chapter": 46,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms46.mp3"
+        },
+        {
+          "chapter": 47,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms47.mp3"
+        },
+        {
+          "chapter": 48,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms48.mp3"
+        },
+        {
+          "chapter": 49,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms49.mp3"
+        },
+        {
+          "chapter": 50,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms50.mp3"
+        },
+        {
+          "chapter": 51,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms51.mp3"
+        },
+        {
+          "chapter": 52,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms52.mp3"
+        },
+        {
+          "chapter": 53,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms53.mp3"
+        },
+        {
+          "chapter": 54,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms54.mp3"
+        },
+        {
+          "chapter": 55,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms55.mp3"
+        },
+        {
+          "chapter": 56,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms56.mp3"
+        },
+        {
+          "chapter": 57,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms57.mp3"
+        },
+        {
+          "chapter": 58,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms58.mp3"
+        },
+        {
+          "chapter": 59,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms59.mp3"
+        },
+        {
+          "chapter": 60,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms60.mp3"
+        },
+        {
+          "chapter": 61,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms61.mp3"
+        },
+        {
+          "chapter": 62,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms62.mp3"
+        },
+        {
+          "chapter": 63,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms63.mp3"
+        },
+        {
+          "chapter": 64,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms64.mp3"
+        },
+        {
+          "chapter": 65,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms65.mp3"
+        },
+        {
+          "chapter": 66,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms66.mp3"
+        },
+        {
+          "chapter": 67,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms67.mp3"
+        },
+        {
+          "chapter": 68,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms68.mp3"
+        },
+        {
+          "chapter": 69,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms69.mp3"
+        },
+        {
+          "chapter": 70,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms70.mp3"
+        },
+        {
+          "chapter": 71,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms71.mp3"
+        },
+        {
+          "chapter": 72,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms72.mp3"
+        },
+        {
+          "chapter": 73,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms73.mp3"
+        },
+        {
+          "chapter": 74,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms74.mp3"
+        },
+        {
+          "chapter": 75,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms75.mp3"
+        },
+        {
+          "chapter": 76,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms76.mp3"
+        },
+        {
+          "chapter": 77,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms77.mp3"
+        },
+        {
+          "chapter": 78,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms78.mp3"
+        },
+        {
+          "chapter": 79,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms79.mp3"
+        },
+        {
+          "chapter": 80,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms80.mp3"
+        },
+        {
+          "chapter": 81,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms81.mp3"
+        },
+        {
+          "chapter": 82,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms82.mp3"
+        },
+        {
+          "chapter": 83,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms83.mp3"
+        },
+        {
+          "chapter": 84,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms84.mp3"
+        },
+        {
+          "chapter": 85,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms85.mp3"
+        },
+        {
+          "chapter": 86,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms86.mp3"
+        },
+        {
+          "chapter": 87,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms87.mp3"
+        },
+        {
+          "chapter": 88,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms88.mp3"
+        },
+        {
+          "chapter": 89,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms89.mp3"
+        },
+        {
+          "chapter": 90,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms90.mp3"
+        },
+        {
+          "chapter": 91,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms91.mp3"
+        },
+        {
+          "chapter": 92,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms92.mp3"
+        },
+        {
+          "chapter": 93,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms93.mp3"
+        },
+        {
+          "chapter": 94,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms94.mp3"
+        },
+        {
+          "chapter": 95,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms95.mp3"
+        },
+        {
+          "chapter": 96,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms96.mp3"
+        },
+        {
+          "chapter": 97,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms97.mp3"
+        },
+        {
+          "chapter": 98,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms98.mp3"
+        },
+        {
+          "chapter": 99,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms99.mp3"
+        },
+        {
+          "chapter": 100,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms100.mp3"
+        },
+        {
+          "chapter": 101,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms101.mp3"
+        },
+        {
+          "chapter": 102,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms102.mp3"
+        },
+        {
+          "chapter": 103,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms103.mp3"
+        },
+        {
+          "chapter": 104,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms104.mp3"
+        },
+        {
+          "chapter": 105,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms105.mp3"
+        },
+        {
+          "chapter": 106,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms106.mp3"
+        },
+        {
+          "chapter": 107,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms107.mp3"
+        },
+        {
+          "chapter": 108,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms108.mp3"
+        },
+        {
+          "chapter": 109,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms109.mp3"
+        },
+        {
+          "chapter": 110,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms110.mp3"
+        },
+        {
+          "chapter": 111,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms111.mp3"
+        },
+        {
+          "chapter": 112,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms112.mp3"
+        },
+        {
+          "chapter": 113,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms113.mp3"
+        },
+        {
+          "chapter": 114,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms114.mp3"
+        },
+        {
+          "chapter": 115,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms115.mp3"
+        },
+        {
+          "chapter": 116,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms116.mp3"
+        },
+        {
+          "chapter": 117,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms117.mp3"
+        },
+        {
+          "chapter": 118,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms118.mp3"
+        },
+        {
+          "chapter": 119,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms119.mp3"
+        },
+        {
+          "chapter": 120,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms120.mp3"
+        },
+        {
+          "chapter": 121,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms121.mp3"
+        },
+        {
+          "chapter": 122,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms122.mp3"
+        },
+        {
+          "chapter": 123,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms123.mp3"
+        },
+        {
+          "chapter": 124,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms124.mp3"
+        },
+        {
+          "chapter": 125,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms125.mp3"
+        },
+        {
+          "chapter": 126,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms126.mp3"
+        },
+        {
+          "chapter": 127,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms127.mp3"
+        },
+        {
+          "chapter": 128,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms128.mp3"
+        },
+        {
+          "chapter": 129,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms129.mp3"
+        },
+        {
+          "chapter": 130,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms130.mp3"
+        },
+        {
+          "chapter": 131,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms131.mp3"
+        },
+        {
+          "chapter": 132,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms132.mp3"
+        },
+        {
+          "chapter": 133,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms133.mp3"
+        },
+        {
+          "chapter": 134,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms134.mp3"
+        },
+        {
+          "chapter": 135,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms135.mp3"
+        },
+        {
+          "chapter": 136,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms136.mp3"
+        },
+        {
+          "chapter": 137,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms137.mp3"
+        },
+        {
+          "chapter": 138,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms138.mp3"
+        },
+        {
+          "chapter": 139,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms139.mp3"
+        },
+        {
+          "chapter": 140,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms140.mp3"
+        },
+        {
+          "chapter": 141,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms141.mp3"
+        },
+        {
+          "chapter": 142,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms142.mp3"
+        },
+        {
+          "chapter": 143,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms143.mp3"
+        },
+        {
+          "chapter": 144,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms144.mp3"
+        },
+        {
+          "chapter": 145,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms145.mp3"
+        },
+        {
+          "chapter": 146,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms146.mp3"
+        },
+        {
+          "chapter": 147,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms147.mp3"
+        },
+        {
+          "chapter": 148,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms148.mp3"
+        },
+        {
+          "chapter": 149,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms149.mp3"
+        },
+        {
+          "chapter": 150,
+          "audio": "https://cdn.kinyabible.com/oldTestament/19_psalms/psalms150.mp3"
+        }
+      ]
     },
     {
       "id": 20,
@@ -158,7 +2708,133 @@
       "chapters": 31,
       "category": "wisdom",
       "intro": "Proverbs offers wisdom for living faithfully in God’s world. It contrasts righteousness and wickedness, wisdom and folly, diligence and laziness. Rooted in the fear of the Lord, it guides practical daily life.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/20_proverbs/proverbs31.mp3"
+        }
+      ]
     },
     {
       "id": 21,
@@ -166,7 +2842,57 @@
       "chapters": 12,
       "category": "wisdom",
       "intro": "Ecclesiastes reflects on life’s fleeting nature and the emptiness of worldly pursuits. The Teacher explores meaning, toil, and mortality, finding vanity apart from God. True fulfillment is found in fearing God and keeping His commands.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/21_ecclesiastes/ecclesiastes12.mp3"
+        }
+      ]
     },
     {
       "id": 22,
@@ -174,7 +2900,41 @@
       "chapters": 8,
       "category": "wisdom",
       "intro": "Song of Songs is a poetic celebration of love and marital intimacy. It honors passion, commitment, and covenant joy as God’s design. The book also reflects God’s faithful love for His people.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/22_song_of_songs/song_of_songs1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/22_song_of_songs/song_of_songs2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/22_song_of_songs/song_of_songs3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/22_song_of_songs/song_of_songs4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/22_song_of_songs/song_of_songs5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/22_song_of_songs/song_of_songs6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/22_song_of_songs/song_of_songs7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/22_song_of_songs/song_of_songs8.mp3"
+        }
+      ]
     },
     {
       "id": 23,
@@ -182,7 +2942,273 @@
       "chapters": 66,
       "category": "major_prophet",
       "intro": "Isaiah proclaims judgment and hope, revealing God’s holiness and salvation. He announces the coming Messiah, the suffering servant, and God’s future kingdom. The book blends warning with promises of restoration and eternal peace.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah34.mp3"
+        },
+        {
+          "chapter": 35,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah35.mp3"
+        },
+        {
+          "chapter": 36,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah36.mp3"
+        },
+        {
+          "chapter": 37,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah37.mp3"
+        },
+        {
+          "chapter": 38,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah38.mp3"
+        },
+        {
+          "chapter": 39,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah39.mp3"
+        },
+        {
+          "chapter": 40,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah40.mp3"
+        },
+        {
+          "chapter": 41,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah41.mp3"
+        },
+        {
+          "chapter": 42,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah42.mp3"
+        },
+        {
+          "chapter": 43,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah43.mp3"
+        },
+        {
+          "chapter": 44,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah44.mp3"
+        },
+        {
+          "chapter": 45,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah45.mp3"
+        },
+        {
+          "chapter": 46,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah46.mp3"
+        },
+        {
+          "chapter": 47,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah47.mp3"
+        },
+        {
+          "chapter": 48,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah48.mp3"
+        },
+        {
+          "chapter": 49,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah49.mp3"
+        },
+        {
+          "chapter": 50,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah50.mp3"
+        },
+        {
+          "chapter": 51,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah51.mp3"
+        },
+        {
+          "chapter": 52,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah52.mp3"
+        },
+        {
+          "chapter": 53,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah53.mp3"
+        },
+        {
+          "chapter": 54,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah54.mp3"
+        },
+        {
+          "chapter": 55,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah55.mp3"
+        },
+        {
+          "chapter": 56,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah56.mp3"
+        },
+        {
+          "chapter": 57,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah57.mp3"
+        },
+        {
+          "chapter": 58,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah58.mp3"
+        },
+        {
+          "chapter": 59,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah59.mp3"
+        },
+        {
+          "chapter": 60,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah60.mp3"
+        },
+        {
+          "chapter": 61,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah61.mp3"
+        },
+        {
+          "chapter": 62,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah62.mp3"
+        },
+        {
+          "chapter": 63,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah63.mp3"
+        },
+        {
+          "chapter": 64,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah64.mp3"
+        },
+        {
+          "chapter": 65,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah65.mp3"
+        },
+        {
+          "chapter": 66,
+          "audio": "https://cdn.kinyabible.com/oldTestament/23_isaiah/isaiah66.mp3"
+        }
+      ]
     },
     {
       "id": 24,
@@ -190,7 +3216,217 @@
       "chapters": 52,
       "category": "major_prophet",
       "intro": "Jeremiah warns of judgment on Judah for its unfaithfulness. Despite rejection and hardship, he delivers God’s call to repentance. The book also promises a new covenant and hope beyond exile.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah34.mp3"
+        },
+        {
+          "chapter": 35,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah35.mp3"
+        },
+        {
+          "chapter": 36,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah36.mp3"
+        },
+        {
+          "chapter": 37,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah37.mp3"
+        },
+        {
+          "chapter": 38,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah38.mp3"
+        },
+        {
+          "chapter": 39,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah39.mp3"
+        },
+        {
+          "chapter": 40,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah40.mp3"
+        },
+        {
+          "chapter": 41,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah41.mp3"
+        },
+        {
+          "chapter": 42,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah42.mp3"
+        },
+        {
+          "chapter": 43,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah43.mp3"
+        },
+        {
+          "chapter": 44,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah44.mp3"
+        },
+        {
+          "chapter": 45,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah45.mp3"
+        },
+        {
+          "chapter": 46,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah46.mp3"
+        },
+        {
+          "chapter": 47,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah47.mp3"
+        },
+        {
+          "chapter": 48,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah48.mp3"
+        },
+        {
+          "chapter": 49,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah49.mp3"
+        },
+        {
+          "chapter": 50,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah50.mp3"
+        },
+        {
+          "chapter": 51,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah51.mp3"
+        },
+        {
+          "chapter": 52,
+          "audio": "https://cdn.kinyabible.com/oldTestament/24_jeremiah/jeremiah52.mp3"
+        }
+      ]
     },
     {
       "id": 25,
@@ -198,7 +3434,29 @@
       "chapters": 5,
       "category": "major_prophet",
       "intro": "Lamentations is a poetic mourning over Jerusalem’s destruction. It expresses grief, confession, and cries for mercy amid suffering. Yet it also affirms God’s steadfast love and faithfulness that never fail.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/25_lamentations/lamentations1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/25_lamentations/lamentations2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/25_lamentations/lamentations3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/25_lamentations/lamentations4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/25_lamentations/lamentations5.mp3"
+        }
+      ]
     },
     {
       "id": 26,
@@ -206,7 +3464,201 @@
       "chapters": 48,
       "category": "major_prophet",
       "intro": "Ezekiel shares visions of God’s glory, judgment, and restoration. He calls Israel to repent while portraying God’s holiness and presence. The book ends with hope of renewal and a future temple.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel28.mp3"
+        },
+        {
+          "chapter": 29,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel29.mp3"
+        },
+        {
+          "chapter": 30,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel30.mp3"
+        },
+        {
+          "chapter": 31,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel31.mp3"
+        },
+        {
+          "chapter": 32,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel32.mp3"
+        },
+        {
+          "chapter": 33,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel33.mp3"
+        },
+        {
+          "chapter": 34,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel34.mp3"
+        },
+        {
+          "chapter": 35,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel35.mp3"
+        },
+        {
+          "chapter": 36,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel36.mp3"
+        },
+        {
+          "chapter": 37,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel37.mp3"
+        },
+        {
+          "chapter": 38,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel38.mp3"
+        },
+        {
+          "chapter": 39,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel39.mp3"
+        },
+        {
+          "chapter": 40,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel40.mp3"
+        },
+        {
+          "chapter": 41,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel41.mp3"
+        },
+        {
+          "chapter": 42,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel42.mp3"
+        },
+        {
+          "chapter": 43,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel43.mp3"
+        },
+        {
+          "chapter": 44,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel44.mp3"
+        },
+        {
+          "chapter": 45,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel45.mp3"
+        },
+        {
+          "chapter": 46,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel46.mp3"
+        },
+        {
+          "chapter": 47,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel47.mp3"
+        },
+        {
+          "chapter": 48,
+          "audio": "https://cdn.kinyabible.com/oldTestament/26_ezekiel/ezekiel48.mp3"
+        }
+      ]
     },
     {
       "id": 27,
@@ -214,7 +3666,57 @@
       "chapters": 12,
       "category": "major_prophet",
       "intro": "Daniel tells of faithfulness in exile and God’s sovereignty over kingdoms. Through visions and miracles, God shows His plan for the future. The book emphasizes trust in God’s rule despite opposition.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/27_daniel/daniel12.mp3"
+        }
+      ]
     },
     {
       "id": 28,
@@ -222,7 +3724,65 @@
       "chapters": 14,
       "category": "minor_prophet",
       "intro": "Hosea uses marriage as a picture of God’s love for His unfaithful people. Despite Israel’s idolatry, God calls them back with compassion. The book highlights both judgment and redeeming love.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/28_hosea/hosea14.mp3"
+        }
+      ]
     },
     {
       "id": 29,
@@ -230,7 +3790,21 @@
       "chapters": 3,
       "category": "minor_prophet",
       "intro": "Joel describes a devastating locust plague as a picture of God’s judgment. He calls the people to repentance and promises restoration. The book points to God’s Spirit being poured out in the last days.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/29_joel/joel1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/29_joel/joel2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/29_joel/joel3.mp3"
+        }
+      ]
     },
     {
       "id": 30,
@@ -238,7 +3812,45 @@
       "chapters": 9,
       "category": "minor_prophet",
       "intro": "Amos warns Israel of coming judgment for injustice and idolatry. He calls for true worship expressed in righteousness and justice. The book ends with hope of restoration under David’s line.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/30_amos/amos1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/30_amos/amos2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/30_amos/amos3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/30_amos/amos4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/30_amos/amos5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/30_amos/amos6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/30_amos/amos7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/30_amos/amos8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/30_amos/amos9.mp3"
+        }
+      ]
     },
     {
       "id": 31,
@@ -246,7 +3858,13 @@
       "chapters": 1,
       "category": "minor_prophet",
       "intro": "Obadiah delivers judgment against Edom for its pride and cruelty. God’s justice is certain against all who oppose His people. The book ends with the promise of God’s kingdom triumphing.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/31_obadiah/obadiah1.mp3"
+        }
+      ]
     },
     {
       "id": 32,
@@ -254,7 +3872,25 @@
       "chapters": 4,
       "category": "minor_prophet",
       "intro": "Jonah tells of a reluctant prophet sent to Nineveh. Despite running away, Jonah witnesses God’s mercy toward repentant sinners. The story highlights God’s compassion for all nations.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/32_jonah/jonah1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/32_jonah/jonah2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/32_jonah/jonah3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/32_jonah/jonah4.mp3"
+        }
+      ]
     },
     {
       "id": 33,
@@ -262,7 +3898,37 @@
       "chapters": 7,
       "category": "minor_prophet",
       "intro": "Micah proclaims judgment for injustice and idolatry in Israel and Judah. He also promises the coming ruler from Bethlehem and God’s restoration. The book emphasizes justice, mercy, and walking humbly with God.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/33_micah/micah1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/33_micah/micah2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/33_micah/micah3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/33_micah/micah4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/33_micah/micah5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/33_micah/micah6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/33_micah/micah7.mp3"
+        }
+      ]
     },
     {
       "id": 34,
@@ -270,7 +3936,21 @@
       "chapters": 3,
       "category": "minor_prophet",
       "intro": "Nahum announces God’s judgment on Nineveh for its cruelty and pride. The book portrays God as both just and a refuge for His people. It assures that evil will not prevail forever.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/34_nahum/nahum1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/34_nahum/nahum2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/34_nahum/nahum3.mp3"
+        }
+      ]
     },
     {
       "id": 35,
@@ -278,7 +3958,21 @@
       "chapters": 3,
       "category": "minor_prophet",
       "intro": "Habakkuk questions God about injustice and suffering in the world. God answers with a call to live by faith and trust His timing. The book ends with a prayer of confidence in God’s salvation.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/35_habakkuk/habakkuk1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/35_habakkuk/habakkuk2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/35_habakkuk/habakkuk3.mp3"
+        }
+      ]
     },
     {
       "id": 36,
@@ -286,7 +3980,21 @@
       "chapters": 3,
       "category": "minor_prophet",
       "intro": "Zephaniah warns of the coming day of the Lord against sin and rebellion. He calls for repentance and promises future restoration for the faithful. The book highlights God’s judgment and redeeming love.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/36_zephaniah/zephaniah1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/36_zephaniah/zephaniah2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/36_zephaniah/zephaniah3.mp3"
+        }
+      ]
     },
     {
       "id": 37,
@@ -294,7 +4002,17 @@
       "chapters": 2,
       "category": "minor_prophet",
       "intro": "Haggai encourages the people to rebuild the temple after exile. He reminds them of God’s presence and promises greater glory to come. The book calls for renewed priorities and obedience.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/37_haggai/haggai1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/37_haggai/haggai2.mp3"
+        }
+      ]
     },
     {
       "id": 38,
@@ -302,7 +4020,65 @@
       "chapters": 14,
       "category": "minor_prophet",
       "intro": "Zechariah offers visions of encouragement and calls for repentance. He points to God’s coming King, the Messiah, who will bring peace. The book emphasizes hope, restoration, and God’s future kingdom.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/oldTestament/38_zechariah/zechariah14.mp3"
+        }
+      ]
     },
     {
       "id": 39,
@@ -310,7 +4086,25 @@
       "chapters": 4,
       "category": "minor_prophet",
       "intro": "Malachi rebukes Israel for neglecting worship and covenant faithfulness. He calls them to return to God with sincere devotion. The book promises a coming messenger and the day of the Lord.",
-      "testament": "oldTestament"
+      "testament": "oldTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/oldTestament/39_malachi/malachi1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/oldTestament/39_malachi/malachi2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/oldTestament/39_malachi/malachi3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/oldTestament/39_malachi/malachi4.mp3"
+        }
+      ]
     }
   ],
   "NewTestament": [
@@ -320,7 +4114,121 @@
       "chapters": 28,
       "category": "gospel",
       "intro": "Matthew presents Jesus as the promised Messiah and King. It emphasizes His teachings, miracles, and fulfillment of Old Testament prophecy. The book ends with the Great Commission to make disciples of all nations.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/newTestament/40_matthew/matthew28.mp3"
+        }
+      ]
     },
     {
       "id": 41,
@@ -328,7 +4236,73 @@
       "chapters": 16,
       "category": "gospel",
       "intro": "Mark portrays Jesus as the powerful Son of God and servant. It moves quickly through His miracles, teachings, and sacrifice. The gospel highlights discipleship and the call to follow Christ.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/newTestament/41_mark/mark16.mp3"
+        }
+      ]
     },
     {
       "id": 42,
@@ -336,7 +4310,105 @@
       "chapters": 24,
       "category": "gospel",
       "intro": "Luke emphasizes Jesus’ compassion and mission to all people. It contains parables, healings, and stories showing God’s mercy to the marginalized. The gospel highlights salvation as God’s gift through Christ.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/newTestament/42_luke/luke24.mp3"
+        }
+      ]
     },
     {
       "id": 43,
@@ -344,7 +4416,93 @@
       "chapters": 21,
       "category": "gospel",
       "intro": "John presents Jesus as the eternal Word and Son of God. Through signs and teachings, it shows that believing in Him brings life. The gospel emphasizes love, truth, and the Spirit’s work.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/newTestament/43_john/john21.mp3"
+        }
+      ]
     },
     {
       "id": 44,
@@ -352,7 +4510,121 @@
       "chapters": 28,
       "category": "history",
       "intro": "Acts narrates the birth and growth of the early Church through the work of the Holy Spirit. It follows Peter and Paul as they spread the gospel across the Roman Empire. The book emphasizes courage, faith, and God’s guidance in mission.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts22.mp3"
+        },
+        {
+          "chapter": 23,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts23.mp3"
+        },
+        {
+          "chapter": 24,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts24.mp3"
+        },
+        {
+          "chapter": 25,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts25.mp3"
+        },
+        {
+          "chapter": 26,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts26.mp3"
+        },
+        {
+          "chapter": 27,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts27.mp3"
+        },
+        {
+          "chapter": 28,
+          "audio": "https://cdn.kinyabible.com/newTestament/44_acts/acts28.mp3"
+        }
+      ]
     },
     {
       "id": 45,
@@ -360,7 +4632,73 @@
       "chapters": 16,
       "category": "pauline_epistle",
       "intro": "Romans presents a systematic explanation of salvation through faith in Christ. Paul teaches about sin, grace, justification, and living by the Spirit. The letter shows God’s plan for Jews and Gentiles alike.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/newTestament/45_romans/romans16.mp3"
+        }
+      ]
     },
     {
       "id": 46,
@@ -368,7 +4706,73 @@
       "chapters": 16,
       "category": "pauline_epistle",
       "intro": "1 Corinthians addresses divisions, immorality, and misuse of spiritual gifts in the church. Paul teaches unity, love, and proper worship. The book emphasizes practical Christian living and resurrection hope.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/newTestament/46_1_corinthians/1_corinthians16.mp3"
+        }
+      ]
     },
     {
       "id": 47,
@@ -376,7 +4780,61 @@
       "chapters": 13,
       "category": "pauline_epistle",
       "intro": "2 Corinthians defends Paul’s apostleship and ministry. He encourages generosity, reconciliation, and endurance in suffering. The letter emphasizes God’s comfort and power in weakness.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/47_2_corinthians/2_corinthians13.mp3"
+        }
+      ]
     },
     {
       "id": 48,
@@ -384,7 +4842,33 @@
       "chapters": 6,
       "category": "pauline_epistle",
       "intro": "Galatians teaches salvation by grace through faith, not by the law. Paul defends Christian freedom and calls believers to live by the Spirit. The book emphasizes identity in Christ and unity in the gospel.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/48_galatians/galatians1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/48_galatians/galatians2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/48_galatians/galatians3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/48_galatians/galatians4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/48_galatians/galatians5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/48_galatians/galatians6.mp3"
+        }
+      ]
     },
     {
       "id": 49,
@@ -392,7 +4876,33 @@
       "chapters": 6,
       "category": "pauline_epistle",
       "intro": "Ephesians explains the Church as Christ’s body and God’s eternal plan of salvation. Paul teaches unity, love, spiritual growth, and armor of God for spiritual battles.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/49_ephesians/ephesians1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/49_ephesians/ephesians2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/49_ephesians/ephesians3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/49_ephesians/ephesians4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/49_ephesians/ephesians5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/49_ephesians/ephesians6.mp3"
+        }
+      ]
     },
     {
       "id": 50,
@@ -400,7 +4910,25 @@
       "chapters": 4,
       "category": "pauline_epistle",
       "intro": "Philippians is a letter of joy and encouragement. Paul thanks the believers for support, exhorts humility, and urges steadfast faith. The book emphasizes rejoicing in the Lord in all circumstances.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/50_philippians/philippians1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/50_philippians/philippians2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/50_philippians/philippians3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/50_philippians/philippians4.mp3"
+        }
+      ]
     },
     {
       "id": 51,
@@ -408,7 +4936,25 @@
       "chapters": 4,
       "category": "pauline_epistle",
       "intro": "Colossians teaches the supremacy of Christ over all creation and false teachings. Paul encourages believers to live in Christ and bear fruit through love and good works.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/51_colossians/colossians1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/51_colossians/colossians2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/51_colossians/colossians3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/51_colossians/colossians4.mp3"
+        }
+      ]
     },
     {
       "id": 52,
@@ -416,7 +4962,29 @@
       "chapters": 5,
       "category": "pauline_epistle",
       "intro": "1 Thessalonians encourages believers to stand firm in faith and hope. Paul instructs on holy living, love, and readiness for Christ’s return. The book emphasizes perseverance and comfort in trials.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/52_1_thessalonians/1_thessalonians1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/52_1_thessalonians/1_thessalonians2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/52_1_thessalonians/1_thessalonians3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/52_1_thessalonians/1_thessalonians4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/52_1_thessalonians/1_thessalonians5.mp3"
+        }
+      ]
     },
     {
       "id": 53,
@@ -424,7 +4992,21 @@
       "chapters": 3,
       "category": "pauline_epistle",
       "intro": "2 Thessalonians corrects misunderstandings about the Day of the Lord. Paul calls for steadfastness, work ethic, and encouragement, highlighting God’s justice and faithfulness.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/53_2_thessalonians/2_thessalonians1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/53_2_thessalonians/2_thessalonians2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/53_2_thessalonians/2_thessalonians3.mp3"
+        }
+      ]
     },
     {
       "id": 54,
@@ -432,7 +5014,33 @@
       "chapters": 6,
       "category": "pauline_epistle",
       "intro": "1 Timothy gives guidance for church leadership, sound teaching, and godly living. Paul instructs Timothy on prayer, doctrine, and character needed for ministry.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/54_1_timothy/1_timothy1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/54_1_timothy/1_timothy2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/54_1_timothy/1_timothy3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/54_1_timothy/1_timothy4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/54_1_timothy/1_timothy5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/54_1_timothy/1_timothy6.mp3"
+        }
+      ]
     },
     {
       "id": 55,
@@ -440,7 +5048,25 @@
       "chapters": 4,
       "category": "pauline_epistle",
       "intro": "2 Timothy is Paul’s final letter, urging faithfulness and endurance. He encourages Timothy to continue preaching the gospel boldly despite persecution.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/55_2_timothy/2_timothy1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/55_2_timothy/2_timothy2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/55_2_timothy/2_timothy3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/55_2_timothy/2_timothy4.mp3"
+        }
+      ]
     },
     {
       "id": 56,
@@ -448,7 +5074,21 @@
       "chapters": 3,
       "category": "pauline_epistle",
       "intro": "Titus provides guidance on church organization, teaching sound doctrine, and encouraging good works among believers.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/56_titus/titus1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/56_titus/titus2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/56_titus/titus3.mp3"
+        }
+      ]
     },
     {
       "id": 57,
@@ -456,7 +5096,13 @@
       "chapters": 1,
       "category": "pauline_epistle",
       "intro": "Philemon is a personal letter appealing for forgiveness and reconciliation between a slave and his master. It reflects Christian love, mercy, and practical application of faith.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/57_philemon/philemon1.mp3"
+        }
+      ]
     },
     {
       "id": 58,
@@ -464,7 +5110,61 @@
       "chapters": 13,
       "category": "pauline_epistle",
       "intro": "Hebrews presents Christ as the perfect high priest and fulfillment of the Old Testament. It encourages perseverance, faith, and understanding God’s promises.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/58_hebrews/hebrews13.mp3"
+        }
+      ]
     },
     {
       "id": 59,
@@ -472,7 +5172,29 @@
       "chapters": 5,
       "category": "general_epistle",
       "intro": "James emphasizes practical faith expressed in works, patience, and wisdom. He calls believers to live righteous, faithful, and humble lives.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/59_james/james1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/59_james/james2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/59_james/james3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/59_james/james4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/59_james/james5.mp3"
+        }
+      ]
     },
     {
       "id": 60,
@@ -480,7 +5202,29 @@
       "chapters": 5,
       "category": "general_epistle",
       "intro": "1 Peter encourages believers facing persecution. It teaches hope, holiness, and submission to God while enduring suffering.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/60_1_peter/1_peter1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/60_1_peter/1_peter2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/60_1_peter/1_peter3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/60_1_peter/1_peter4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/60_1_peter/1_peter5.mp3"
+        }
+      ]
     },
     {
       "id": 61,
@@ -488,7 +5232,21 @@
       "chapters": 3,
       "category": "general_epistle",
       "intro": "2 Peter warns against false teachers and reminds believers of Christ’s return. It encourages growth in faith and knowledge of God’s promises.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/61_2_peter/2_peter1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/61_2_peter/2_peter2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/61_2_peter/2_peter3.mp3"
+        }
+      ]
     },
     {
       "id": 62,
@@ -496,7 +5254,29 @@
       "chapters": 5,
       "category": "general_epistle",
       "intro": "1 John stresses love, obedience, and assurance of salvation. It contrasts truth and falsehood, emphasizing God’s love in Christ.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/62_1_john/1_john1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/62_1_john/1_john2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/62_1_john/1_john3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/62_1_john/1_john4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/62_1_john/1_john5.mp3"
+        }
+      ]
     },
     {
       "id": 63,
@@ -504,7 +5284,13 @@
       "chapters": 1,
       "category": "general_epistle",
       "intro": "2 John warns against deceivers and encourages walking in truth and love. It emphasizes faithfulness to God’s commandments.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/63_2_john/2_john1.mp3"
+        }
+      ]
     },
     {
       "id": 64,
@@ -512,7 +5298,13 @@
       "chapters": 1,
       "category": "general_epistle",
       "intro": "3 John commends hospitality and faithfulness among believers. It highlights support for those spreading the gospel and warns against pride and opposition.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/64_3_john/3_john1.mp3"
+        }
+      ]
     },
     {
       "id": 65,
@@ -520,7 +5312,13 @@
       "chapters": 1,
       "category": "general_epistle",
       "intro": "Jude urges believers to contend for the faith and warns against false teachers. It emphasizes God’s judgment and the need for perseverance in truth.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/65_jude/jude1.mp3"
+        }
+      ]
     },
     {
       "id": 66,
@@ -528,8 +5326,97 @@
       "chapters": 22,
       "category": "prophecy",
       "intro": "Revelation unveils visions of Christ’s return, final judgment, and the establishment of God’s eternal kingdom. It encourages faithfulness, hope, and perseverance amid trials.",
-      "testament": "newTestament"
+      "testament": "newTestament",
+      "chaptersData": [
+        {
+          "chapter": 1,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation1.mp3"
+        },
+        {
+          "chapter": 2,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation2.mp3"
+        },
+        {
+          "chapter": 3,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation3.mp3"
+        },
+        {
+          "chapter": 4,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation4.mp3"
+        },
+        {
+          "chapter": 5,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation5.mp3"
+        },
+        {
+          "chapter": 6,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation6.mp3"
+        },
+        {
+          "chapter": 7,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation7.mp3"
+        },
+        {
+          "chapter": 8,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation8.mp3"
+        },
+        {
+          "chapter": 9,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation9.mp3"
+        },
+        {
+          "chapter": 10,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation10.mp3"
+        },
+        {
+          "chapter": 11,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation11.mp3"
+        },
+        {
+          "chapter": 12,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation12.mp3"
+        },
+        {
+          "chapter": 13,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation13.mp3"
+        },
+        {
+          "chapter": 14,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation14.mp3"
+        },
+        {
+          "chapter": 15,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation15.mp3"
+        },
+        {
+          "chapter": 16,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation16.mp3"
+        },
+        {
+          "chapter": 17,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation17.mp3"
+        },
+        {
+          "chapter": 18,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation18.mp3"
+        },
+        {
+          "chapter": 19,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation19.mp3"
+        },
+        {
+          "chapter": 20,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation20.mp3"
+        },
+        {
+          "chapter": 21,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation21.mp3"
+        },
+        {
+          "chapter": 22,
+          "audio": "https://cdn.kinyabible.com/newTestament/66_revelation/revelation22.mp3"
+        }
+      ]
     }
   ]
 }
-
