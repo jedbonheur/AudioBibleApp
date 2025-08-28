@@ -65,8 +65,9 @@ export default function ChapterViewScreen({ navigation }) {
   const [audioUrl, setAudioUrl] = useState(null);
   const [latestStatus, setLatestStatus] = useState(null);
   const [currentVerse, setCurrentVerse] = useState(null);
-  const [syncOffsetMs, setSyncOffsetMs] = useState(0);
+  const [syncOffsetMs] = useState(0);
   const [seekToMs, setSeekToMs] = useState(null);
+  const [showGoToPlaying, setShowGoToPlaying] = useState(false);
 
   const flatListRef = useRef(null);
   const verseLayoutsRef = useRef({});
@@ -83,6 +84,26 @@ export default function ChapterViewScreen({ navigation }) {
   const USER_PLAY_DEBOUNCE_MS = 800;
   const isUserDraggingRef = useRef(false);
   const audioPlayerRef = useRef(null);
+  const autoReturnTimerRef = useRef(null);
+  const centerRetryTimerRef = useRef(null);
+  const visibleVersesRef = useRef(new Set());
+  const onViewableItemsChangedRef = useRef(({ viewableItems }) => {
+    try {
+      const set = new Set();
+      for (const vi of viewableItems || []) {
+        const vkey = vi?.item?.verse;
+        if (vkey) set.add(vkey);
+      }
+      visibleVersesRef.current = set;
+      if (currentVerse && isPlaying) {
+        setShowGoToPlaying(!set.has(currentVerse));
+      }
+    } catch (e) {}
+  });
+  const viewabilityConfigRef = useRef({
+    itemVisiblePercentThreshold: 10,
+    minimumViewTime: 60,
+  });
 
   useEffect(() => {
     let mounted = true;
@@ -239,6 +260,10 @@ export default function ChapterViewScreen({ navigation }) {
               setIsPlaying(true);
             }
           }
+          // center the tapped verse immediately
+          try {
+            centerVerse(item.verse, true);
+          } catch (e) {}
         }}
         onLayout={(e) => {
           try {
@@ -290,6 +315,39 @@ export default function ChapterViewScreen({ navigation }) {
       }
     }
     return { length, offset, index };
+  };
+
+  // Determine if a verse is currently visible using FlatList's viewability
+  const isVerseVisible = (verseKey) => {
+    return visibleVersesRef.current.has(verseKey);
+  };
+
+  // Scroll so that a specific verse is centered in the viewport
+  const centerVerse = (verseKey, animated = true) => {
+    try {
+      const idx = versesArray.findIndex((v) => v.verse === verseKey);
+      if (idx < 0) return;
+      const now = Date.now();
+      if (flatListRef.current && flatListRef.current.scrollToIndex) {
+        try {
+          flatListRef.current.scrollToIndex({ index: idx, viewPosition: 0.5, animated });
+          lastScrolledVerseRef.current = verseKey;
+          lastAutoScrollAtRef.current = now;
+          // Schedule a second pass to ensure exact centering after the item renders
+          if (centerRetryTimerRef.current) clearTimeout(centerRetryTimerRef.current);
+          centerRetryTimerRef.current = setTimeout(() => {
+            try {
+              flatListRef.current.scrollToIndex({ index: idx, viewPosition: 0.5, animated: true });
+            } catch (e) {}
+          }, 80);
+          return;
+        } catch (e) {
+          // ignore and exit
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
   };
 
   useEffect(() => {
@@ -360,33 +418,49 @@ export default function ChapterViewScreen({ navigation }) {
         return;
       }
 
-      if (flatListRef.current && flatListRef.current.scrollToIndex) {
-        try {
-          flatListRef.current.scrollToIndex({ index: idx, viewPosition: 0.4, animated: true });
-          lastScrolledVerseRef.current = currentVerse;
-          lastAutoScrollAtRef.current = now;
-          return;
-        } catch (e) {
-          // fall through to offset fallback
-        }
-      }
-
-      const layout = verseLayoutsRef.current[currentVerse];
-      if (layout && flatListRef.current && flatListRef.current.scrollToOffset) {
-        const listHeight = flatListHeightRef.current || 0;
-        const offset = Math.max(0, layout.y - listHeight / 2 + layout.height / 2 - 16);
-        try {
-          flatListRef.current.scrollToOffset({ offset, animated: true });
-          lastScrolledVerseRef.current = currentVerse;
-          lastAutoScrollAtRef.current = now;
-        } catch (e) {
-          // ignore
-        }
-      }
+      // center the verse
+      centerVerse(currentVerse, true);
     } catch (e) {
       // ignore
     }
   }, [currentVerse, versesArray]);
+
+  // Track visibility of the current verse to show/hide the "Go to playing verse" button
+  useEffect(() => {
+    try {
+      if (!currentVerse || !isPlaying) {
+        setShowGoToPlaying(false);
+        return;
+      }
+      const visible = isVerseVisible(currentVerse);
+      setShowGoToPlaying(!visible);
+    } catch (e) {}
+  }, [currentVerse, isPlaying]);
+
+  // Auto-return after 5 seconds if user hasn't tapped the button
+  useEffect(() => {
+    try {
+      if (autoReturnTimerRef.current) {
+        clearTimeout(autoReturnTimerRef.current);
+        autoReturnTimerRef.current = null;
+      }
+      if (showGoToPlaying && isPlaying && currentVerse) {
+        autoReturnTimerRef.current = setTimeout(() => {
+          centerVerse(currentVerse, true);
+          setShowGoToPlaying(false);
+        }, 5000);
+      }
+    } catch (e) {}
+
+    return () => {
+      try {
+        if (autoReturnTimerRef.current) clearTimeout(autoReturnTimerRef.current);
+        autoReturnTimerRef.current = null;
+        if (centerRetryTimerRef.current) clearTimeout(centerRetryTimerRef.current);
+        centerRetryTimerRef.current = null;
+      } catch (e) {}
+    };
+  }, [showGoToPlaying, isPlaying, currentVerse]);
 
   return (
     <LinearGradient
@@ -424,13 +498,20 @@ export default function ChapterViewScreen({ navigation }) {
             initialNumToRender={20}
             windowSize={21}
             removeClippedSubviews={false}
-            getItemLayout={(data, index) => computeItemLayout(index)}
+            // Using viewability callbacks to detect visibility
+            onViewableItemsChanged={onViewableItemsChangedRef.current}
+            viewabilityConfig={viewabilityConfigRef.current}
             onLayout={(e) => {
               flatListHeightRef.current = e.nativeEvent.layout.height;
             }}
             onScroll={(e) => {
               try {
                 scrollOffsetRef.current = e.nativeEvent.contentOffset.y || 0;
+                // update button visibility while scrolling
+                if (currentVerse && isPlaying) {
+                  const visible = isVerseVisible(currentVerse);
+                  setShowGoToPlaying(!visible);
+                }
               } catch (err) {}
             }}
             onScrollBeginDrag={() => {
@@ -443,6 +524,11 @@ export default function ChapterViewScreen({ navigation }) {
               try {
                 isUserDraggingRef.current = false;
                 lastUserScrollAtRef.current = Date.now();
+                // re-evaluate visibility after user stops dragging
+                if (currentVerse && isPlaying) {
+                  const visible = isVerseVisible(currentVerse);
+                  setShowGoToPlaying(!visible);
+                }
               } catch (e) {}
             }}
             onMomentumScrollBegin={() => {
@@ -454,11 +540,31 @@ export default function ChapterViewScreen({ navigation }) {
               try {
                 isUserDraggingRef.current = false;
                 lastUserScrollAtRef.current = Date.now();
+                if (currentVerse && isPlaying) {
+                  const visible = isVerseVisible(currentVerse);
+                  setShowGoToPlaying(!visible);
+                }
               } catch (e) {}
             }}
             scrollEventThrottle={100}
           />
         )}
+
+        {showGoToPlaying && isPlaying && currentVerse ? (
+          <View style={styles.goToPlayingWrapper} pointerEvents="box-none">
+            <TouchableOpacity
+              style={styles.goToPlayingButton}
+              activeOpacity={0.9}
+              onPress={() => {
+                centerVerse(currentVerse, true);
+                setShowGoToPlaying(false);
+              }}
+            >
+              <Ionicons name="musical-notes" size={16} color="#fff" style={{ marginRight: 6 }} />
+              <Text style={styles.goToPlayingText}>Go to playing verse</Text>
+            </TouchableOpacity>
+          </View>
+        ) : null}
 
         <BottomController
           book={book}
@@ -512,26 +618,7 @@ export default function ChapterViewScreen({ navigation }) {
           }}
         />
 
-        <View style={styles.debugOverlay} pointerEvents="box-none">
-          <Text style={styles.debugTitle}>Sync</Text>
-          <Text style={styles.debugText}>reported: {latestStatus?.positionMillis ?? '—'} ms</Text>
-          <Text style={styles.debugText}>
-            applied: {(latestStatus?.positionMillis ?? 0) + syncOffsetMs} ms
-          </Text>
-          <Text style={styles.debugText}>offset: {syncOffsetMs} ms</Text>
-          <Text style={styles.debugText}>matched verse: {currentVerse ?? '—'}</Text>
-          <View style={{ flexDirection: 'row' }}>
-            <TouchableOpacity
-              onPress={() => setSyncOffsetMs((s) => s - 100)}
-              style={{ marginRight: 12 }}
-            >
-              <Text style={styles.debugText}>-100ms</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setSyncOffsetMs((s) => s + 100)}>
-              <Text style={styles.debugText}>+100ms</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+        {/* Debug overlay removed */}
 
         <Controller
           visible={controllerVisible}
@@ -604,25 +691,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     textAlign: 'center',
   },
-  debugOverlay: {
-    position: 'absolute',
-    left: 12,
-    right: 12,
-    bottom: 72,
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    padding: 8,
-    borderRadius: 8,
-  },
-  debugTitle: {
-    color: '#ffffffaa',
-    fontSize: 11,
-    fontWeight: '700',
-  },
-  debugText: {
-    color: '#fff',
-    fontSize: 12,
-    marginBottom: 6,
-  },
   activeVerseRow: {
     backgroundColor: 'rgba(255,255,255,0.06)',
     borderRadius: 8,
@@ -633,5 +701,26 @@ const styles = StyleSheet.create({
   },
   activeVerseFooter: {
     color: '#ffffffaa',
+  },
+  goToPlayingWrapper: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 88, // above bottom controller
+    alignItems: 'center',
+  },
+  goToPlayingButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 16,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: 'rgba(255,255,255,0.3)',
+  },
+  goToPlayingText: {
+    color: '#fff',
+    fontWeight: '600',
   },
 });
