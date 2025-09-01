@@ -15,6 +15,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import theme from '@theme/theme';
 import { Paragraph } from '@typography/Typography';
 import Controller from '@components/Controller';
+import { getBackgroundMusicUrlById } from '@data/backgroundMusic';
 import BottomController from '@components/BottomController';
 import AudioPlayer from '@components/AudioPlayer';
 
@@ -61,6 +62,12 @@ export default function ChapterViewScreen({ navigation }) {
   const [controllerVisible, setControllerVisible] = useState(false);
   const [fontSize, setFontSize] = useState(16);
   const [music, setMusic] = useState('none');
+  const [bgMusicUrl, setBgMusicUrl] = useState(null);
+  const [bgVolume, setBgVolume] = useState(0.3);
+  const [bibleVolume, setBibleVolume] = useState(1.0);
+  const [masterVolume, setMasterVolume] = useState(1.0);
+  const [bibleRate, setBibleRate] = useState(1.5);
+  const [settingsLoaded, setSettingsLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioUrl, setAudioUrl] = useState(null);
   const [latestStatus, setLatestStatus] = useState(null);
@@ -85,6 +92,7 @@ export default function ChapterViewScreen({ navigation }) {
   const USER_PLAY_DEBOUNCE_MS = 800;
   const isUserDraggingRef = useRef(false);
   const audioPlayerRef = useRef(null);
+  const bgPlayerRef = useRef(null);
   const autoReturnTimerRef = useRef(null);
   const centerRetryTimerRef = useRef(null);
   const visibleVersesRef = useRef(new Set());
@@ -115,7 +123,36 @@ export default function ChapterViewScreen({ navigation }) {
           const n = parseInt(stored, 10);
           if (!Number.isNaN(n)) setFontSize(n);
         }
+        // Load persisted music + volumes
+        try {
+          const entries = await AsyncStorage.multiGet([
+            'bg_music_selected',
+            'bg_volume',
+            'bible_volume',
+            'master_volume',
+            'bible_rate',
+          ]);
+          const map = Object.fromEntries(entries || []);
+          if (mounted && map.bg_music_selected) setMusic(map.bg_music_selected || 'none');
+          if (mounted && map.bg_volume) {
+            const v = Math.max(0, Math.min(1, parseFloat(map.bg_volume)));
+            if (!Number.isNaN(v)) setBgVolume(v);
+          }
+          if (mounted && map.bible_volume) {
+            const v = Math.max(0, Math.min(1, parseFloat(map.bible_volume)));
+            if (!Number.isNaN(v)) setBibleVolume(v);
+          }
+          if (mounted && map.master_volume) {
+            const v = Math.max(0, Math.min(1, parseFloat(map.master_volume)));
+            if (!Number.isNaN(v)) setMasterVolume(v);
+          }
+          if (mounted && map.bible_rate) {
+            const r = Math.max(0.75, Math.min(2.0, parseFloat(map.bible_rate)));
+            if (!Number.isNaN(r)) setBibleRate(r);
+          }
+        } catch (e) {}
       } catch (e) {}
+      if (mounted) setSettingsLoaded(true);
     })();
     return () => (mounted = false);
   }, []);
@@ -127,6 +164,22 @@ export default function ChapterViewScreen({ navigation }) {
       } catch (e) {}
     })();
   }, [fontSize]);
+
+  // Persist music selection and volumes
+  useEffect(() => {
+    if (!settingsLoaded) return;
+    (async () => {
+      try {
+        await AsyncStorage.multiSet([
+          ['bg_music_selected', music || 'none'],
+          ['bg_volume', String(Math.max(0, Math.min(1, bgVolume)))],
+          ['bible_volume', String(Math.max(0, Math.min(1, bibleVolume)))],
+          ['master_volume', String(Math.max(0, Math.min(1, masterVolume)))],
+          ['bible_rate', String(Math.max(0.75, Math.min(2.0, bibleRate)))],
+        ]);
+      } catch (e) {}
+    })();
+  }, [settingsLoaded, music, bgVolume, bibleVolume, masterVolume, bibleRate]);
 
   const fetchChapter = async (chapterBook, { forceRefresh = false } = {}) => {
     const key = chapterCacheKey(chapterBook);
@@ -216,6 +269,20 @@ export default function ChapterViewScreen({ navigation }) {
   useEffect(() => {
     if (autoplay && audioUrl) setIsPlaying(true);
   }, [autoplay, audioUrl]);
+
+  // Resolve selected background music URL from static list
+  useEffect(() => {
+    try {
+      if (!music || music === 'none') {
+        setBgMusicUrl(null);
+        return;
+      }
+      const url = getBackgroundMusicUrlById(music);
+      setBgMusicUrl(url);
+    } catch (_) {
+      setBgMusicUrl(null);
+    }
+  }, [music]);
 
   const gradientColors = [theme.bibleCategory[book?.category] || '#fffdfdff', '#030100d5'];
 
@@ -631,6 +698,9 @@ export default function ChapterViewScreen({ navigation }) {
           ref={audioPlayerRef}
           sourceUrl={audioUrl}
           play={isPlaying}
+          volume={Math.max(0, Math.min(1, bibleVolume * masterVolume))}
+          rate={bibleRate}
+          preservePitch={true}
           seekToMs={seekToMs}
           onSeekComplete={() => setSeekToMs(null)}
           onStatusChange={(status) => {
@@ -653,6 +723,25 @@ export default function ChapterViewScreen({ navigation }) {
           }}
         />
 
+        {/* Background music player: plays on loop while bible is playing */}
+        {bgMusicUrl ? (
+          <AudioPlayer
+            ref={bgPlayerRef}
+            sourceUrl={bgMusicUrl}
+            play={!!isPlaying}
+            volume={Math.max(0, Math.min(1, bgVolume * masterVolume))}
+            onStatusChange={(status) => {
+              // loop background music
+              try {
+                if (status?.didJustFinish && bgPlayerRef.current?.play) {
+                  bgPlayerRef.current.seek?.(0);
+                  bgPlayerRef.current.play();
+                }
+              } catch {}
+            }}
+          />
+        ) : null}
+
         {/* debug overlay removed */}
 
         <Controller
@@ -664,8 +753,15 @@ export default function ChapterViewScreen({ navigation }) {
           selectedMusic={music}
           onSelectMusic={(m) => {
             setMusic(m);
-            setControllerVisible(false);
           }}
+          bgVolume={bgVolume}
+          onBgVolumeChange={setBgVolume}
+          bibleVolume={bibleVolume}
+          onBibleVolumeChange={setBibleVolume}
+          masterVolume={masterVolume}
+          onMasterVolumeChange={setMasterVolume}
+          bibleRate={bibleRate}
+          onBibleRateChange={setBibleRate}
           bookLabel={`${book?.name} - ${book.chapter}`}
           versesCount={data?.verses ? Object.keys(data.verses).length : 0}
         />

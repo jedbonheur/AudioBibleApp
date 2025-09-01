@@ -8,7 +8,16 @@ import { Audio as AV } from 'expo-av';
 // Accepts `seekToMs` (number) to seek to a position in milliseconds and
 // calls `onSeekComplete` after the seek finishes.
 function AudioPlayer(
-  { sourceUrl, play = false, onStatusChange, seekToMs = null, onSeekComplete = null },
+  {
+    sourceUrl,
+    play = false,
+    onStatusChange,
+    seekToMs = null,
+    onSeekComplete = null,
+    volume = 1.0,
+    rate = 1.0,
+    preservePitch = false,
+  },
   ref,
 ) {
   const player = useAudioPlayer?.() || null;
@@ -79,7 +88,10 @@ function AudioPlayer(
             allowsRecordingIOS: false,
             playsInSilentModeIOS: true,
             staysActiveInBackground: true,
-            shouldDuckAndroid: true,
+            // Do not mix with other audio
+            interruptionModeIOS: AV.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+            interruptionModeAndroid: AV.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+            shouldDuckAndroid: false,
             playThroughEarpieceAndroid: false,
           });
           try {
@@ -129,7 +141,7 @@ function AudioPlayer(
         }
 
         // Prefer expo-av on iOS to ensure reliable silent-mode behavior
-        const preferAV = Platform.OS === 'ios';
+        const preferAV = Platform.OS === 'ios' || !!preservePitch;
         // Try expo-audio first unless iOS prefers AV
         usingAVRef.current = false;
         let expoAudioLoaded = false;
@@ -155,9 +167,15 @@ function AudioPlayer(
             if (player && typeof player.setIsMuted === 'function') await player.setIsMuted(false);
             if (player && typeof player.setIsMutedAsync === 'function')
               await player.setIsMutedAsync(false);
-            if (player && typeof player.setVolume === 'function') await player.setVolume(1.0);
+            if (player && typeof player.setVolume === 'function') await player.setVolume(volume);
             if (player && typeof player.setVolumeAsync === 'function')
-              await player.setVolumeAsync(1.0);
+              await player.setVolumeAsync(volume);
+            // set rate if supported
+            if (player && typeof player.setRateAsync === 'function')
+              await player.setRateAsync(rate);
+            else if (player && typeof player.setPlaybackRate === 'function')
+              await player.setPlaybackRate(rate);
+            else if (player && typeof player.setRate === 'function') await player.setRate(rate);
           } catch (_) {}
         }
 
@@ -221,7 +239,9 @@ function AudioPlayer(
               allowsRecordingIOS: false,
               playsInSilentModeIOS: true,
               staysActiveInBackground: true,
-              shouldDuckAndroid: true,
+              interruptionModeIOS: AV.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+              interruptionModeAndroid: AV.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+              shouldDuckAndroid: false,
             });
             try {
               await AV.setIsEnabledAsync(true);
@@ -230,13 +250,29 @@ function AudioPlayer(
           try {
             const { sound } = await AV.Sound.createAsync(
               { uri: sourceUrl },
-              { shouldPlay: false, isMuted: false, volume: 1.0 },
+              {
+                shouldPlay: false,
+                isMuted: false,
+                volume: volume,
+                rate: rate,
+                shouldCorrectPitch: !!preservePitch,
+                pitchCorrectionQuality: 'high',
+              },
             );
             avSoundRef.current = sound;
             usingAVRef.current = true;
             try {
               await sound.setIsMutedAsync(false);
-              await sound.setVolumeAsync(1.0);
+              await sound.setVolumeAsync(volume);
+              // set rate for AV
+              if (typeof sound.setStatusAsync === 'function')
+                await sound.setStatusAsync({
+                  rate,
+                  shouldCorrectPitch: !!preservePitch,
+                  pitchCorrectionQuality: 'high',
+                });
+              else if (typeof sound.setRateAsync === 'function')
+                await sound.setRateAsync(rate, !!preservePitch, 'high');
             } catch (_) {}
             sound.setOnPlaybackStatusUpdate((status) => {
               onStatusChange && onStatusChange({ ...status, _engine: 'expo-av' });
@@ -356,6 +392,52 @@ function AudioPlayer(
       }
     })();
   }, [seekToMs, player]);
+
+  // respond to volume changes
+  useEffect(() => {
+    (async () => {
+      try {
+        const v = Math.max(0, Math.min(1, Number(volume) || 0));
+        if (usingAVRef.current) {
+          if (avSoundRef.current) await avSoundRef.current.setVolumeAsync(v);
+        } else if (player) {
+          if (typeof player.setVolumeAsync === 'function') await player.setVolumeAsync(v);
+          else if (typeof player.setVolume === 'function') await player.setVolume(v);
+        }
+      } catch (_) {}
+    })();
+  }, [volume, player]);
+
+  // respond to rate changes
+  useEffect(() => {
+    (async () => {
+      try {
+        const r = Math.max(0.75, Math.min(2.0, Number(rate) || 1));
+        if (usingAVRef.current) {
+          if (avSoundRef.current) {
+            if (typeof avSoundRef.current.setStatusAsync === 'function')
+              await avSoundRef.current.setStatusAsync({
+                rate: r,
+                shouldCorrectPitch: !!preservePitch,
+                pitchCorrectionQuality: 'high',
+              });
+            else if (typeof avSoundRef.current.setRateAsync === 'function')
+              await avSoundRef.current.setRateAsync(r, !!preservePitch, 'high');
+            // Nudge playback so changes take effect immediately when playing
+            try {
+              if (play) {
+                await avSoundRef.current.playAsync();
+              }
+            } catch (_) {}
+          }
+        } else if (player) {
+          if (typeof player.setRateAsync === 'function') await player.setRateAsync(r);
+          else if (typeof player.setPlaybackRate === 'function') await player.setPlaybackRate(r);
+          else if (typeof player.setRate === 'function') await player.setRate(r);
+        }
+      } catch (_) {}
+    })();
+  }, [rate, player, play, preservePitch]);
 
   return null; // invisible player
 }

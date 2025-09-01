@@ -23,8 +23,10 @@ export default function App() {
           await AV.setAudioModeAsync({
             playsInSilentModeIOS: true,
             staysActiveInBackground: true,
-            shouldDuckAndroid: true,
+            shouldDuckAndroid: false,
             allowsRecordingIOS: false,
+            interruptionModeIOS: AV.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+            interruptionModeAndroid: AV.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
           });
           try {
             await AV.setIsEnabledAsync(true);
