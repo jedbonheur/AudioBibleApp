@@ -701,6 +701,7 @@ export default function ChapterViewScreen({ navigation }) {
           volume={Math.max(0, Math.min(1, bibleVolume * masterVolume))}
           rate={bibleRate}
           preservePitch={true}
+          exclusiveFocus={true}
           seekToMs={seekToMs}
           onSeekComplete={() => setSeekToMs(null)}
           onStatusChange={(status) => {
@@ -730,6 +731,7 @@ export default function ChapterViewScreen({ navigation }) {
             sourceUrl={bgMusicUrl}
             play={!!isPlaying}
             volume={Math.max(0, Math.min(1, bgVolume * masterVolume))}
+            loop={true}
             onStatusChange={(status) => {
               // loop background music
               try {

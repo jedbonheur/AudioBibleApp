@@ -1,6 +1,10 @@
 import { registerRootComponent } from 'expo';
+import TrackPlayer from 'react-native-track-player';
 
 import App from './App';
+
+// Register background playback service (require form recommended by Track Player)
+TrackPlayer.registerPlaybackService(() => require('./player/service').default);
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in Expo Go or in a native build,

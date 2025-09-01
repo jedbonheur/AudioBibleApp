@@ -17,6 +17,8 @@ function AudioPlayer(
     volume = 1.0,
     rate = 1.0,
     preservePitch = false,
+    exclusiveFocus = true,
+    loop = false,
   },
   ref,
 ) {
@@ -140,8 +142,8 @@ function AudioPlayer(
           if (onStatusChange) onStatusChange({ error: String(headErr) });
         }
 
-        // Prefer expo-av on iOS to ensure reliable silent-mode behavior
-        const preferAV = Platform.OS === 'ios' || !!preservePitch;
+        // Prefer expo-av to ensure reliable silent-mode behavior and exclusive focus
+        const preferAV = Platform.OS === 'ios' || !!preservePitch || !!exclusiveFocus;
         // Try expo-audio first unless iOS prefers AV
         usingAVRef.current = false;
         let expoAudioLoaded = false;
@@ -176,6 +178,9 @@ function AudioPlayer(
             else if (player && typeof player.setPlaybackRate === 'function')
               await player.setPlaybackRate(rate);
             else if (player && typeof player.setRate === 'function') await player.setRate(rate);
+            // set looping if supported
+            if (player && typeof player.setIsLoopingAsync === 'function')
+              await player.setIsLoopingAsync(!!loop);
           } catch (_) {}
         }
 
@@ -257,6 +262,7 @@ function AudioPlayer(
                 rate: rate,
                 shouldCorrectPitch: !!preservePitch,
                 pitchCorrectionQuality: 'high',
+                isLooping: !!loop,
               },
             );
             avSoundRef.current = sound;
@@ -270,6 +276,7 @@ function AudioPlayer(
                   rate,
                   shouldCorrectPitch: !!preservePitch,
                   pitchCorrectionQuality: 'high',
+                  isLooping: !!loop,
                 });
               else if (typeof sound.setRateAsync === 'function')
                 await sound.setRateAsync(rate, !!preservePitch, 'high');
@@ -342,11 +349,47 @@ function AudioPlayer(
       try {
         if (usingAVRef.current) {
           if (!avSoundRef.current) return;
-          if (play) await avSoundRef.current.playAsync();
-          else await avSoundRef.current.pauseAsync();
+          if (play) {
+            try {
+              await AV.setAudioModeAsync({
+                allowsRecordingIOS: false,
+                playsInSilentModeIOS: true,
+                staysActiveInBackground: true,
+                interruptionModeIOS: AV.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+                interruptionModeAndroid: AV.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+                shouldDuckAndroid: false,
+                playThroughEarpieceAndroid: false,
+              });
+              try {
+                await AV.setIsEnabledAsync(true);
+              } catch (_) {}
+            } catch (_) {}
+            // small delay to allow focus change to propagate
+            try {
+              await new Promise((r) => setTimeout(r, 60));
+            } catch (_) {}
+            await avSoundRef.current.playAsync();
+          } else await avSoundRef.current.pauseAsync();
         } else {
           if (!player) return;
           if (play) {
+            try {
+              await AV.setAudioModeAsync({
+                allowsRecordingIOS: false,
+                playsInSilentModeIOS: true,
+                staysActiveInBackground: true,
+                interruptionModeIOS: AV.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+                interruptionModeAndroid: AV.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+                shouldDuckAndroid: false,
+                playThroughEarpieceAndroid: false,
+              });
+              try {
+                await AV.setIsEnabledAsync(true);
+              } catch (_) {}
+            } catch (_) {}
+            try {
+              await new Promise((r) => setTimeout(r, 60));
+            } catch (_) {}
             if (typeof player.playAsync === 'function') await player.playAsync();
             else if (typeof player.play === 'function') await player.play();
           } else {
@@ -438,6 +481,23 @@ function AudioPlayer(
       } catch (_) {}
     })();
   }, [rate, player, play, preservePitch]);
+
+  // respond to loop changes
+  useEffect(() => {
+    (async () => {
+      try {
+        if (usingAVRef.current) {
+          if (avSoundRef.current) {
+            if (typeof avSoundRef.current.setStatusAsync === 'function')
+              await avSoundRef.current.setStatusAsync({ isLooping: !!loop });
+          }
+        } else if (player) {
+          if (typeof player.setIsLoopingAsync === 'function')
+            await player.setIsLoopingAsync(!!loop);
+        }
+      } catch (_) {}
+    })();
+  }, [loop, player]);
 
   return null; // invisible player
 }
