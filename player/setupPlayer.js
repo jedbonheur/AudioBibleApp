@@ -21,12 +21,7 @@ export default async function setupPlayer() {
       progressUpdateEventInterval: 2,
       // iOS: ensure playback category and explicitly avoid mixing/ducking
       iosCategory: 'playback',
-      iosCategoryOptions: [
-        // do NOT include 'mixWithOthers' or 'duckOthers'
-        'allowBluetooth',
-        'allowAirPlay',
-        'defaultToSpeaker',
-      ],
+      iosCategoryOptions: ['allowBluetooth', 'allowAirPlay', 'defaultToSpeaker', 'mixWithOthers'],
       alwaysPauseOnInterruption: true,
       android: {
         appKilledPlaybackBehavior: AppKilledPlaybackBehavior.StopPlaybackAndRemoveNotification,

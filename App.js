@@ -3,11 +3,9 @@ import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Audio as AV } from 'expo-av';
 import { View, TouchableOpacity, Text } from 'react-native';
 import TrackPlayer from 'react-native-track-player';
 import setupPlayer from './player/setupPlayer';
-import { AppState } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import ChapterScreen from './screens/ChapterScreen';
 import ChapterViewScreen from './screens/ChapterViewScreen';
@@ -22,29 +20,6 @@ export default function App() {
     async function prepare() {
       try {
         await SplashScreen.preventAutoHideAsync();
-        // Ensure iOS plays audio even when the hardware mute switch is ON
-        // Call before any audio playback starts
-        try {
-          await AV.setAudioModeAsync({
-            playsInSilentModeIOS: true,
-            staysActiveInBackground: true,
-            shouldDuckAndroid: false,
-            allowsRecordingIOS: false,
-            interruptionModeIOS: AV.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
-            interruptionModeAndroid: AV.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-            // Prefer speaker, not earpiece, and force app to own audio focus
-            playThroughEarpieceAndroid: false,
-            // Explicitly request iOS playback category for background
-            // @ts-ignore – supported by expo-av on iOS
-            iosCategory: 'playback',
-            iosCategoryOptions: ['allowBluetooth', 'allowAirPlay', 'defaultToSpeaker'],
-          });
-          try {
-            await AV.setIsEnabledAsync(true);
-          } catch (_) {}
-        } catch (e) {
-          // non-fatal
-        }
         await Font.loadAsync({
           'Inter-Regular': require('./assets/fonts/Inter-Regular.ttf'),
           'Inter-Bold': require('./assets/fonts/Inter-Bold.ttf'),
@@ -76,31 +51,6 @@ export default function App() {
       }
     }
     prepare();
-  }, []);
-
-  // Re-assert iOS audio session on app state changes to prevent mixing edge cases
-  useEffect(() => {
-    const sub = AppState.addEventListener('change', async (state) => {
-      try {
-        if (state === 'active' || state === 'background') {
-          await AV.setAudioModeAsync({
-            playsInSilentModeIOS: true,
-            staysActiveInBackground: true,
-            shouldDuckAndroid: false,
-            allowsRecordingIOS: false,
-            interruptionModeIOS: AV.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
-            interruptionModeAndroid: AV.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-            playThroughEarpieceAndroid: false,
-            iosCategory: 'playback',
-            iosCategoryOptions: ['allowBluetooth', 'allowAirPlay', 'defaultToSpeaker'],
-          });
-          try {
-            await AV.setIsEnabledAsync(true);
-          } catch (_) {}
-        }
-      } catch (_) {}
-    });
-    return () => sub.remove();
   }, []);
 
   if (!fontsLoaded || !playerReady) {

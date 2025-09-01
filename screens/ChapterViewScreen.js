@@ -18,6 +18,7 @@ import Controller from '@components/Controller';
 import { getBackgroundMusicUrlById } from '@data/backgroundMusic';
 import BottomController from '@components/BottomController';
 import AudioPlayer from '@components/AudioPlayer';
+import BackgroundMusicPlayer from '@components/BackgroundMusicPlayer';
 
 // Build CDN JSON URL
 function buildCdnUrl(book) {
@@ -726,21 +727,12 @@ export default function ChapterViewScreen({ navigation }) {
 
         {/* Background music player: plays on loop while bible is playing */}
         {bgMusicUrl ? (
-          <AudioPlayer
+          <BackgroundMusicPlayer
             ref={bgPlayerRef}
             sourceUrl={bgMusicUrl}
             play={!!isPlaying}
             volume={Math.max(0, Math.min(1, bgVolume * masterVolume))}
             loop={true}
-            onStatusChange={(status) => {
-              // loop background music
-              try {
-                if (status?.didJustFinish && bgPlayerRef.current?.play) {
-                  bgPlayerRef.current.seek?.(0);
-                  bgPlayerRef.current.play();
-                }
-              } catch {}
-            }}
           />
         ) : null}
 
