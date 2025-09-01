@@ -3,6 +3,7 @@ import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Audio as AV } from 'expo-av';
 import HomeScreen from './screens/HomeScreen';
 import ChapterScreen from './screens/ChapterScreen';
 import ChapterViewScreen from './screens/ChapterViewScreen';
@@ -16,6 +17,21 @@ export default function App() {
     async function prepare() {
       try {
         await SplashScreen.preventAutoHideAsync();
+        // Ensure iOS plays audio even when the hardware mute switch is ON
+        // Call before any audio playback starts
+        try {
+          await AV.setAudioModeAsync({
+            playsInSilentModeIOS: true,
+            staysActiveInBackground: true,
+            shouldDuckAndroid: true,
+            allowsRecordingIOS: false,
+          });
+          try {
+            await AV.setIsEnabledAsync(true);
+          } catch (_) {}
+        } catch (e) {
+          // non-fatal
+        }
         await Font.loadAsync({
           'Inter-Regular': require('./assets/fonts/Inter-Regular.ttf'),
           'Inter-Bold': require('./assets/fonts/Inter-Bold.ttf'),

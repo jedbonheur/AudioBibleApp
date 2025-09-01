@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AudioBibleApp",
-    "slug": "AudioBibleApp",
+    "name": "Kinya Audio Bible",
+    "slug": "KinyaAudioBible",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,22 +13,31 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"],
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.bonheurjedd.KinyaAudioBible"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.bonheurjedd.KinyaAudioBible"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-audio"
-    ],
-    "sdkVersion": "53.0.0"
+    "plugins": ["expo-audio"],
+    "sdkVersion": "53.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "80d51132-9e81-46c4-a12a-0bd0a4c4a090"
+      }
+    }
   },
-  "name": "audiobibleapp"
+  "name": "Kinya Audio Bible"
 }

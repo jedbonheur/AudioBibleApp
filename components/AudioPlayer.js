@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react';
-import { Audio } from 'expo-av';
+import { Platform } from 'react-native';
+import { useAudioPlayer } from 'expo-audio';
+import { Audio as AV } from 'expo-av';
 
 // A small reusable audio player that loads a remote URL and plays/pauses
 // controlled by the `play` prop. Reports playback status via onStatusChange.
@@ -9,34 +11,56 @@ function AudioPlayer(
   { sourceUrl, play = false, onStatusChange, seekToMs = null, onSeekComplete = null },
   ref,
 ) {
-  const soundRef = useRef(null);
+  const player = useAudioPlayer?.() || null;
   const [loading, setLoading] = useState(false);
+  const listenersRef = useRef([]);
+  const avSoundRef = useRef(null);
+  const usingAVRef = useRef(false);
+  const progressTimerRef = useRef(null);
 
   // Expose imperative API: play, pause, seek
   useImperativeHandle(ref, () => ({
     play: async () => {
       try {
-        if (!soundRef.current) return;
-        await soundRef.current.playAsync();
+        if (usingAVRef.current) {
+          if (!avSoundRef.current) return;
+          await avSoundRef.current.playAsync();
+        } else {
+          if (!player) return;
+          if (typeof player.playAsync === 'function') await player.playAsync();
+          else if (typeof player.play === 'function') await player.play();
+        }
       } catch (e) {
-        if (onStatusChange) onStatusChange({ error: String(e) });
+        onStatusChange && onStatusChange({ error: String(e) });
       }
     },
     pause: async () => {
       try {
-        if (!soundRef.current) return;
-        await soundRef.current.pauseAsync();
+        if (usingAVRef.current) {
+          if (!avSoundRef.current) return;
+          await avSoundRef.current.pauseAsync();
+        } else {
+          if (!player) return;
+          if (typeof player.pauseAsync === 'function') await player.pauseAsync();
+          else if (typeof player.pause === 'function') await player.pause();
+        }
       } catch (e) {
-        if (onStatusChange) onStatusChange({ error: String(e) });
+        onStatusChange && onStatusChange({ error: String(e) });
       }
     },
     seek: async (ms) => {
       try {
-        if (!soundRef.current) return;
         const pos = Math.max(0, Math.round(ms || 0));
-        await soundRef.current.setPositionAsync(pos);
+        if (usingAVRef.current) {
+          if (!avSoundRef.current) return;
+          await avSoundRef.current.setPositionAsync(pos);
+        } else {
+          if (!player) return;
+          if (typeof player.setPositionAsync === 'function') await player.setPositionAsync(pos);
+          else if (typeof player.seekTo === 'function') await player.seekTo(pos);
+        }
       } catch (e) {
-        if (onStatusChange) onStatusChange({ error: String(e) });
+        onStatusChange && onStatusChange({ error: String(e) });
       }
     },
   }));
@@ -49,30 +73,49 @@ function AudioPlayer(
       setLoading(true);
 
       try {
-        // Ensure audio mode is configured so playback is audible on iOS/Android
+        // Ensure platform audio session is configured for silent-mode + background
         try {
-          await Audio.setAudioModeAsync({
+          await AV.setAudioModeAsync({
             allowsRecordingIOS: false,
-            interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
             playsInSilentModeIOS: true,
+            staysActiveInBackground: true,
             shouldDuckAndroid: true,
-            interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-            staysActiveInBackground: false,
+            playThroughEarpieceAndroid: false,
           });
-        } catch (modeErr) {
-          // ignore mode errors but forward if needed
-          if (onStatusChange) onStatusChange({ error: String(modeErr) });
-        }
-        // Unload previous
-        if (soundRef.current) {
           try {
-            await soundRef.current.unloadAsync();
-          } catch (e) {
-            // ignore unload errors
+            await AV.setIsEnabledAsync(true);
+          } catch (_) {}
+        } catch (_) {}
+
+        // Unload previous expo-audio
+        try {
+          if (player && typeof player.unloadAsync === 'function') await player.unloadAsync();
+          else if (player && typeof player.unload === 'function') await player.unload();
+        } catch (_) {}
+        // Unload previous expo-av
+        try {
+          if (avSoundRef.current) {
+            avSoundRef.current.setOnPlaybackStatusUpdate(null);
+            await avSoundRef.current.unloadAsync();
+            avSoundRef.current = null;
           }
-          soundRef.current.setOnPlaybackStatusUpdate(null);
-          soundRef.current = null;
-        }
+        } catch (_) {}
+        // cleanup listeners
+        try {
+          listenersRef.current.forEach((off) => {
+            try {
+              if (typeof off === 'function') off();
+            } catch {}
+          });
+          listenersRef.current = [];
+        } catch {}
+        // stop any progress polling
+        try {
+          if (progressTimerRef.current) {
+            clearInterval(progressTimerRef.current);
+            progressTimerRef.current = null;
+          }
+        } catch (_) {}
 
         // quick HEAD check to detect 404/CORS early
         try {
@@ -85,28 +128,137 @@ function AudioPlayer(
           if (onStatusChange) onStatusChange({ error: String(headErr) });
         }
 
-        const { sound } = await Audio.Sound.createAsync(
-          { uri: sourceUrl },
-          { shouldPlay: play, staysActiveInBackground: false },
-        );
-
-        // attach playback status update
-        if (sound) {
-          sound.setOnPlaybackStatusUpdate((status) => {
-            if (onStatusChange) onStatusChange(status);
-            // debug logging removed
-          });
-          // if play was requested while we were loading, start immediately
-          if (play) {
-            try {
-              await sound.playAsync();
-            } catch (e) {
-              if (onStatusChange) onStatusChange({ error: String(e) });
+        // Prefer expo-av on iOS to ensure reliable silent-mode behavior
+        const preferAV = Platform.OS === 'ios';
+        // Try expo-audio first unless iOS prefers AV
+        usingAVRef.current = false;
+        let expoAudioLoaded = false;
+        if (!preferAV) {
+          try {
+            if (
+              player &&
+              (typeof player.loadAsync === 'function' || typeof player.load === 'function')
+            ) {
+              if (typeof player.loadAsync === 'function') await player.loadAsync(sourceUrl);
+              else await player.load(sourceUrl);
+              expoAudioLoaded = true;
             }
+          } catch (e) {
+            expoAudioLoaded = false;
+            onStatusChange && onStatusChange({ error: String(e) });
           }
         }
 
-        soundRef.current = sound;
+        // Set volume/unmute if available for expo-audio
+        if (expoAudioLoaded) {
+          try {
+            if (player && typeof player.setIsMuted === 'function') await player.setIsMuted(false);
+            if (player && typeof player.setIsMutedAsync === 'function')
+              await player.setIsMutedAsync(false);
+            if (player && typeof player.setVolume === 'function') await player.setVolume(1.0);
+            if (player && typeof player.setVolumeAsync === 'function')
+              await player.setVolumeAsync(1.0);
+          } catch (_) {}
+        }
+
+        // Attach status listeners for expo-audio
+        if (expoAudioLoaded) {
+          try {
+            if (player && typeof player.addListener === 'function') {
+              const offEnd = player.addListener('ended', () => {
+                onStatusChange &&
+                  onStatusChange({ didJustFinish: true, isPlaying: false, _engine: 'expo-audio' });
+              });
+              const offErr = player.addListener('error', (e) => {
+                onStatusChange && onStatusChange({ error: String(e), _engine: 'expo-audio' });
+              });
+              listenersRef.current.push(offEnd, offErr);
+            } else if (player && typeof player.setOnPlaybackStatusUpdate === 'function') {
+              player.setOnPlaybackStatusUpdate(
+                (status) => onStatusChange && onStatusChange({ ...status, _engine: 'expo-audio' }),
+              );
+            }
+          } catch (_) {}
+          // Start periodic progress polling for expo-audio (it may not emit frequent updates)
+          try {
+            const poll = async () => {
+              if (!player || usingAVRef.current) return;
+              try {
+                let posMs = null;
+                let isPlayingFlag = undefined;
+                // Try a generic status getter if available
+                if (typeof player.getStatusAsync === 'function') {
+                  const status = await player.getStatusAsync();
+                  if (status) {
+                    if (typeof status.positionMillis === 'number') posMs = status.positionMillis;
+                    else if (typeof status.position === 'number') posMs = status.position;
+                    else if (typeof status.currentTime === 'number')
+                      posMs = Math.round(status.currentTime * 1000);
+                    if (typeof status.isPlaying === 'boolean') isPlayingFlag = !!status.isPlaying;
+                  }
+                } else if (typeof player.getPosition === 'function') {
+                  const p = await player.getPosition();
+                  if (typeof p === 'number') posMs = p > 100000 ? p : Math.round(p * 1000);
+                } else if (typeof player.getCurrentTime === 'function') {
+                  const sec = await player.getCurrentTime();
+                  if (typeof sec === 'number') posMs = Math.round(sec * 1000);
+                }
+                if (posMs !== null && onStatusChange) {
+                  const payload = { positionMillis: posMs, _engine: 'expo-audio' };
+                  if (typeof isPlayingFlag === 'boolean') payload.isPlaying = isPlayingFlag;
+                  onStatusChange(payload);
+                }
+              } catch (_) {}
+            };
+            progressTimerRef.current = setInterval(poll, 500);
+          } catch (_) {}
+        }
+
+        // If expo-audio failed, fallback to expo-av
+        if (!expoAudioLoaded) {
+          try {
+            await AV.setAudioModeAsync({
+              allowsRecordingIOS: false,
+              playsInSilentModeIOS: true,
+              staysActiveInBackground: true,
+              shouldDuckAndroid: true,
+            });
+            try {
+              await AV.setIsEnabledAsync(true);
+            } catch (_) {}
+          } catch (_) {}
+          try {
+            const { sound } = await AV.Sound.createAsync(
+              { uri: sourceUrl },
+              { shouldPlay: false, isMuted: false, volume: 1.0 },
+            );
+            avSoundRef.current = sound;
+            usingAVRef.current = true;
+            try {
+              await sound.setIsMutedAsync(false);
+              await sound.setVolumeAsync(1.0);
+            } catch (_) {}
+            sound.setOnPlaybackStatusUpdate((status) => {
+              onStatusChange && onStatusChange({ ...status, _engine: 'expo-av' });
+            });
+          } catch (e) {
+            onStatusChange && onStatusChange({ error: String(e) });
+          }
+        }
+
+        // Start if requested
+        if (play) {
+          try {
+            if (usingAVRef.current) {
+              if (avSoundRef.current) await avSoundRef.current.playAsync();
+            } else if (player) {
+              if (typeof player.playAsync === 'function') await player.playAsync();
+              else if (typeof player.play === 'function') await player.play();
+            }
+          } catch (e) {
+            onStatusChange && onStatusChange({ error: String(e) });
+          }
+        }
       } catch (e) {
         // forward an error-like status if available
         if (onStatusChange) onStatusChange({ error: e.message });
@@ -120,49 +272,82 @@ function AudioPlayer(
     return () => {
       mounted = false;
       (async () => {
-        if (soundRef.current) {
-          try {
-            soundRef.current.setOnPlaybackStatusUpdate(null);
-            await soundRef.current.unloadAsync();
-          } catch (e) {
-            // ignore
+        try {
+          if (player && typeof player.setOnPlaybackStatusUpdate === 'function') {
+            player.setOnPlaybackStatusUpdate(null);
           }
-          soundRef.current = null;
-        }
+          listenersRef.current.forEach((off) => {
+            try {
+              if (typeof off === 'function') off();
+            } catch {}
+          });
+          listenersRef.current = [];
+          if (progressTimerRef.current) {
+            clearInterval(progressTimerRef.current);
+            progressTimerRef.current = null;
+          }
+          if (player && typeof player.unloadAsync === 'function') await player.unloadAsync();
+          else if (player && typeof player.unload === 'function') await player.unload();
+        } catch (_) {}
+        try {
+          if (avSoundRef.current) {
+            avSoundRef.current.setOnPlaybackStatusUpdate(null);
+            await avSoundRef.current.unloadAsync();
+            avSoundRef.current = null;
+          }
+        } catch (_) {}
       })();
     };
-  }, [sourceUrl]);
+  }, [sourceUrl, player]);
 
   // respond to play prop changes
   useEffect(() => {
     (async () => {
       try {
-        if (!soundRef.current) return;
-        // Directly request play or pause. Avoid relying on getStatusAsync() to
-        // decide because status can be stale during quick user interactions.
-        if (play) await soundRef.current.playAsync();
-        else await soundRef.current.pauseAsync();
+        if (usingAVRef.current) {
+          if (!avSoundRef.current) return;
+          if (play) await avSoundRef.current.playAsync();
+          else await avSoundRef.current.pauseAsync();
+        } else {
+          if (!player) return;
+          if (play) {
+            if (typeof player.playAsync === 'function') await player.playAsync();
+            else if (typeof player.play === 'function') await player.play();
+          } else {
+            if (typeof player.pauseAsync === 'function') await player.pauseAsync();
+            else if (typeof player.pause === 'function') await player.pause();
+          }
+        }
       } catch (e) {
         if (onStatusChange) onStatusChange({ error: e.message });
       }
     })();
-  }, [play]);
+  }, [play, player]);
 
   // respond to external seek requests (seekToMs)
   useEffect(() => {
     (async () => {
       try {
         if (seekToMs === null || seekToMs === undefined) return;
-        if (!soundRef.current) return;
         // clamp to non-negative
         const pos = Math.max(0, Math.round(seekToMs));
-        await soundRef.current.setPositionAsync(pos);
-        // if playback was requested, ensure we are playing
-        if (play) {
-          try {
-            await soundRef.current.playAsync();
-          } catch (e) {
-            // ignore play errors here, status handler will report
+        if (usingAVRef.current) {
+          if (!avSoundRef.current) return;
+          await avSoundRef.current.setPositionAsync(pos);
+          if (play) {
+            try {
+              await avSoundRef.current.playAsync();
+            } catch (_) {}
+          }
+        } else {
+          if (!player) return;
+          if (typeof player.setPositionAsync === 'function') await player.setPositionAsync(pos);
+          else if (typeof player.seekTo === 'function') await player.seekTo(pos);
+          if (play) {
+            try {
+              if (typeof player.playAsync === 'function') await player.playAsync();
+              else if (typeof player.play === 'function') await player.play();
+            } catch (e) {}
           }
         }
         if (onSeekComplete) onSeekComplete();
@@ -170,7 +355,7 @@ function AudioPlayer(
         if (onStatusChange) onStatusChange({ error: String(e) });
       }
     })();
-  }, [seekToMs]);
+  }, [seekToMs, player]);
 
   return null; // invisible player
 }

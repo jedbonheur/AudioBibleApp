@@ -68,6 +68,7 @@ export default function ChapterViewScreen({ navigation }) {
   const [syncOffsetMs] = useState(0);
   const [seekToMs, setSeekToMs] = useState(null);
   const [showGoToPlaying, setShowGoToPlaying] = useState(false);
+  // debug UI removed
 
   const flatListRef = useRef(null);
   const verseLayoutsRef = useRef({});
@@ -322,6 +323,21 @@ export default function ChapterViewScreen({ navigation }) {
     return visibleVersesRef.current.has(verseKey);
   };
 
+  // Check if a verse is centered in the viewport within a tolerance (px)
+  const isVerseCentered = (verseKey, tolerance = 24) => {
+    try {
+      const layout = verseLayoutsRef.current[verseKey];
+      const listHeight = flatListHeightRef.current || 0;
+      const scrollY = scrollOffsetRef.current || 0;
+      if (!layout || !listHeight) return true; // avoid fighting until measured
+      const verseCenter = layout.y + layout.height / 2;
+      const visibleCenter = scrollY + listHeight / 2;
+      return Math.abs(verseCenter - visibleCenter) <= tolerance;
+    } catch (e) {
+      return true;
+    }
+  };
+
   // Scroll so that a specific verse is centered in the viewport
   const centerVerse = (verseKey, animated = true) => {
     try {
@@ -437,6 +453,24 @@ export default function ChapterViewScreen({ navigation }) {
     } catch (e) {}
   }, [currentVerse, isPlaying]);
 
+  // Periodically ensure the current verse is centered while playing
+  useEffect(() => {
+    if (!isPlaying || !currentVerse) return;
+    const intervalId = setInterval(() => {
+      try {
+        const now = Date.now();
+        if (isUserDraggingRef.current) return;
+        if (now - (lastUserSeekAtRef.current || 0) < USER_SEEK_NO_AUTOSCROLL_MS) return;
+        if (now - (lastUserScrollAtRef.current || 0) < USER_SCROLL_NO_AUTOSCROLL_MS) return;
+        if (now - (lastAutoScrollAtRef.current || 0) < MIN_AUTOSCROLL_INTERVAL_MS) return;
+        if (!isVerseCentered(currentVerse)) {
+          centerVerse(currentVerse, true);
+        }
+      } catch (e) {}
+    }, 700);
+    return () => clearInterval(intervalId);
+  }, [isPlaying, currentVerse]);
+
   // Auto-return after 5 seconds if user hasn't tapped the button
   useEffect(() => {
     try {
@@ -479,6 +513,7 @@ export default function ChapterViewScreen({ navigation }) {
           </Text>
           <View style={{ width: 24 }} />
         </View>
+        {/* debug button removed */}
 
         {loading ? (
           <ActivityIndicator
@@ -618,7 +653,7 @@ export default function ChapterViewScreen({ navigation }) {
           }}
         />
 
-        {/* Debug overlay removed */}
+        {/* debug overlay removed */}
 
         <Controller
           visible={controllerVisible}
