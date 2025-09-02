@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import theme from '@theme/theme';
-import BookListItem from './BookListItem';
+import BookListItem from '../../BookListItem';
 
 const BookList = ({ books }) => {
   const navigation = useNavigation();
@@ -11,15 +11,14 @@ const BookList = ({ books }) => {
     (book) => {
       navigation.navigate('ChapterScreen', { book });
     },
-    [navigation]
+    [navigation],
   );
-
 
   const renderItem = useCallback(
     ({ item }) => {
       return <BookListItem item={item} onPress={() => handlePress(item)} />;
     },
-    [handlePress]
+    [handlePress],
   );
 
   return (
@@ -41,7 +40,6 @@ const styles = StyleSheet.create({
   listContainer: {
     paddingVertical: 4,
     flexGrow: 1,
-
   },
   list: {
     flex: 1,

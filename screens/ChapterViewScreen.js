@@ -18,7 +18,8 @@ import Controller from '@components/Controller';
 import { getBackgroundMusicUrlById } from '@data/backgroundMusic';
 import BottomController from '@components/BottomController';
 import AudioPlayer from '@components/AudioPlayer';
-import { syncBackgroundMusicWithBible, setBackgroundMusicVolume } from '../NativeBackgroundMusic';
+import { syncBackgroundMusicWithBible, setBackgroundMusicVolume, stopBackgroundMusic } from '../NativeBackgroundMusic';
+import { bookIconPngMap } from '../assets/bible_icons_png/map';
 
 // Build CDN JSON URL
 function buildCdnUrl(book) {
@@ -41,6 +42,20 @@ function buildAudioUrl(book) {
   return jsonUrl
     .replace('https://cdn.kinyabible.com/', 'https://cdn.kinyabible.com/audiobible/')
     .replace(/\.json$/i, '.mp3');
+}
+
+// Build artwork URL for the book icon (SVG in bible_icons)
+function buildBookIconArtwork(book) {
+  if (!book || !book.name || !book.id) return require('../assets/icon.png');
+  const padded = String(book.id).padStart(2, '0');
+  const slug = book.name
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9\-]/g, '')
+    .replace(/\-+/g, '-');
+  const key = `${padded}-${slug}`;
+  return bookIconPngMap[key] || require('../assets/icon.png');
 }
 
 // AsyncStorage cache key for a chapter
@@ -749,7 +764,7 @@ export default function ChapterViewScreen({ navigation }) {
           trackId={`bible-${book?.testament}-${book?.id}-${book?.chapter}`}
           title={`${book?.name} ${book?.chapter}`}
           artist={'Kinya Bible'}
-          artwork={'https://cdn.kinyabible.com/icon.png'}
+          artwork={buildBookIconArtwork(book)}
           volume={Math.max(0, Math.min(1, bibleVolume * masterVolume))}
           rate={bibleRate}
           preservePitch={true}
@@ -773,9 +788,9 @@ export default function ChapterViewScreen({ navigation }) {
 
             if (status?.didJustFinish) {
               setIsPlaying(false);
-              // Ensure bg loop stops when bible finishes
+              // End background music completely when narration ends
               try {
-                syncBackgroundMusicWithBible(false, null, 0);
+                stopBackgroundMusic();
               } catch (_) {}
             }
             if (status?.error) setIsPlaying(false);

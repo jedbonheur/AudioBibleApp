@@ -1,9 +1,9 @@
 // BookListItem.js
-import React from "react";
-import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import React from 'react';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { Paragraph } from '@typography/Typography';
-import BibleIcon from "./utils/BibleIcons"; // helper function
+import BibleIcon from '@bookcategories/utils/BibleIcons'; // helper function
 import theme from '@theme/theme';
 
 const BookListItem = ({ item, isSelected, onPress }) => {
@@ -17,25 +17,15 @@ const BookListItem = ({ item, isSelected, onPress }) => {
       activeOpacity={0.7}
     >
       <View style={styles.bookBox}>
-        {IconComponent ? (
-          <IconComponent width={60} height={60} />
-        ) : (
-          <View style={styles.s} />
-        )}
+        {IconComponent ? <IconComponent width={60} height={60} /> : <View style={styles.s} />}
       </View>
 
       <View style={styles.textContainer}>
-        <Paragraph style={isSelected && styles.selectedText}>
-          {item.name}
-        </Paragraph>
+        <Paragraph style={isSelected && styles.selectedText}>{item.name}</Paragraph>
         <Text style={styles.subText}>{item.chapters} Chapters</Text>
       </View>
 
-      <Ionicons
-        name="chevron-forward-outline"
-        size={20}
-        color={theme.colors.secondary}
-      />
+      <Ionicons name="chevron-forward-outline" size={20} color={theme.colors.secondary} />
 
       <View style={styles.divider} />
     </TouchableOpacity>
@@ -44,8 +34,8 @@ const BookListItem = ({ item, isSelected, onPress }) => {
 
 const styles = StyleSheet.create({
   row: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingVertical: 18,
     paddingHorizontal: 16,
   },
@@ -55,19 +45,19 @@ const styles = StyleSheet.create({
   bookBox: {
     width: 50,
     height: 50,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginRight: 12,
   },
   bookIconPlaceholder: {
     width: 44,
     height: 44,
-    backgroundColor: "#ccc",
+    backgroundColor: '#ccc',
     borderRadius: 8,
   },
   textContainer: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
   subText: {
     color: theme.colors.primaryTextGrey,
