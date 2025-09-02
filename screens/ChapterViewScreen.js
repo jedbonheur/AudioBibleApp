@@ -276,7 +276,7 @@ export default function ChapterViewScreen({ navigation }) {
     (async () => {
       try {
         const vol = Math.max(0, Math.min(1, bgVolume * masterVolume));
-    const actuallyPlaying = Boolean(isPlaying);
+        const actuallyPlaying = Boolean(isPlaying);
         if (actuallyPlaying && bgMusicUrl) {
           // slight debounce to avoid race with TP session applying
           await new Promise((r) => setTimeout(r, 100));
@@ -717,7 +717,9 @@ export default function ChapterViewScreen({ navigation }) {
                   audioPlayerRef.current.pause();
                 setIsPlaying(false);
                 // Immediately pause background music
-                try { syncBackgroundMusicWithBible(false, null, 0); } catch (_) {}
+                try {
+                  syncBackgroundMusicWithBible(false, null, 0);
+                } catch (_) {}
               } else {
                 if (audioPlayerRef.current && audioPlayerRef.current.play)
                   audioPlayerRef.current.play();
