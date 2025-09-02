@@ -18,7 +18,11 @@ import Controller from '@components/Controller';
 import { getBackgroundMusicUrlById } from '@data/backgroundMusic';
 import BottomController from '@components/BottomController';
 import AudioPlayer from '@components/AudioPlayer';
-import { syncBackgroundMusicWithBible, setBackgroundMusicVolume } from '../NativeBackgroundMusic';
+import {
+  syncBackgroundMusicWithBible,
+  setBackgroundMusicVolume,
+  stopBackgroundMusic,
+} from '../NativeBackgroundMusic';
 
 // Build CDN JSON URL
 function buildCdnUrl(book) {
@@ -76,6 +80,8 @@ export default function ChapterViewScreen({ navigation }) {
   const [syncOffsetMs] = useState(0);
   const [seekToMs, setSeekToMs] = useState(null);
   const [showGoToPlaying, setShowGoToPlaying] = useState(false);
+  // When chapter changes, force BG music to restart from the beginning on next play
+  const [bgShouldRestart, setBgShouldRestart] = useState(false);
   // debug UI removed
 
   const flatListRef = useRef(null);
@@ -259,6 +265,9 @@ export default function ChapterViewScreen({ navigation }) {
       setAudioUrl(null);
     }
 
+    // Mark BG to restart at the beginning for this chapter
+    setBgShouldRestart(true);
+
     let nextChapterBook = null;
     if (book.chapter < book.chapters) nextChapterBook = { ...book, chapter: book.chapter + 1 };
     else if (nextBook) nextChapterBook = { ...nextBook, chapter: 1 };
@@ -280,13 +289,21 @@ export default function ChapterViewScreen({ navigation }) {
         if (actuallyPlaying && bgMusicUrl) {
           // slight debounce to avoid race with TP session applying
           await new Promise((r) => setTimeout(r, 100));
+          if (bgShouldRestart) {
+            try {
+              stopBackgroundMusic();
+            } catch (_) {}
+            // tiny gap to ensure native teardown before starting
+            await new Promise((r) => setTimeout(r, 50));
+            setBgShouldRestart(false);
+          }
           await syncBackgroundMusicWithBible(true, bgMusicUrl, vol);
         } else {
           await syncBackgroundMusicWithBible(false, null, 0);
         }
       } catch (_) {}
     })();
-  }, [isPlaying, bgMusicUrl, bgVolume, masterVolume]);
+  }, [isPlaying, bgMusicUrl, bgVolume, masterVolume, bgShouldRestart]);
 
   // Apply background music volume changes dynamically (throttled)
   useEffect(() => {
@@ -727,6 +744,12 @@ export default function ChapterViewScreen({ navigation }) {
                 // Immediately resume background music with current url and volume
                 try {
                   const vol = Math.max(0, Math.min(1, bgVolume * masterVolume));
+                  if (bgShouldRestart) {
+                    try {
+                      stopBackgroundMusic();
+                    } catch (_) {}
+                    setBgShouldRestart(false);
+                  }
                   if (bgMusicUrl) syncBackgroundMusicWithBible(true, bgMusicUrl, vol);
                 } catch (_) {}
               }
