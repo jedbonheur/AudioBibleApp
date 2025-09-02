@@ -17,11 +17,18 @@ export default async function setupPlayer() {
         Capability.SeekTo,
         Capability.Stop,
       ],
-      compactCapabilities: [Capability.Play, Capability.Pause, Capability.SkipToNext],
+      compactCapabilities: [Capability.Play, Capability.Pause, Capability.SeekTo],
       progressUpdateEventInterval: 2,
-      // iOS: ensure playback category and explicitly avoid mixing/ducking
+      // iOS: playback category and options to mix and keep speaker/BT stable
       iosCategory: 'playback',
-      iosCategoryOptions: ['allowBluetooth', 'allowAirPlay', 'defaultToSpeaker', 'mixWithOthers'],
+      iosCategoryOptions: [
+        'allowBluetooth',
+        'allowBluetoothA2DP',
+        'allowAirPlay',
+        'defaultToSpeaker',
+        'mixWithOthers',
+        'duckOthers',
+      ],
       alwaysPauseOnInterruption: true,
       android: {
         appKilledPlaybackBehavior: AppKilledPlaybackBehavior.StopPlaybackAndRemoveNotification,

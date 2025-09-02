@@ -25,6 +25,10 @@ function AudioPlayer(
     volume = 1.0,
     rate = 1.0,
     loop = false,
+    trackId,
+    title = 'Audio',
+    artist = 'Kinya Audio Bible',
+    artwork,
   },
   ref,
 ) {
@@ -77,10 +81,16 @@ function AudioPlayer(
         } catch {}
         // Reset the queue and add the requested source as a single track
         try {
-          const id = `track-${Math.abs(hashCode(String(sourceUrl)))}`;
+          const id = trackId || `track-${Math.abs(hashCode(String(sourceUrl)))}`;
           currentTrackIdRef.current = id;
           await TrackPlayer.reset();
-          await TrackPlayer.add({ id, url: sourceUrl, title: 'Audio', artist: 'KinyaBible' });
+          await TrackPlayer.add({
+            id,
+            url: sourceUrl,
+            title: title || 'Audio',
+            artist: artist || 'Kinya Audio Bible',
+            artwork: artwork || 'https://cdn.kinyabible.com/icon.png',
+          });
         } catch (e) {
           onStatusChange && onStatusChange({ error: String(e) });
         }

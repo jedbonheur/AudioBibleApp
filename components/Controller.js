@@ -86,7 +86,7 @@ export default function Controller({
             <View style={styles.divider} />
 
             <View style={styles.section}>
-              <Text style={styles.sectionTitle}>Change Music Background</Text>
+              <Text style={styles.sectionTitle}>Background Music (hidden)</Text>
               <FlatList
                 data={musicOptions}
                 keyExtractor={(i) => i.id}

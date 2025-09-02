@@ -3,8 +3,9 @@ import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, Platform } from 'react-native';
 import TrackPlayer from 'react-native-track-player';
+// Background music is managed within ChapterViewScreen.
 import setupPlayer from './player/setupPlayer';
 import HomeScreen from './screens/HomeScreen';
 import ChapterScreen from './screens/ChapterScreen';
@@ -15,6 +16,8 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
+  const [tpSub, setTpSub] = useState(null);
+  const [showLogs, setShowLogs] = useState(false);
 
   useEffect(() => {
     async function prepare() {
@@ -27,6 +30,8 @@ export default function App() {
           'VastShadow-Regular': require('./assets/fonts/VastShadow-Regular.ttf'),
           'Radley-Regular': require('./assets/fonts/Radley-Regular.ttf'),
         });
+
+        // No BG debug logs in app
 
         // Initialize Track Player and add a sample track
         try {
@@ -51,6 +56,17 @@ export default function App() {
       }
     }
     prepare();
+
+    // No global BG music sync; avoid double-control
+    const sub = null;
+    setTpSub(sub);
+
+    return () => {
+      try {
+        tpSub && tpSub.remove && tpSub.remove();
+      } catch {}
+      // no-op
+    };
   }, []);
 
   if (!fontsLoaded || !playerReady) {
@@ -91,6 +107,7 @@ export default function App() {
         <Stack.Screen name="ChapterScreen" component={ChapterScreen} />
         <Stack.Screen name="ChapterView" component={ChapterViewScreen} />
       </Stack.Navigator>
+      {/* BG debug logs removed */}
     </NavigationContainer>
   );
 }

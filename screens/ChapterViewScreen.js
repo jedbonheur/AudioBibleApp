@@ -18,7 +18,7 @@ import Controller from '@components/Controller';
 import { getBackgroundMusicUrlById } from '@data/backgroundMusic';
 import BottomController from '@components/BottomController';
 import AudioPlayer from '@components/AudioPlayer';
-import BackgroundMusicPlayer from '@components/BackgroundMusicPlayer';
+import { syncBackgroundMusicWithBible, setBackgroundMusicVolume } from '../NativeBackgroundMusic';
 
 // Build CDN JSON URL
 function buildCdnUrl(book) {
@@ -93,7 +93,7 @@ export default function ChapterViewScreen({ navigation }) {
   const USER_PLAY_DEBOUNCE_MS = 800;
   const isUserDraggingRef = useRef(false);
   const audioPlayerRef = useRef(null);
-  const bgPlayerRef = useRef(null);
+  // no component ref needed; bg music managed by native module
   const autoReturnTimerRef = useRef(null);
   const centerRetryTimerRef = useRef(null);
   const visibleVersesRef = useRef(new Set());
@@ -271,17 +271,51 @@ export default function ChapterViewScreen({ navigation }) {
     if (autoplay && audioUrl) setIsPlaying(true);
   }, [autoplay, audioUrl]);
 
+  // Keep background music in sync with actual TrackPlayer state
+  useEffect(() => {
+    (async () => {
+      try {
+        const vol = Math.max(0, Math.min(1, bgVolume * masterVolume));
+    const actuallyPlaying = Boolean(isPlaying);
+        if (actuallyPlaying && bgMusicUrl) {
+          // slight debounce to avoid race with TP session applying
+          await new Promise((r) => setTimeout(r, 100));
+          await syncBackgroundMusicWithBible(true, bgMusicUrl, vol);
+        } else {
+          await syncBackgroundMusicWithBible(false, null, 0);
+        }
+      } catch (_) {}
+    })();
+  }, [isPlaying, bgMusicUrl, bgVolume, masterVolume]);
+
+  // Apply background music volume changes dynamically (throttled)
+  useEffect(() => {
+    let timer = null;
+    const apply = async () => {
+      try {
+        const vol = Math.max(0, Math.min(1, bgVolume * masterVolume));
+        await setBackgroundMusicVolume(vol);
+      } catch (_) {}
+    };
+    // Coalesce rapid slider updates
+    timer = setTimeout(apply, 80);
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [bgVolume, masterVolume]);
+
   // Resolve selected background music URL from static list
   useEffect(() => {
     try {
-      if (!music || music === 'none') {
-        setBgMusicUrl(null);
-        return;
+      let url = null;
+      if (music && music !== 'none') url = getBackgroundMusicUrlById(music);
+      if (!url) {
+        // Fallback default loop if none selected
+        url = 'https://cdn.kinyabible.com/background_music/hymn.mp3';
       }
-      const url = getBackgroundMusicUrlById(music);
       setBgMusicUrl(url);
     } catch (_) {
-      setBgMusicUrl(null);
+      setBgMusicUrl('https://cdn.kinyabible.com/background_music/hymn.mp3');
     }
   }, [music]);
 
@@ -682,10 +716,17 @@ export default function ChapterViewScreen({ navigation }) {
                 if (audioPlayerRef.current && audioPlayerRef.current.pause)
                   audioPlayerRef.current.pause();
                 setIsPlaying(false);
+                // Immediately pause background music
+                try { syncBackgroundMusicWithBible(false, null, 0); } catch (_) {}
               } else {
                 if (audioPlayerRef.current && audioPlayerRef.current.play)
                   audioPlayerRef.current.play();
                 setIsPlaying(true);
+                // Immediately resume background music with current url and volume
+                try {
+                  const vol = Math.max(0, Math.min(1, bgVolume * masterVolume));
+                  if (bgMusicUrl) syncBackgroundMusicWithBible(true, bgMusicUrl, vol);
+                } catch (_) {}
               }
             } catch (e) {
               setIsPlaying((s) => !s);
@@ -699,6 +740,10 @@ export default function ChapterViewScreen({ navigation }) {
           ref={audioPlayerRef}
           sourceUrl={audioUrl}
           play={isPlaying}
+          trackId={`bible-${book?.testament}-${book?.id}-${book?.chapter}`}
+          title={`${book?.name} ${book?.chapter}`}
+          artist={'Kinya Bible'}
+          artwork={'https://cdn.kinyabible.com/icon.png'}
           volume={Math.max(0, Math.min(1, bibleVolume * masterVolume))}
           rate={bibleRate}
           preservePitch={true}
@@ -720,21 +765,19 @@ export default function ChapterViewScreen({ navigation }) {
                 setIsPlaying(Boolean(status.isPlaying));
             }
 
-            if (status?.didJustFinish) setIsPlaying(false);
+            if (status?.didJustFinish) {
+              setIsPlaying(false);
+              // Ensure bg loop stops when bible finishes
+              try {
+                syncBackgroundMusicWithBible(false, null, 0);
+              } catch (_) {}
+            }
             if (status?.error) setIsPlaying(false);
           }}
         />
 
         {/* Background music player: plays on loop while bible is playing */}
-        {bgMusicUrl ? (
-          <BackgroundMusicPlayer
-            ref={bgPlayerRef}
-            sourceUrl={bgMusicUrl}
-            play={!!isPlaying}
-            volume={Math.max(0, Math.min(1, bgVolume * masterVolume))}
-            loop={true}
-          />
-        ) : null}
+        {/* Background music handled natively; no JSX needed */}
 
         {/* debug overlay removed */}
 
