@@ -18,7 +18,8 @@ export default async function setupPlayer() {
         Capability.Stop,
       ],
       compactCapabilities: [Capability.Play, Capability.Pause, Capability.SeekTo],
-      progressUpdateEventInterval: 2,
+      // Faster progress updates for snappy verse highlighting (seconds)
+      progressUpdateEventInterval: 0.25,
       // iOS: playback category and options to mix and keep speaker/BT stable
       iosCategory: 'playback',
       iosCategoryOptions: [
