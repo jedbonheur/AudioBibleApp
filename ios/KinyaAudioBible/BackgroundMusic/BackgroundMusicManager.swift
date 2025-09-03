@@ -1,5 +1,6 @@
 import Foundation
 import AVFoundation
+import MediaPlayer
 import React
 
 @objc(BackgroundMusicManager)
@@ -79,6 +80,8 @@ class BackgroundMusicManager: RCTEventEmitter {
                 self.ensureSession()
                 qp.volume = self.currentVolume
                 if qp.timeControlStatus != .playing {
+                    // Keep bg invisible in Now Playing
+                    MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
                     qp.play()
                 }
             case .failed:
@@ -107,6 +110,8 @@ class BackgroundMusicManager: RCTEventEmitter {
             self.ensureSession()
             qp.volume = self.currentVolume
             if qp.timeControlStatus != .playing {
+                // Keep bg invisible in Now Playing
+                MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
                 qp.play()
                 self.log("started bg after access log, volume=\(self.currentVolume)")
             }
@@ -136,7 +141,11 @@ class BackgroundMusicManager: RCTEventEmitter {
                 self.log("session interruption ended; reactivating")
                 self.ensureSession()
                 qp.volume = self.currentVolume
-                if qp.timeControlStatus != .playing { qp.play() }
+                if qp.timeControlStatus != .playing {
+                    // Keep bg invisible in Now Playing
+                    MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+                    qp.play()
+                }
             }
         }
 
@@ -212,7 +221,11 @@ class BackgroundMusicManager: RCTEventEmitter {
         if currentUrl == urlString {
             // Same URL: just ensure session and play
             ensureSession()
-            if qp.timeControlStatus != .playing { qp.play() }
+            if qp.timeControlStatus != .playing {
+                // Clear Now Playing so bg remains invisible
+                MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+                qp.play()
+            }
             log("resumed bg with volume=\(vol)")
             return
         }
@@ -223,7 +236,11 @@ class BackgroundMusicManager: RCTEventEmitter {
             self.ensureSession()
             self.replaceItem(with: url, on: qp)
             qp.volume = self.currentVolume
-            if qp.timeControlStatus != .playing { qp.play() }
+            if qp.timeControlStatus != .playing {
+                // Clear Now Playing so bg remains invisible
+                MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+                qp.play()
+            }
             self.log("switched bg url and started, volume=\(self.currentVolume)")
         }
     }
