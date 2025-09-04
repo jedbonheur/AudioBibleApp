@@ -2,6 +2,7 @@ const colors = {
   primary: '#000',
   primaryTextWhite: '#DEDFE0',
   primaryTextGrey: '#525C65',
+  greyverse: '#a5a5a5ff',
   secondaryOrange: '#CB653F',
   blueDark: '#0D171F',
   secondary: '#bfc3c7',
@@ -14,16 +15,16 @@ const colors = {
 };
 
 const bibleCategory = {
-  pentateuch: '#CB653F',       // red-ish
-  historical: '#fe9540da',       // orange
-  wisdom: '#0a6a01ff',           // yellow
-  major_prophet: '#845EC2',    // green
-  minor_prophet: '#036afcff',    // blue
-  gospel: '#CB653F',          // red-ish
+  pentateuch: '#9e3c18ff',       // red-ish
+  historical: '#763907ff',       // orange
+  wisdom: '#0e421cff',           // yellow
+  major_prophet: '#250b4eff',    // green
+  minor_prophet: '#032049ff',    // blue
+  gospel: '#87391cff',          // red-ish
   history: '#845EC2',          // purple
-  pauline_epistle: '#1f940bff',  // teal
-  general_epistle: '#fe9540da',  // light orange
-  prophecy: '#F9F871',         // bright yellow
+  pauline_epistle: '#083901ff',  // teal
+  general_epistle: '#8a3f01da',  // light orange
+  prophecy: '#5a0000ff',         // bright yellow
 };
 
 const fonts = {

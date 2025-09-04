@@ -1,10 +1,18 @@
 import React from 'react';
-import { SafeAreaView, Text, StyleSheet, ScrollView, View, TouchableOpacity } from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  StyleSheet,
+  ScrollView,
+  View,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import theme from '@theme/theme';
-import BibleIcon from "../bible-module/book-categories/utils/BibleIcons";
+import BibleIcon from '../bible-module/book-categories/utils/BibleIcons';
 import { generateLightGradient } from '../bible-module/book-categories/utils/GenerateLightGradient';
 import { Paragraph } from '@typography/Typography';
 
@@ -23,16 +31,21 @@ export default function ChapterScreen({ navigation }) {
   const fullText = book.intro;
 
   return (
-    <LinearGradient colors={gradientColors} style={{ flex: 1 }} start={{ x: 0.5, y: 0.5 }}   // top center
-      end={{ x: 0.6, y: 0.1 }}  >
+    <LinearGradient
+      colors={gradientColors}
+      style={{ flex: 1 }}
+      start={{ x: 0.5, y: 0.5 }} // top center
+      end={{ x: 0.6, y: 0.1 }}
+    >
       <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" />
         {/* Header */}
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text style={styles.title}>{book.name}</Text>
-          <TouchableOpacity onPress={() => console.log('Menu pressed')}>
+          <TouchableOpacity>
             <Ionicons name="ellipsis-vertical" size={22} color="white" />
           </TouchableOpacity>
         </View>
@@ -48,12 +61,9 @@ export default function ChapterScreen({ navigation }) {
         {/* Book Intro */}
         <View style={styles.bookIntro}>
           <Paragraph style={styles.bookIntroText}>
-            {expanded ? fullText : previewText + "..."}
-            <Text
-              style={styles.readMore}
-              onPress={() => setExpanded(!expanded)}
-            >
-              {expanded ? " Read less" : " Read more"}
+            {expanded ? fullText : previewText + '...'}
+            <Text style={styles.readMore} onPress={() => setExpanded(!expanded)}>
+              {expanded ? ' Read less' : ' Read more'}
             </Text>
           </Paragraph>
         </View>
@@ -64,7 +74,12 @@ export default function ChapterScreen({ navigation }) {
             <TouchableOpacity
               key={num}
               style={styles.chapterButton}
-              onPress={() => navigation.navigate('ChapterView', { bookId: book.id, chapterNumber: num })}
+              onPress={() =>
+                navigation.navigate('ChapterView', {
+                  book: { ...book, chapter: num },
+                  autoplay: true,
+                })
+              }
             >
               <Text style={styles.chapterText}>{num}</Text>
             </TouchableOpacity>

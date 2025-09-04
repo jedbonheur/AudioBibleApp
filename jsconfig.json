@@ -8,7 +8,8 @@
      "@screens/*": ["screens/*"],
      "@header/*": ["bible-module/header/*"],
      "@bookselect/*": ["bible-module/book-select/*"],
-     "@data/*": ["api/core/*"]
+     "@data/*": ["api/core/*"],
+     "@components/*": ["components/*"],
    }
  }
 }
