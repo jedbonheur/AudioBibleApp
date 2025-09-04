@@ -18,7 +18,11 @@ import Controller from '@components/Controller';
 import { getBackgroundMusicUrlById } from '@data/backgroundMusic';
 import BottomController from '@components/BottomController';
 import AudioPlayer from '@components/AudioPlayer';
-import { syncBackgroundMusicWithBible, setBackgroundMusicVolume, stopBackgroundMusic } from '../NativeBackgroundMusic';
+import {
+  syncBackgroundMusicWithBible,
+  setBackgroundMusicVolume,
+  stopBackgroundMusic,
+} from '../NativeBackgroundMusic';
 import { bookIconPngMap } from '../assets/bible_icons_png/map';
 
 // Build CDN JSON URL
@@ -344,6 +348,20 @@ export default function ChapterViewScreen({ navigation }) {
         endMs: typeof verse.end === 'number' ? Math.round(verse.end * 1000) : null,
       }))
     : [];
+
+  // Derive total duration from the last verse end time if not provided by JSON
+  const derivedTotalDurationMs = React.useMemo(() => {
+    try {
+      if (!Array.isArray(versesArray) || versesArray.length === 0) return null;
+      let maxEnd = 0;
+      for (const v of versesArray) {
+        if (typeof v?.endMs === 'number' && v.endMs > maxEnd) maxEnd = v.endMs;
+      }
+      return maxEnd > 0 ? maxEnd : null;
+    } catch (_) {
+      return null;
+    }
+  }, [versesArray]);
 
   const renderVerse = ({ item }) => {
     const verseMargin = Math.max(8, Math.round(fontSize * 0.75));
@@ -771,6 +789,12 @@ export default function ChapterViewScreen({ navigation }) {
           exclusiveFocus={true}
           seekToMs={seekToMs}
           onSeekComplete={() => setSeekToMs(null)}
+          // Pass known duration when available (JSON may include total_duration seconds)
+          durationMs={
+            typeof data?.total_duration === 'number'
+              ? Math.max(0, Math.round(data.total_duration * 1000))
+              : derivedTotalDurationMs || undefined
+          }
           onStatusChange={(status) => {
             setLatestStatus(status);
             try {

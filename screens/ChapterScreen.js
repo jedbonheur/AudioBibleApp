@@ -45,7 +45,7 @@ export default function ChapterScreen({ navigation }) {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text style={styles.title}>{book.name}</Text>
-          <TouchableOpacity onPress={() => console.log('Menu pressed')}>
+          <TouchableOpacity>
             <Ionicons name="ellipsis-vertical" size={22} color="white" />
           </TouchableOpacity>
         </View>

@@ -9,7 +9,7 @@ const BookList = ({ books }) => {
 
   const handlePress = useCallback(
     (book) => {
-      navigation.navigate('ChapterScreen', { book });
+      navigation.navigate('Chapter', { book });
     },
     [navigation],
   );

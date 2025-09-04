@@ -29,12 +29,17 @@ function AudioPlayer(
     title = 'Audio',
     artist = 'Kinya Audio Bible',
     artwork,
+    // Optional known duration in milliseconds; improves lock-screen time-left
+    durationMs,
   },
   ref,
 ) {
   const [loading, setLoading] = useState(false);
   const listenersRef = useRef([]);
   const currentTrackIdRef = useRef(null);
+  const didSetDurationRef = useRef(false);
+  const prewarmedRef = useRef(false);
+  const suppressEventsRef = useRef(false);
 
   // Expose imperative API: play, pause, seek
   useImperativeHandle(ref, () => ({
@@ -83,14 +88,71 @@ function AudioPlayer(
         try {
           const id = trackId || `track-${Math.abs(hashCode(String(sourceUrl)))}`;
           currentTrackIdRef.current = id;
+          didSetDurationRef.current = false;
           await TrackPlayer.reset();
-          await TrackPlayer.add({
+          const track = {
             id,
             url: sourceUrl,
             title: title || 'Audio',
             artist: artist || 'Kinya Audio Bible',
             artwork: artwork || 'https://cdn.kinyabible.com/icon.png',
-          });
+            // Provide duration if known (in seconds)
+            ...(typeof durationMs === 'number' && durationMs > 0
+              ? { duration: Math.round(durationMs) / 1000 }
+              : {}),
+          };
+          await TrackPlayer.add(track);
+          // Proactively push metadata to Now Playing so lock screen updates immediately
+          try {
+            const meta = {
+              title: title || 'Audio',
+              artist: artist || 'Kinya Audio Bible',
+              artwork: artwork || 'https://cdn.kinyabible.com/icon.png',
+              ...(typeof durationMs === 'number' && durationMs > 0
+                ? { duration: Math.round(durationMs) / 1000 }
+                : {}),
+            };
+            await TrackPlayer.updateMetadataForTrack(id, meta);
+          } catch (_) {}
+          // If duration not provided, probe player for it and set metadata once known
+          if (!(typeof durationMs === 'number' && durationMs > 0)) {
+            try {
+              const setDurationIfAvailable = async () => {
+                if (didSetDurationRef.current) return;
+                const d = await TrackPlayer.getDuration();
+                if (d && isFinite(d) && d > 0 && currentTrackIdRef.current) {
+                  await TrackPlayer.updateMetadataForTrack(currentTrackIdRef.current, {
+                    duration: d,
+                  });
+                  didSetDurationRef.current = true;
+                }
+              };
+              // Try immediately, then retry shortly; some streams report a bit later
+              await setDurationIfAvailable();
+              if (!didSetDurationRef.current) {
+                setTimeout(setDurationIfAvailable, 400);
+              }
+            } catch (_) {}
+          }
+
+          // Silent pre-warm: if not starting playback yet, briefly play at volume 0 to
+          // force Now Playing to initialize on first lock, then pause and restore volume.
+          if (!play && !prewarmedRef.current) {
+            try {
+              prewarmedRef.current = true;
+              const desiredVol = Math.max(0, Math.min(1, Number(volume) || 0));
+              suppressEventsRef.current = true;
+              await TrackPlayer.setVolume(0);
+              await TrackPlayer.play();
+              await new Promise((r) => setTimeout(r, 180));
+              await TrackPlayer.pause();
+              await TrackPlayer.setVolume(desiredVol);
+            } catch (_) {
+              // ignore prewarm errors
+            } finally {
+              suppressEventsRef.current = false;
+            }
+          }
         } catch (e) {
           onStatusChange && onStatusChange({ error: String(e) });
         }
@@ -195,8 +257,10 @@ function AudioPlayer(
     try {
       subs.push(
         TrackPlayer.addEventListener(Event.PlaybackProgressUpdated, (e) => {
-          onStatusChange &&
-            onStatusChange({ positionMillis: Math.round((e.position || 0) * 1000) });
+          if (!suppressEventsRef.current) {
+            onStatusChange &&
+              onStatusChange({ positionMillis: Math.round((e.position || 0) * 1000) });
+          }
         }),
       );
     } catch (_) {}
@@ -204,7 +268,9 @@ function AudioPlayer(
       subs.push(
         TrackPlayer.addEventListener(Event.PlaybackState, async (e) => {
           const isPlaying = e.state === State.Playing;
-          onStatusChange && onStatusChange({ isPlaying });
+          if (!suppressEventsRef.current) {
+            onStatusChange && onStatusChange({ isPlaying });
+          }
         }),
       );
     } catch (_) {}
