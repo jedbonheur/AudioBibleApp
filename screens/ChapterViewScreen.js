@@ -349,6 +349,37 @@ export default function ChapterViewScreen({ navigation }) {
       }))
     : [];
 
+  // Normalize verse timing ranges and prepare for fast lookup
+  const timedVerses = React.useMemo(() => {
+    try {
+      const arr = (versesArray || []).filter((v) => typeof v.startMs === 'number');
+      // Ensure sorted by startMs
+      arr.sort((a, b) => (a.startMs || 0) - (b.startMs || 0));
+      const out = [];
+      for (let i = 0; i < arr.length; i++) {
+        const v = arr[i];
+        const next = arr[i + 1];
+        let end = typeof v.endMs === 'number' ? v.endMs : undefined;
+        if (end == null && next && typeof next.startMs === 'number') {
+          // Fallback end at next start
+          end = next.startMs;
+        }
+        if (end == null) {
+          // Last verse fallback: add 1500ms window
+          end = (v.startMs || 0) + 1500;
+        }
+        // Guard for non-decreasing
+        if (end <= v.startMs) end = v.startMs + 300;
+        out.push({ verse: v.verse, startMs: v.startMs, endMs: end, text: v.text });
+      }
+      return out;
+    } catch (_) {
+      return [];
+    }
+  }, [versesArray]);
+
+  const verseStarts = React.useMemo(() => timedVerses.map((v) => v.startMs || 0), [timedVerses]);
+
   // Derive total duration from the last verse end time if not provided by JSON
   const derivedTotalDurationMs = React.useMemo(() => {
     try {
@@ -510,23 +541,49 @@ export default function ChapterViewScreen({ navigation }) {
       const reportedMs = latestStatus?.positionMillis;
       if (typeof reportedMs !== 'number' || isNaN(reportedMs)) return;
       const posMs = reportedMs + (typeof syncOffsetMs === 'number' ? syncOffsetMs : 0);
-      const found = versesArray.find(
-        (v) =>
-          typeof v.startMs === 'number' &&
-          typeof v.endMs === 'number' &&
-          posMs >= v.startMs &&
-          posMs < v.endMs,
-      );
-      if (found) {
-        if (found.verse !== currentVerse) setCurrentVerse(found.verse);
-      } else {
-        if (currentVerse !== null) setCurrentVerse(null);
+
+      if (!timedVerses.length) return;
+
+      // Binary search for the verse whose start <= pos < next.start (or <= end)
+      let lo = 0;
+      let hi = verseStarts.length - 1;
+      let idx = 0;
+      while (lo <= hi) {
+        const mid = (lo + hi) >> 1;
+        const start = verseStarts[mid];
+        if (posMs < start) hi = mid - 1;
+        else {
+          idx = mid;
+          lo = mid + 1;
+        }
       }
+      const cand = timedVerses[idx];
+      let chosen = null;
+      if (cand && posMs >= (cand.startMs || 0) && posMs < (cand.endMs || Infinity)) {
+        chosen = cand;
+      } else {
+        // If we overshot end boundary by a few ms, still pick it
+        if (cand && Math.abs(posMs - (cand.endMs || 0)) <= 80) chosen = cand;
+      }
+      if (!chosen) {
+        // If before first verse start
+        const first = timedVerses[0];
+        if (posMs < (first.startMs || 0)) chosen = first;
+        else {
+          // If after last verse end
+          const last = timedVerses[timedVerses.length - 1];
+          if (posMs >= (last.endMs || Infinity) - 60) chosen = last;
+        }
+      }
+
+      if (chosen && chosen.verse !== currentVerse) setCurrentVerse(chosen.verse);
+      if (!chosen && currentVerse !== null) setCurrentVerse(null);
+
       if (latestStatus?.didJustFinish) setCurrentVerse(null);
     } catch (e) {
       // ignore
     }
-  }, [latestStatus, versesArray]);
+  }, [latestStatus, timedVerses, verseStarts]);
 
   useEffect(() => {
     try {
@@ -815,6 +872,20 @@ export default function ChapterViewScreen({ navigation }) {
               // End background music completely when narration ends
               try {
                 stopBackgroundMusic();
+              } catch (_) {}
+              // Reset playback to the beginning so the next Play starts from 0
+              try {
+                if (audioPlayerRef.current && audioPlayerRef.current.seek) {
+                  audioPlayerRef.current.seek(0);
+                } else {
+                  setSeekToMs(0);
+                }
+              } catch (_) {
+                setSeekToMs(0);
+              }
+              // Clear current verse highlight at end
+              try {
+                setCurrentVerse(null);
               } catch (_) {}
             }
             if (status?.error) setIsPlaying(false);

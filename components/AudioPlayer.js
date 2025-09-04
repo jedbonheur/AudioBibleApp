@@ -40,19 +40,96 @@ function AudioPlayer(
   const didSetDurationRef = useRef(false);
   const prewarmedRef = useRef(false);
   const suppressEventsRef = useRef(false);
+  // Serialize player operations to avoid race conditions across fast toggles
+  const opQueueRef = useRef(Promise.resolve());
+  const desiredPlayRef = useRef(Boolean(play));
+
+  const enqueue = (fn) => {
+    const run = async () => {
+      try {
+        return await fn();
+      } catch (e) {
+        throw e;
+      }
+    };
+    opQueueRef.current = opQueueRef.current.then(run).catch(() => {});
+    return opQueueRef.current;
+  };
+
+  const getSafeState = async () => {
+    try {
+      const s = await TrackPlayer.getState();
+      return s;
+    } catch (_) {
+      return null;
+    }
+  };
+
+  const safePlay = async () => {
+    desiredPlayRef.current = true;
+    return enqueue(async () => {
+      const state = await getSafeState();
+      if (state === State.Playing) return; // idempotent
+      try {
+        await TrackPlayer.play();
+      } catch (e1) {
+        // tiny backoff + retry once
+        await new Promise((r) => setTimeout(r, 120));
+        await TrackPlayer.play();
+      }
+    });
+  };
+
+  const safePause = async () => {
+    desiredPlayRef.current = false;
+    return enqueue(async () => {
+      const state = await getSafeState();
+      if (state === State.Paused || state === State.Stopped || state === State.None) return;
+      try {
+        await TrackPlayer.pause();
+      } catch (e) {
+        // ignore
+      }
+    });
+  };
+
+  // Soft stop that keeps the queue: pause + seek to start
+  const safeStop = async () => {
+    desiredPlayRef.current = false;
+    return enqueue(async () => {
+      try {
+        const state = await getSafeState();
+        if (state !== State.Paused && state !== State.Stopped && state !== State.None) {
+          try {
+            await TrackPlayer.pause();
+          } catch (_) {}
+        }
+        try {
+          await TrackPlayer.seekTo(0);
+        } catch (_) {}
+      } catch (_) {}
+    });
+  };
 
   // Expose imperative API: play, pause, seek
   useImperativeHandle(ref, () => ({
     play: async () => {
       try {
-        await TrackPlayer.play();
+        await safePlay();
       } catch (e) {
         onStatusChange && onStatusChange({ error: String(e) });
       }
     },
     pause: async () => {
       try {
-        await TrackPlayer.pause();
+        await safePause();
+      } catch (e) {
+        onStatusChange && onStatusChange({ error: String(e) });
+      }
+    },
+    stop: async () => {
+      try {
+        await safeStop();
       } catch (e) {
         onStatusChange && onStatusChange({ error: String(e) });
       }
@@ -60,7 +137,9 @@ function AudioPlayer(
     seek: async (ms) => {
       try {
         const pos = Math.max(0, Math.round(ms || 0)) / 1000;
-        await TrackPlayer.seekTo(pos);
+        await enqueue(async () => {
+          await TrackPlayer.seekTo(pos);
+        });
       } catch (e) {
         onStatusChange && onStatusChange({ error: String(e) });
       }
@@ -84,12 +163,26 @@ function AudioPlayer(
           });
           listenersRef.current = [];
         } catch {}
-        // Reset the queue and add the requested source as a single track
+        // Reset the queue and add the requested source as a single track (with small retries)
         try {
           const id = trackId || `track-${Math.abs(hashCode(String(sourceUrl)))}`;
           currentTrackIdRef.current = id;
           didSetDurationRef.current = false;
-          await TrackPlayer.reset();
+          const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+          const withRetry = async (fn, attempts = 3, waitMs = 120) => {
+            let lastErr;
+            for (let i = 0; i < attempts; i++) {
+              try {
+                return await fn();
+              } catch (e) {
+                lastErr = e;
+                if (i < attempts - 1) await delay(waitMs);
+              }
+            }
+            throw lastErr;
+          };
+
+          await enqueue(() => withRetry(() => TrackPlayer.reset()));
           const track = {
             id,
             url: sourceUrl,
@@ -101,7 +194,7 @@ function AudioPlayer(
               ? { duration: Math.round(durationMs) / 1000 }
               : {}),
           };
-          await TrackPlayer.add(track);
+          await enqueue(() => withRetry(() => TrackPlayer.add(track)));
           // Proactively push metadata to Now Playing so lock screen updates immediately
           try {
             const meta = {
@@ -112,7 +205,7 @@ function AudioPlayer(
                 ? { duration: Math.round(durationMs) / 1000 }
                 : {}),
             };
-            await TrackPlayer.updateMetadataForTrack(id, meta);
+            await enqueue(() => TrackPlayer.updateMetadataForTrack(id, meta));
           } catch (_) {}
           // If duration not provided, probe player for it and set metadata once known
           if (!(typeof durationMs === 'number' && durationMs > 0)) {
@@ -121,9 +214,11 @@ function AudioPlayer(
                 if (didSetDurationRef.current) return;
                 const d = await TrackPlayer.getDuration();
                 if (d && isFinite(d) && d > 0 && currentTrackIdRef.current) {
-                  await TrackPlayer.updateMetadataForTrack(currentTrackIdRef.current, {
-                    duration: d,
-                  });
+                  await enqueue(() =>
+                    TrackPlayer.updateMetadataForTrack(currentTrackIdRef.current, {
+                      duration: d,
+                    }),
+                  );
                   didSetDurationRef.current = true;
                 }
               };
@@ -160,7 +255,25 @@ function AudioPlayer(
         // Start if requested
         if (play) {
           try {
-            await TrackPlayer.play();
+            // pre-configure desired volume/rate before starting
+            try {
+              const v = Math.max(0, Math.min(1, Number(volume) || 0));
+              await TrackPlayer.setVolume(v);
+            } catch (_) {}
+            try {
+              const r = Math.max(0.75, Math.min(2.0, Number(rate) || 1));
+              await TrackPlayer.setRate(r);
+            } catch (_) {}
+            // small delay to allow the queue to settle
+            await new Promise((r) => setTimeout(r, 80));
+            const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+            // attempt play with a quick retry
+            try {
+              await safePlay();
+            } catch (e1) {
+              await delay(120);
+              await safePlay();
+            }
           } catch (e) {
             onStatusChange && onStatusChange({ error: String(e) });
           }
@@ -192,8 +305,11 @@ function AudioPlayer(
   useEffect(() => {
     (async () => {
       try {
-        if (play) await TrackPlayer.play();
-        else await TrackPlayer.pause();
+        if (play) {
+          await safePlay();
+        } else {
+          await safePause();
+        }
       } catch (e) {
         if (onStatusChange) onStatusChange({ error: e.message });
       }
@@ -207,10 +323,17 @@ function AudioPlayer(
         if (seekToMs === null || seekToMs === undefined) return;
         // clamp to non-negative
         const pos = Math.max(0, Math.round(seekToMs));
-        await TrackPlayer.seekTo(pos / 1000);
+        await enqueue(async () => {
+          await TrackPlayer.seekTo(pos / 1000);
+        });
         if (play) {
           try {
-            await TrackPlayer.play();
+            await safePlay();
+          } catch (_) {}
+          // quick retry if initial play failed due to race
+          try {
+            await new Promise((r) => setTimeout(r, 100));
+            await safePlay();
           } catch (_) {}
         }
         if (onSeekComplete) onSeekComplete();
@@ -225,7 +348,7 @@ function AudioPlayer(
     (async () => {
       try {
         const v = Math.max(0, Math.min(1, Number(volume) || 0));
-        await TrackPlayer.setVolume(v);
+        await enqueue(() => TrackPlayer.setVolume(v));
       } catch (_) {}
     })();
   }, [volume]);
@@ -236,7 +359,7 @@ function AudioPlayer(
       try {
         const r = Math.max(0.75, Math.min(2.0, Number(rate) || 1));
         try {
-          await TrackPlayer.setRate(r);
+          await enqueue(() => TrackPlayer.setRate(r));
         } catch (_) {}
       } catch (_) {}
     })();
@@ -246,7 +369,7 @@ function AudioPlayer(
   useEffect(() => {
     (async () => {
       try {
-        await TrackPlayer.setRepeatMode(loop ? RepeatMode.Track : RepeatMode.Off);
+        await enqueue(() => TrackPlayer.setRepeatMode(loop ? RepeatMode.Track : RepeatMode.Off));
       } catch (_) {}
     })();
   }, [loop]);
